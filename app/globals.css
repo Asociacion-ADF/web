@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+:root {
+  --font-sans: var(--font-geist-sans);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
