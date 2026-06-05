@@ -1,7 +1,19 @@
 @import "tailwindcss";
 
-:root {
-  --font-sans: var(--font-geist-sans);
+@theme inline {
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-source-serif);
+}
+
+@theme {
+  --color-primary: #3d815c;
+  --color-secondary: #a3d3f2;
+  --color-surface-container-low: #f8f9fa;
+  --color-surface-container: #f1f3f5;
+  --color-border-subtle: #e9ecef;
+  --color-text-main: #1a1a1a;
+  --color-text-soft: #495057;
+  --color-text-muted: #868e96;
 }
 
 *,
@@ -12,4 +24,12 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+.hero-bg {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.institution-gradient {
+  background: linear-gradient(to bottom, #ffffff, #f0f7f3);
 }

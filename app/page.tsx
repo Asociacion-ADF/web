@@ -1,47 +1,38 @@
 import type { Metadata } from "next";
+import HeroSection from "@/components/sections/HeroSection";
+import IntroSection from "@/components/sections/IntroSection";
+import WhatWeDoSection from "@/components/sections/WhatWeDoSection";
+import ProgramsSection from "@/components/sections/ProgramsSection";
+import UpcomingMeetingsSection from "@/components/sections/UpcomingMeetingsSection";
+import ParticipateSection from "@/components/sections/ParticipateSection";
+import NewsSection from "@/components/sections/NewsSection";
+import CommunitySection from "@/components/sections/CommunitySection";
+import InstitutionalTrustSection from "@/components/sections/InstitutionalTrustSection";
+import FaqSection from "@/components/sections/FaqSection";
+import CtaSection from "@/components/sections/CtaSection";
+import ContactFormSection from "@/components/sections/ContactFormSection";
 
 export const metadata: Metadata = {
   title: "Inicio",
   description:
-    "Bienvenidos a Acción por los Derechos Fundamentales, A.C. Organización civil dedicada a la defensa y promoción de los derechos fundamentales en México.",
+    "Acción por los Derechos Fundamentales, A.C. — Asociación civil apartidista en Tijuana, Baja California. Participación ciudadana, formación cívica y defensa de derechos fundamentales.",
 };
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col">
-      {/* Hero */}
-      <section className="flex flex-col items-center justify-center gap-6 px-4 py-24 text-center sm:px-6 lg:px-8">
-        <h1 className="max-w-3xl text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
-          Acción por los Derechos Fundamentales
-        </h1>
-        <p className="max-w-xl text-lg text-gray-500">
-          {/* Contenido pendiente */}
-          Próximamente
-        </p>
-      </section>
-
-      {/* Placeholder sections */}
-      <section className="border-t border-gray-100 px-4 py-16 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-7xl">
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {["Quiénes somos", "Áreas de trabajo", "Cómo participar"].map(
-              (title) => (
-                <div
-                  key={title}
-                  className="rounded-xl border border-gray-200 bg-gray-50 p-6"
-                >
-                  <h2 className="text-base font-semibold text-gray-700">
-                    {title}
-                  </h2>
-                  <p className="mt-2 text-sm text-gray-400">
-                    Contenido pendiente
-                  </p>
-                </div>
-              )
-            )}
-          </div>
-        </div>
-      </section>
-    </div>
+    <>
+      <HeroSection />
+      <IntroSection />
+      <WhatWeDoSection />
+      <ProgramsSection />
+      <UpcomingMeetingsSection />
+      <ParticipateSection />
+      <NewsSection />
+      <CommunitySection />
+      <InstitutionalTrustSection />
+      <FaqSection />
+      <CtaSection />
+      <ContactFormSection />
+    </>
   );
 }

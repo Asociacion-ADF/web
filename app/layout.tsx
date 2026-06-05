@@ -1,12 +1,21 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Inter, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
-const geist = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
+});
+
+const sourceSerif = Source_Serif_4({
+  variable: "--font-source-serif",
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+  weight: ["400", "600", "700"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -15,7 +24,7 @@ export const metadata: Metadata = {
     template: "%s | Acción por los Derechos Fundamentales",
   },
   description:
-    "Organización civil dedicada a la defensa y promoción de los derechos fundamentales en México.",
+    "Asociación civil apartidista con sede en Tijuana, Baja California. Promovemos participación ciudadana, formación cívica, diálogo social, defensa de derechos fundamentales e incidencia institucional.",
   metadataBase: new URL("https://accionderechosfundamentales.org"),
   openGraph: {
     type: "website",
@@ -37,8 +46,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={`${geist.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col bg-white text-gray-900">
+    <html
+      lang="es"
+      className={`${inter.variable} ${sourceSerif.variable} h-full antialiased`}
+    >
+      <body className="min-h-full flex flex-col bg-white text-text-main font-sans">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
