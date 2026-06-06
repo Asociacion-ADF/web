@@ -110,15 +110,13 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-4 flex flex-col gap-6">
             <div className="flex items-center gap-4">
-              <div className="bg-white rounded-xl shadow-md shrink-0 p-2">
-                <Image
-                  src="/images/logo-aadf.png"
-                  alt="Acción por los Derechos Fundamentales, A.C."
-                  width={52}
-                  height={46}
-                  className="object-contain"
-                />
-              </div>
+              <Image
+                src="/images/logo-aadf-transparent.png"
+                alt="Acción por los Derechos Fundamentales, A.C."
+                width={80}
+                height={71}
+                className="object-contain shrink-0 brightness-0 invert opacity-90"
+              />
               <h2 className="font-display text-base font-bold uppercase leading-snug">
                 Acción por los<br />Derechos Fundamentales
               </h2>
