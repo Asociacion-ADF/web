@@ -51,8 +51,7 @@ const faqs = [
       "Sí, como Asociación Civil legalmente constituida, emitimos los comprobantes fiscales correspondientes por las aportaciones recibidas.",
   },
   {
-    question:
-      "¿En cuánto tiempo me contactan después de enviar mis datos?",
+    question: "¿En cuánto tiempo me contactan después de enviar mis datos?",
     answer:
       "Un integrante de nuestro equipo se pondrá en contacto contigo en un lapso máximo de 24 horas hábiles.",
   },
@@ -66,49 +65,58 @@ export default function FaqSection() {
   };
 
   return (
-    <section className="py-24 px-6 bg-white">
-      <div className="max-w-3xl mx-auto">
-        <h2 className="font-serif text-2xl sm:text-[28px] font-semibold text-text-main text-center mb-12">
-          Preguntas Frecuentes
-        </h2>
+    <section className="py-20 lg:py-28 px-5 bg-white border-b border-border-subtle">
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 lg:gap-20">
+        {/* Left: label + heading */}
+        <div className="lg:col-span-4 lg:sticky lg:top-32 self-start">
+          <span className="text-[10px] font-bold tracking-[0.22em] text-brand-green uppercase block mb-3">
+            FAQ
+          </span>
+          <h2 className="font-display text-3xl lg:text-4xl font-bold leading-tight text-text-blue">
+            Preguntas frecuentes
+          </h2>
+        </div>
 
-        <dl className="space-y-4">
-          {faqs.map((faq, index) => {
-            const isOpen = openIndex === index;
-            return (
-              <div
-                key={index}
-                className="border-b border-border-subtle pb-4"
-              >
-                <dt>
-                  <button
-                    className="w-full flex justify-between items-center text-left py-4 font-semibold text-lg text-text-main focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded"
-                    aria-expanded={isOpen}
-                    onClick={() => toggle(index)}
-                  >
-                    <span>{faq.question}</span>
-                    <ChevronDown
-                      className={`shrink-0 ml-4 text-text-muted transition-transform duration-200 ${
-                        isOpen ? "rotate-180" : ""
-                      }`}
-                      size={20}
-                      aria-hidden="true"
-                    />
-                  </button>
-                </dt>
-                <dd
-                  className={`overflow-hidden transition-all duration-300 ${
-                    isOpen ? "max-h-64 pb-4" : "max-h-0"
-                  }`}
+        {/* Right: accordion */}
+        <div className="lg:col-span-8">
+          <dl>
+            {faqs.map((faq, index) => {
+              const isOpen = openIndex === index;
+              return (
+                <div
+                  key={index}
+                  className="border-b border-brand-blue/30 last:border-b-0"
                 >
-                  <p className="text-text-soft text-base leading-relaxed">
-                    {faq.answer}
-                  </p>
-                </dd>
-              </div>
-            );
-          })}
-        </dl>
+                  <dt>
+                    <button
+                      className="w-full flex justify-between items-center text-left py-5 font-semibold text-base text-text-blue focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue rounded"
+                      aria-expanded={isOpen}
+                      onClick={() => toggle(index)}
+                    >
+                      <span>{faq.question}</span>
+                      <ChevronDown
+                        className={`shrink-0 ml-4 text-text-blue/40 transition-transform duration-200 ${
+                          isOpen ? "rotate-180 text-brand-green" : ""
+                        }`}
+                        size={20}
+                        aria-hidden="true"
+                      />
+                    </button>
+                  </dt>
+                  <dd
+                    className={`overflow-hidden transition-all duration-300 ${
+                      isOpen ? "max-h-64 pb-5" : "max-h-0"
+                    }`}
+                  >
+                    <p className="text-text-soft text-sm leading-relaxed">
+                      {faq.answer}
+                    </p>
+                  </dd>
+                </div>
+              );
+            })}
+          </dl>
+        </div>
       </div>
     </section>
   );

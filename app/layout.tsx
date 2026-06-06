@@ -1,20 +1,20 @@
 import type { Metadata } from "next";
-import { Inter, Source_Serif_4 } from "next/font/google";
+import { Epilogue, DM_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
-const inter = Inter({
-  variable: "--font-inter",
+const dmSans = DM_Sans({
+  variable: "--font-dm-sans",
   subsets: ["latin"],
+  weight: ["400", "500", "600"],
   display: "swap",
 });
 
-const sourceSerif = Source_Serif_4({
-  variable: "--font-source-serif",
+const epilogue = Epilogue({
+  variable: "--font-epilogue",
   subsets: ["latin"],
-  style: ["normal", "italic"],
-  weight: ["400", "600", "700"],
+  weight: ["500", "600", "700"],
   display: "swap",
 });
 
@@ -31,24 +31,17 @@ export const metadata: Metadata = {
     locale: "es_MX",
     siteName: "Acción por los Derechos Fundamentales, A.C.",
   },
-  twitter: {
-    card: "summary_large_image",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
+  twitter: { card: "summary_large_image" },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html
       lang="es"
-      className={`${inter.variable} ${sourceSerif.variable} h-full antialiased`}
+      className={`${dmSans.variable} ${epilogue.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-white text-text-main font-sans">
         <Header />

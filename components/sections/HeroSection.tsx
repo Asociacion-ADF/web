@@ -1,32 +1,75 @@
+import Image from "next/image";
+
 export default function HeroSection() {
   return (
-    <section className="relative min-h-[600px] flex flex-col justify-center px-6 py-24 hero-bg overflow-hidden border-b border-border-subtle">
-      <div className="relative z-10 max-w-[1200px] mx-auto w-full">
-        <span className="inline-block px-4 py-1.5 bg-secondary/30 text-primary text-sm font-semibold tracking-wider rounded-full mb-5 uppercase">
-          Tijuana, Baja California
-        </span>
-        <h1 className="font-serif text-[30px] sm:text-[48px] lg:text-[52px] font-bold leading-tight tracking-tight text-text-main mb-10 max-w-3xl">
-          Participar también es defender tu futuro
-        </h1>
-        <p className="text-lg text-text-soft leading-relaxed mb-10 max-w-2xl">
-          Acción por los Derechos Fundamentales, A.C. es una asociación civil
-          apartidista con sede en Tijuana, Baja California. Promovemos
-          participación ciudadana, formación cívica, diálogo social, defensa de
-          derechos fundamentales e incidencia institucional desde la sociedad.
-        </p>
-        <div className="flex flex-col gap-4 sm:flex-row">
-          <button className="h-14 px-8 bg-primary text-white font-semibold text-sm tracking-wide rounded-lg shadow-lg hover:brightness-110 active:scale-[0.98] transition-all">
-            Quiero ser miembro
-          </button>
-          <button className="h-14 px-8 border-2 border-primary text-primary font-semibold text-sm tracking-wide rounded-lg hover:bg-primary/5 transition-colors">
-            Ver próximos encuentros
-          </button>
-        </div>
-      </div>
+    <section className="relative overflow-hidden bg-white border-b border-border-subtle">
+      {/* Editorial right-side panel — rectangular, no circles */}
       <div
-        className="absolute -right-20 -bottom-20 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none"
+        className="absolute top-0 right-0 h-full w-5/12 bg-brand-blue/10 pointer-events-none hidden lg:block"
         aria-hidden="true"
       />
+
+      <div className="relative z-10 max-w-7xl mx-auto px-5 py-20 lg:py-28">
+        <div className="grid lg:grid-cols-12 gap-16 items-center">
+          {/* Left: heading + text + CTA */}
+          <div className="lg:col-span-6 flex flex-col gap-8">
+            {/* Thin editorial accent line */}
+            <div className="w-10 h-[3px] bg-brand-green" aria-hidden="true" />
+
+            <h1 className="font-display text-[2.6rem] sm:text-[3.5rem] lg:text-[4rem] font-bold leading-[1.08] tracking-tight text-text-blue">
+              Participar también es{" "}
+              <em className="not-italic text-brand-green">
+                defender tu futuro
+              </em>
+            </h1>
+
+            <p className="text-lg text-text-soft leading-relaxed max-w-lg">
+              Acción por los Derechos Fundamentales, A.C. es una asociación
+              civil apartidista con sede en Tijuana, Baja California.
+              Promovemos participación ciudadana, formación cívica y diálogo
+              social desde la sociedad.
+            </p>
+
+            <div className="flex flex-col gap-4 sm:flex-row pt-2">
+              <a
+                href="/participa"
+                className="inline-flex h-14 px-8 items-center justify-center bg-brand-green text-white font-semibold text-sm tracking-wide rounded shadow-md hover:brightness-110 active:scale-[0.98] transition-all"
+              >
+                Quiero ser miembro
+              </a>
+              <a
+                href="/proximos-encuentros"
+                className="inline-flex h-14 px-8 items-center justify-center border-2 border-text-blue/30 text-text-blue font-semibold text-sm tracking-wide rounded hover:border-text-blue hover:bg-brand-blue/10 transition-all"
+              >
+                Ver próximos encuentros
+              </a>
+            </div>
+          </div>
+
+          {/* Right: photo */}
+          <div className="lg:col-span-6 flex justify-center lg:justify-end">
+            <div className="relative w-full max-w-lg">
+              {/* Rectangular offset behind photo — editorial, not circular */}
+              <div
+                className="absolute -bottom-3 -right-3 w-full h-full bg-brand-blue/25 rounded-xl pointer-events-none"
+                aria-hidden="true"
+              />
+
+              <div className="relative rounded-xl overflow-hidden border-4 border-white shadow-[0_12px_36px_rgba(21,76,102,0.14)]">
+                <div className="relative w-full aspect-[4/3]">
+                  <Image
+                    src="/images/hero-dialogos-sociedad.jpeg"
+                    alt="Encuentro ciudadano de Diálogos con la Sociedad"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }

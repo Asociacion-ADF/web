@@ -2,78 +2,95 @@ const tiers = [
   {
     name: "Miembro",
     description:
-      "Para ciudadanos comprometidos que desean participar plenamente en asambleas, votaciones y programas internos.",
+      "Para personas que quieren participar activamente en la vida de la asociación.",
     price: "Aportación anual: $6,000 MXN",
     cta: "Quiero ser miembro",
+    href: "/participa#miembro",
     highlighted: false,
-    outline: false,
   },
   {
     name: "Aliado estratégico",
     description:
-      "Para líderes y organizaciones que buscan mayor incidencia, visibilidad y respaldo institucional en nuestras causas.",
+      "Para empresas, instituciones y líderes que quieren fortalecer el alcance de la asociación.",
     price: "Aportación anual: $12,000 MXN",
     cta: "Quiero ser aliado estratégico",
+    href: "/participa#aliado",
     highlighted: true,
-    outline: false,
   },
   {
     name: "Apoya un programa",
     description:
-      "Contribuciones específicas destinadas exclusivamente al sostenimiento de un proyecto o programa de su interés.",
-    price: "Modalidad: Voluntario / Donante",
+      "Para personas, empresas o instituciones que quieren respaldar una causa concreta.",
+    price: "Aportación voluntaria, según el programa seleccionado.",
     cta: "Quiero apoyar un programa",
+    href: "/participa#apoyar",
     highlighted: false,
-    outline: true,
   },
 ];
 
 export default function ParticipateSection() {
   return (
-    <section className="py-24 px-6 bg-white">
-      <div className="max-w-[1200px] mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="font-serif text-2xl sm:text-[28px] font-semibold leading-snug text-text-main mb-4">
-            Elige cómo quieres sumarte
-          </h2>
-          <p className="text-text-soft text-base">
-            Diferentes formas de respaldar nuestra misión ciudadana.
-          </p>
+    <section className="py-20 lg:py-28 px-5 bg-white border-b border-border-subtle">
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-20 mb-14">
+          <div>
+            <span className="text-[10px] font-bold tracking-[0.22em] text-brand-green uppercase block mb-3">
+              Participa
+            </span>
+            <h2 className="font-display text-3xl lg:text-4xl font-bold leading-tight text-text-blue">
+              Elige cómo quieres sumarte
+            </h2>
+          </div>
+          <div className="flex items-end">
+            <p className="text-text-soft text-base leading-relaxed">
+              Hay distintas formas de apoyar la misión de Acción por los
+              Derechos Fundamentales. Desde la participación activa como
+              miembro hasta el respaldo puntual de un programa específico.
+            </p>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Tiers */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {tiers.map((tier) => (
             <div
               key={tier.name}
-              className={`relative rounded-2xl p-10 flex flex-col items-start text-left bg-white ${
+              className={`group relative rounded-2xl p-8 flex flex-col gap-6 transition-all duration-300 ${
                 tier.highlighted
-                  ? "border-2 border-primary shadow-lg"
-                  : "border border-border-subtle hover:shadow-xl transition-shadow"
+                  ? "border-2 border-brand-green bg-brand-blue/35 shadow-md hover:-translate-y-2 hover:shadow-xl"
+                  : "border border-border-subtle bg-white hover:-translate-y-2 hover:shadow-lg hover:border-brand-blue/65 hover:bg-brand-blue/25"
               }`}
             >
               {tier.highlighted && (
-                <div className="absolute -top-4 left-10 bg-primary text-white px-4 py-1 rounded-full text-xs font-bold uppercase">
-                  Recomendado
-                </div>
+                <span className="absolute -top-3 left-8 bg-brand-green text-white px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-wide">
+                  Más popular
+                </span>
               )}
-              <h3 className="font-serif text-2xl font-semibold text-text-main mb-2">
-                {tier.name}
-              </h3>
-              <p className="text-text-soft text-base leading-relaxed mb-6">
-                {tier.description}
-              </p>
-              <p className="text-sm font-semibold text-text-muted mb-8">
+
+              <div>
+                <h3 className="font-display text-xl font-bold text-text-blue mb-2">
+                  {tier.name}
+                </h3>
+                <p className="text-text-soft text-sm leading-relaxed">
+                  {tier.description}
+                </p>
+              </div>
+
+              <p className="text-xs font-semibold text-text-muted border-t border-border-subtle pt-4">
                 {tier.price}
               </p>
-              <button
-                className={`mt-auto w-full h-12 rounded-lg font-semibold text-sm tracking-wide transition-all ${
-                  tier.outline
-                    ? "border-2 border-primary text-primary hover:bg-primary/5"
-                    : "bg-primary text-white hover:brightness-110 shadow-md"
+
+              <a
+                href={tier.href}
+                className={`mt-auto flex h-12 items-center justify-center rounded font-semibold text-sm tracking-wide transition-all ${
+                  tier.highlighted
+                    ? "bg-brand-green text-white hover:brightness-110 shadow-sm"
+                    : "border border-text-blue/30 text-text-blue hover:border-brand-green hover:text-brand-green group-hover:border-brand-green group-hover:text-brand-green"
                 }`}
               >
                 {tier.cta}
-              </button>
+              </a>
             </div>
           ))}
         </div>

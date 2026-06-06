@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Landmark, Menu, X } from "lucide-react";
+import Image from "next/image";
+import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { href: "/", label: "Inicio" },
@@ -17,81 +18,112 @@ export default function Header() {
 
   return (
     <>
-      <header className="fixed top-0 w-full z-50 bg-white border-b border-border-subtle shadow-sm h-20 flex items-center px-6">
-        <div className="flex items-center justify-between w-full max-w-[1200px] mx-auto">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-4">
-            <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
-              <Landmark
-                className="text-primary"
-                size={26}
-                aria-hidden="true"
-              />
-            </div>
-            <div className="flex flex-col leading-tight">
-              <span className="text-sm sm:text-base font-bold text-primary uppercase tracking-tight">
-                Acción por los Derechos Fundamentales
+      <header className="sticky top-0 w-full z-50 bg-white border-b border-border-subtle shadow-sm h-28 flex items-center">
+        <nav
+          aria-label="Navegación principal"
+          className="flex justify-between items-center max-w-7xl mx-auto px-5 w-full"
+        >
+          {/* Logo + marca */}
+          <Link href="/" className="flex items-center gap-4 shrink-0">
+            <Image
+              src="/images/logo-aadf-transparent.png"
+              alt="Acción por los Derechos Fundamentales, A.C."
+              width={100}
+              height={88}
+              className="object-contain w-auto h-14 md:h-[88px] shrink-0"
+              priority
+            />
+            <div className="hidden lg:block border-l border-text-blue/20 pl-4 py-1">
+              <span className="text-[12px] font-bold text-text-blue tracking-tight leading-snug block uppercase">
+                Acción por los<br />Derechos Fundamentales
               </span>
-              <span className="text-[11px] font-semibold text-text-muted tracking-widest uppercase">
+              <span className="text-[10px] font-semibold text-text-muted tracking-[0.18em] uppercase mt-0.5 block">
                 Asociación Civil
               </span>
             </div>
           </Link>
 
-          {/* Hamburger */}
+          {/* Desktop nav */}
+          <div className="hidden md:flex items-center gap-1">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="px-3 py-2 text-sm font-semibold text-text-blue hover:text-brand-green hover:bg-brand-blue/20 rounded-lg transition-colors"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+
+          {/* Desktop CTA */}
+          <Link
+            href="/proximos-encuentros"
+            className="hidden md:flex h-11 px-6 bg-brand-green text-white text-sm font-semibold rounded hover:brightness-110 active:scale-[0.98] transition-all shadow-sm items-center shrink-0"
+          >
+            Próximos encuentros
+          </Link>
+
+          {/* Mobile hamburger */}
           <button
             type="button"
-            aria-label={open ? "Cerrar menú" : "Abrir menú"}
+            aria-label="Abrir menú"
             aria-expanded={open}
             aria-controls="mobile-drawer"
             onClick={() => setOpen(true)}
-            className="p-2 text-text-soft hover:bg-surface-container-low rounded-lg transition-colors"
+            className="md:hidden p-2 text-text-blue hover:bg-brand-blue/15 rounded-lg transition-colors"
           >
-            <Menu size={28} aria-hidden="true" />
+            <Menu size={26} aria-hidden="true" />
           </button>
-        </div>
+        </nav>
       </header>
 
-      {/* Overlay */}
+      {/* Mobile overlay */}
       {open && (
         <div
-          className="fixed inset-0 z-[60] bg-black/40"
+          className="fixed inset-0 z-[60] bg-black/40 md:hidden"
           aria-hidden="true"
           onClick={() => setOpen(false)}
         />
       )}
 
-      {/* Drawer */}
+      {/* Mobile drawer */}
       <div
         id="mobile-drawer"
         role="dialog"
         aria-modal="true"
         aria-label="Menú de navegación"
-        className={`fixed right-0 top-0 bottom-0 z-[70] w-4/5 max-w-sm bg-white shadow-2xl flex flex-col gap-10 p-8 transition-transform duration-300 ${
+        className={`fixed right-0 top-0 bottom-0 z-[70] w-4/5 max-w-sm bg-white shadow-2xl flex flex-col gap-10 p-8 transition-transform duration-300 md:hidden ${
           open ? "translate-x-0" : "translate-x-full"
         }`}
       >
         <div className="flex justify-between items-center border-b border-border-subtle pb-6">
-          <span className="font-serif text-[22px] font-bold text-primary">
-            Menú
-          </span>
+          <Link href="/" onClick={() => setOpen(false)} className="flex items-center gap-3">
+            <Image
+              src="/images/logo-aadf-transparent.png"
+              alt="Acción por los Derechos Fundamentales, A.C."
+              width={64}
+              height={56}
+              className="object-contain w-auto h-[56px] shrink-0"
+            />
+          </Link>
           <button
             type="button"
             aria-label="Cerrar menú"
             onClick={() => setOpen(false)}
-            className="p-2 text-text-soft hover:bg-surface-container-low rounded-lg transition-colors"
+            className="p-2 text-text-blue/60 hover:bg-brand-blue/15 rounded-lg transition-colors"
           >
             <X size={24} aria-hidden="true" />
           </button>
         </div>
 
-        <nav className="flex flex-col gap-2">
+        <nav className="flex flex-col gap-1">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="px-4 py-3 text-lg font-semibold text-text-soft hover:text-primary hover:bg-primary/5 rounded-lg transition-colors"
+              className="px-4 py-3 text-lg font-semibold text-text-blue hover:text-brand-green hover:bg-brand-blue/15 rounded-lg transition-colors"
             >
               {link.label}
             </Link>
@@ -99,12 +131,13 @@ export default function Header() {
         </nav>
 
         <div className="mt-auto">
-          <button
-            className="w-full h-14 bg-primary text-white font-semibold text-sm tracking-wide rounded-lg shadow-md hover:brightness-110 active:scale-95 transition-all"
+          <Link
+            href="/proximos-encuentros"
             onClick={() => setOpen(false)}
+            className="flex w-full h-14 items-center justify-center bg-brand-green text-white font-semibold text-sm tracking-wide rounded shadow-md hover:brightness-110 active:scale-95 transition-all"
           >
             Próximos encuentros
-          </button>
+          </Link>
         </div>
       </div>
     </>

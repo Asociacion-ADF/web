@@ -5,68 +5,80 @@ const programs = [
     icon: Handshake,
     title: "Fortaleciendo Valores",
     description:
-      "Proyecto educativo enfocado en reconstruir el tejido social a través del civismo y la ética ciudadana en todos los sectores.",
+      "Formación cívica y valores para niñas, niños y jóvenes.",
+    href: "/programas/fortaleciendo-valores",
   },
   {
     icon: Users,
     title: "Diálogos con la Sociedad",
     description:
-      "Ciclo de conferencias y mesas de trabajo diseñadas para conectar líderes de opinión con la ciudadanía preocupada.",
+      "Encuentros ciudadanos, conferencias y diálogo social en Tijuana.",
+    href: "/programas/dialogos-con-la-sociedad",
   },
   {
     icon: Eye,
     title: "Vigilancia Ciudadana",
     description:
-      "Observatorio permanente de la legalidad y transparencia gubernamental en Baja California y sus municipios.",
+      "Participación responsable, legalidad y defensa de la vida democrática.",
+    href: "/programas/vigilancia-ciudadana",
   },
   {
     icon: Scale,
     title: "Derecho de Propiedad",
     description:
-      "Mecanismos de defensa jurídica y difusión sobre la importancia fundamental de la propiedad privada para la libertad.",
+      "Certeza jurídica, patrimonio y desarrollo urbano.",
+    href: "/programas/derecho-de-propiedad",
   },
 ];
 
 export default function ProgramsSection() {
   return (
-    <section className="py-24 px-6 bg-white">
-      <div className="max-w-[1200px] mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="font-serif text-2xl sm:text-[28px] font-semibold leading-snug text-text-main mb-4">
+    <section className="py-20 lg:py-28 px-5 bg-brand-blue/30 border-b border-border-subtle">
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <div className="mb-14">
+          <span className="text-[10px] font-bold tracking-[0.22em] text-brand-green uppercase block mb-3">
+            Programas
+          </span>
+          <h2 className="font-display text-3xl lg:text-4xl font-bold leading-tight text-text-blue max-w-xl">
             Programas de Acción por los Derechos Fundamentales
           </h2>
-          <p className="text-text-soft text-lg italic">
-            Cuatro formas de convertir la participación en acción
-          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {programs.map(({ icon: Icon, title, description }) => (
-            <div
+        {/* Horizontal card list */}
+        <div className="flex flex-col gap-4">
+          {programs.map(({ icon: Icon, title, description, href }) => (
+            <a
               key={title}
-              className="bg-surface-container-low p-10 rounded-2xl border border-border-subtle hover:border-primary/30 transition-colors"
+              href={href}
+              className="group flex items-center gap-8 bg-white border border-border-subtle hover:border-brand-blue/50 rounded-2xl p-8 transition-all hover:shadow-md"
             >
-              <div className="w-16 h-16 rounded-full bg-secondary/30 flex items-center justify-center mb-6">
+              {/* Icon box */}
+              <div className="w-14 h-14 rounded-xl bg-brand-blue/35 group-hover:bg-brand-green flex items-center justify-center shrink-0 transition-colors">
                 <Icon
-                  className="text-primary"
-                  size={28}
+                  className="text-text-blue group-hover:text-white transition-colors"
+                  size={24}
                   aria-hidden="true"
                 />
               </div>
-              <h3 className="font-serif text-2xl font-semibold text-text-main mb-4">
-                {title}
-              </h3>
-              <p className="text-text-soft text-base leading-relaxed mb-6">
-                {description}
-              </p>
-              <a
-                href="#"
-                className="text-primary font-semibold text-sm inline-flex items-center gap-2 hover:underline"
-              >
-                Ver programa{" "}
-                <ArrowUpRight size={14} aria-hidden="true" />
-              </a>
-            </div>
+
+              {/* Content */}
+              <div className="flex-1 min-w-0">
+                <h3 className="font-display text-lg font-semibold text-text-blue mb-1">
+                  {title}
+                </h3>
+                <p className="text-text-muted text-sm leading-relaxed">
+                  {description}
+                </p>
+              </div>
+
+              {/* Arrow */}
+              <ArrowUpRight
+                className="text-brand-green shrink-0 opacity-0 group-hover:opacity-100 transition-opacity"
+                size={22}
+                aria-hidden="true"
+              />
+            </a>
           ))}
         </div>
       </div>

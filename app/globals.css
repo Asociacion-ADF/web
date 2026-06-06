@@ -1,19 +1,33 @@
 @import "tailwindcss";
 
 @theme inline {
-  --font-sans: var(--font-inter);
-  --font-serif: var(--font-source-serif);
+  --font-sans: var(--font-dm-sans);
+  --font-display: var(--font-epilogue);
 }
 
 @theme {
-  --color-primary: #3d815c;
-  --color-secondary: #a3d3f2;
-  --color-surface-container-low: #f8f9fa;
-  --color-surface-container: #f1f3f5;
-  --color-border-subtle: #e9ecef;
-  --color-text-main: #1a1a1a;
-  --color-text-soft: #495057;
-  --color-text-muted: #868e96;
+  --color-brand-blue: #a3d3f2;
+  --color-brand-green: #3d815c;
+  --color-text-blue: #154c66;
+  --color-border-subtle: #d1e9f8;
+  --color-text-main: #1c1b1b;
+  --color-text-soft: #41484d;
+  --color-text-muted: #555555;
+}
+
+.bg-grid-subtle {
+  background-image: radial-gradient(rgba(163, 211, 242, 0.65) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.editorial-shadow {
+  box-shadow: 0 20px 50px rgba(163, 211, 242, 0.50);
 }
 
 *,
@@ -24,12 +38,4 @@
 
 html {
   scroll-behavior: smooth;
-}
-
-.hero-bg {
-  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-}
-
-.institution-gradient {
-  background: linear-gradient(to bottom, #ffffff, #f0f7f3);
 }
