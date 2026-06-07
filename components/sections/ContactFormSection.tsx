@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { Lock, CheckCircle, MapPin, Phone, Mail } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { Lock, MapPin, Phone, Mail } from "lucide-react";
 
 interface FormData {
   nombre: string;
@@ -30,6 +31,7 @@ const inputBase =
 const errorBase = "border-red-400 focus:border-red-500 focus:ring-red-400/30";
 
 export default function ContactFormSection() {
+  const router = useRouter();
   const [formData, setFormData] = useState<FormData>({
     nombre: "",
     email: "",
@@ -39,7 +41,6 @@ export default function ContactFormSection() {
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const [submitting, setSubmitting] = useState(false);
-  const [success, setSuccess] = useState(false);
 
   const validate = (): FormErrors => {
     const e: FormErrors = {};
@@ -75,7 +76,7 @@ export default function ContactFormSection() {
     setSubmitting(true);
     await new Promise((r) => setTimeout(r, 900));
     setSubmitting(false);
-    setSuccess(true);
+    router.push("/confirmacion");
   };
 
   return (
@@ -99,13 +100,13 @@ export default function ContactFormSection() {
           {/* Contact details */}
           <div className="flex flex-col gap-5">
             <a
-              href="tel:6817278"
+              href="tel:+526646817278"
               className="flex items-center gap-4 text-text-soft hover:text-text-blue transition-colors group"
             >
               <div className="w-10 h-10 bg-brand-blue/35 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-brand-blue/55 transition-colors">
                 <Phone size={18} className="text-text-blue" aria-hidden="true" />
               </div>
-              <span className="text-sm font-semibold">681-72-78</span>
+              <span className="text-sm font-semibold">+52 664 681 7278</span>
             </a>
             <a
               href="mailto:contacto@asociacionaccion.com"
@@ -136,25 +137,7 @@ export default function ContactFormSection() {
         {/* Right: form with glass panel */}
         <div className="lg:col-span-7">
           <div className="glass-panel rounded-2xl border border-border-subtle p-8 sm:p-10 editorial-shadow">
-            {success ? (
-              <div className="flex flex-col items-center text-center py-10 gap-5">
-                <CheckCircle
-                  className="text-brand-green"
-                  size={52}
-                  aria-hidden="true"
-                />
-                <div>
-                  <h3 className="font-display text-2xl font-bold text-text-blue mb-2">
-                    ¡Solicitud recibida!
-                  </h3>
-                  <p className="text-text-soft text-sm leading-relaxed max-w-sm mx-auto">
-                    Gracias por tu interés. Un integrante del equipo se
-                    comunicará contigo en las próximas 24 horas hábiles.
-                  </p>
-                </div>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} noValidate className="space-y-5">
+            <form onSubmit={handleSubmit} noValidate className="space-y-5">
                 {/* Row 1: nombre + email */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
@@ -309,7 +292,6 @@ export default function ContactFormSection() {
                   </p>
                 </div>
               </form>
-            )}
           </div>
         </div>
       </div>

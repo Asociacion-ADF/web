@@ -127,14 +127,16 @@ export default function Footer() {
             </p>
             <div className="flex gap-3">
               {[
-                { Icon: FacebookIcon, label: "Facebook" },
-                { Icon: InstagramIcon, label: "Instagram" },
-                { Icon: LinkedinIcon, label: "LinkedIn" },
-              ].map(({ Icon, label }) => (
+                { Icon: FacebookIcon, label: "Facebook", href: "https://www.facebook.com/accionporlosderechosfundamentales" },
+                { Icon: InstagramIcon, label: "Instagram", href: "https://www.instagram.com/accionderechosfundamentales/" },
+                { Icon: LinkedinIcon, label: "LinkedIn", href: "https://www.linkedin.com/company/asociacion-derechos-fundamentales" },
+              ].map(({ Icon, label, href }) => (
                 <a
                   key={label}
-                  href="#"
+                  href={href}
                   aria-label={label}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 rounded-lg border border-white/20 flex items-center justify-center text-white/70 hover:text-white hover:bg-white/10 transition-all"
                 >
                   <Icon size={17} />
@@ -171,11 +173,11 @@ export default function Footer() {
               </h4>
               <div className="flex flex-col gap-4 text-sm">
                 <a
-                  href="tel:6817278"
+                  href="tel:+526646817278"
                   className="flex items-center gap-2 text-white/80 hover:text-white transition-colors"
                 >
                   <Phone size={14} className="shrink-0" aria-hidden="true" />
-                  681-72-78
+                  +52 664 681 7278
                 </a>
                 <a
                   href="mailto:contacto@asociacionaccion.com"

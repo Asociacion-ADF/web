@@ -105,8 +105,8 @@ export default function NewsSection() {
           >
             <div className="relative w-full aspect-[3/4] md:w-56 md:aspect-auto lg:w-64 shrink-0 bg-gray-50">
               <Image
-                src="/eventos/fortaleciendo-valores-portada-01.jpeg"
-                alt="Programa Fortaleciendo Valores"
+                src="/eventos/fortaleciendo-valores-programa-piloto-educacion-basica-01.jpeg"
+                alt="Programa piloto Fortaleciendo Valores en educación básica"
                 fill
                 className="object-contain"
                 sizes="(max-width: 768px) 100vw, 256px"
