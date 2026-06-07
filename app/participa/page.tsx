@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type React from "react";
 import Link from "next/link";
 import { ArrowRight, Plus, Check, ShieldCheck } from "lucide-react";
+import ParticipationForm from "./ParticipationForm";
 
 export const metadata: Metadata = {
   title:
@@ -842,135 +843,7 @@ export default function ParticipaPage() {
           </div>
 
           <div className="lg:col-span-8 bg-white border border-border-subtle rounded-3xl p-10 lg:p-14 shadow-md">
-            <form action="/contacto" method="GET" className="flex flex-col gap-7">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
-                <div className="flex flex-col gap-2">
-                  <label
-                    htmlFor="nombre"
-                    className="text-[10px] font-bold tracking-[0.18em] text-[#154c66] uppercase"
-                  >
-                    Nombre completo
-                  </label>
-                  <input
-                    id="nombre"
-                    name="nombre"
-                    type="text"
-                    placeholder="Tu nombre"
-                    required
-                    maxLength={100}
-                    className="w-full px-5 py-4 bg-gray-50 border border-border-subtle rounded-xl focus:ring-2 focus:ring-[#3d815c]/20 focus:border-[#3d815c] outline-none transition-all placeholder:text-text-muted text-sm"
-                  />
-                </div>
-                <div className="flex flex-col gap-2">
-                  <label
-                    htmlFor="telefono"
-                    className="text-[10px] font-bold tracking-[0.18em] text-[#154c66] uppercase"
-                  >
-                    Teléfono
-                  </label>
-                  <input
-                    id="telefono"
-                    name="telefono"
-                    type="tel"
-                    placeholder="664 000 0000"
-                    required
-                    maxLength={20}
-                    className="w-full px-5 py-4 bg-gray-50 border border-border-subtle rounded-xl focus:ring-2 focus:ring-[#3d815c]/20 focus:border-[#3d815c] outline-none transition-all placeholder:text-text-muted text-sm"
-                  />
-                </div>
-              </div>
-
-              <div className="flex flex-col gap-2">
-                <label
-                  htmlFor="email"
-                  className="text-[10px] font-bold tracking-[0.18em] text-[#154c66] uppercase"
-                >
-                  Correo electrónico
-                </label>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  placeholder="email@ejemplo.com"
-                  required
-                  maxLength={254}
-                  className="w-full px-5 py-4 bg-gray-50 border border-border-subtle rounded-xl focus:ring-2 focus:ring-[#3d815c]/20 focus:border-[#3d815c] outline-none transition-all placeholder:text-text-muted text-sm"
-                />
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
-                <div className="flex flex-col gap-2">
-                  <label
-                    htmlFor="modalidad"
-                    className="text-[10px] font-bold tracking-[0.18em] text-[#154c66] uppercase"
-                  >
-                    Modalidad de interés
-                  </label>
-                  <select
-                    id="modalidad"
-                    name="modalidad"
-                    className="w-full px-5 py-4 bg-gray-50 border border-border-subtle rounded-xl focus:ring-2 focus:ring-[#3d815c]/20 focus:border-[#3d815c] outline-none appearance-none cursor-pointer transition-all text-sm text-text-soft"
-                  >
-                    <option value="">Selecciona una opción</option>
-                    <option value="miembro">Miembro</option>
-                    <option value="aliado">Aliado estratégico</option>
-                    <option value="programa">Apoyar un programa específico</option>
-                    <option value="informacion">Deseo recibir más información</option>
-                  </select>
-                </div>
-                <div className="flex flex-col gap-2">
-                  <label
-                    htmlFor="programa"
-                    className="text-[10px] font-bold tracking-[0.18em] text-[#154c66] uppercase"
-                  >
-                    Programa de interés, si aplica
-                  </label>
-                  <select
-                    id="programa"
-                    name="programa"
-                    className="w-full px-5 py-4 bg-gray-50 border border-border-subtle rounded-xl focus:ring-2 focus:ring-[#3d815c]/20 focus:border-[#3d815c] outline-none appearance-none cursor-pointer transition-all text-sm text-text-soft"
-                  >
-                    <option value="">Selecciona un programa</option>
-                    <option value="valores">Fortaleciendo Valores</option>
-                    <option value="dialogos">Diálogos con la Sociedad</option>
-                    <option value="vigilancia">Vigilancia Ciudadana</option>
-                    <option value="propiedad">Derecho de Propiedad</option>
-                    <option value="sin-decidir">Aún no estoy seguro</option>
-                  </select>
-                </div>
-              </div>
-
-              <div className="flex flex-col gap-2">
-                <label
-                  htmlFor="mensaje"
-                  className="text-[10px] font-bold tracking-[0.18em] text-[#154c66] uppercase"
-                >
-                  Mensaje (opcional)
-                </label>
-                <textarea
-                  id="mensaje"
-                  name="mensaje"
-                  rows={3}
-                  placeholder="Cuéntanos brevemente cómo te gustaría participar o qué información necesitas."
-                  maxLength={1000}
-                  className="w-full px-5 py-4 bg-gray-50 border border-border-subtle rounded-xl focus:ring-2 focus:ring-[#3d815c]/20 focus:border-[#3d815c] outline-none transition-all placeholder:text-text-muted text-sm resize-none"
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="w-full bg-[#3d815c] hover:bg-[#2d6347] text-white font-bold py-5 rounded-xl transition-all shadow-xl shadow-[#3d815c]/20 text-sm uppercase tracking-widest"
-              >
-                Enviar solicitud
-              </button>
-
-              <p className="text-text-soft/60 text-xs text-center leading-relaxed">
-                Hemos recibido tu información. En un lapso de 24 horas, una
-                persona del equipo se pondrá en contacto contigo para
-                compartirte los siguientes pasos y resolver cualquier duda
-                sobre la modalidad de participación que elegiste.
-              </p>
-            </form>
+            <ParticipationForm />
           </div>
         </div>
       </section>

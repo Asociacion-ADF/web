@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import RegistrationForm from "./RegistrationForm";
 
 export const metadata: Metadata = {
   title:
@@ -383,121 +384,7 @@ export default function ProximosEncuentrosPage() {
           </div>
 
           <div className="lg:col-span-8 bg-white border border-border-subtle rounded-3xl p-10 lg:p-14 shadow-md">
-            <form action="/contacto" method="GET" className="flex flex-col gap-7">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
-                <div className="flex flex-col gap-2">
-                  <label
-                    htmlFor="nombre"
-                    className="text-[10px] font-bold tracking-[0.18em] text-[#154c66] uppercase"
-                  >
-                    Nombre completo
-                  </label>
-                  <input
-                    id="nombre"
-                    name="nombre"
-                    type="text"
-                    placeholder="Tu nombre"
-                    required
-                    maxLength={100}
-                    className="w-full px-5 py-4 bg-gray-50 border border-border-subtle rounded-xl focus:ring-2 focus:ring-[#3d815c]/20 focus:border-[#3d815c] outline-none transition-all placeholder:text-text-muted text-sm"
-                  />
-                </div>
-                <div className="flex flex-col gap-2">
-                  <label
-                    htmlFor="telefono"
-                    className="text-[10px] font-bold tracking-[0.18em] text-[#154c66] uppercase"
-                  >
-                    Teléfono
-                  </label>
-                  <input
-                    id="telefono"
-                    name="telefono"
-                    type="tel"
-                    placeholder="+52 664 000 0000"
-                    required
-                    maxLength={20}
-                    className="w-full px-5 py-4 bg-gray-50 border border-border-subtle rounded-xl focus:ring-2 focus:ring-[#3d815c]/20 focus:border-[#3d815c] outline-none transition-all placeholder:text-text-muted text-sm"
-                  />
-                </div>
-              </div>
-
-              <div className="flex flex-col gap-2">
-                <label
-                  htmlFor="email"
-                  className="text-[10px] font-bold tracking-[0.18em] text-[#154c66] uppercase"
-                >
-                  Correo electrónico
-                </label>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  placeholder="email@ejemplo.com"
-                  required
-                  maxLength={254}
-                  className="w-full px-5 py-4 bg-gray-50 border border-border-subtle rounded-xl focus:ring-2 focus:ring-[#3d815c]/20 focus:border-[#3d815c] outline-none transition-all placeholder:text-text-muted text-sm"
-                />
-              </div>
-
-              <div className="flex flex-col gap-2">
-                <label
-                  htmlFor="motivo"
-                  className="text-[10px] font-bold tracking-[0.18em] text-[#154c66] uppercase"
-                >
-                  Motivo de interés
-                </label>
-                <select
-                  id="motivo"
-                  name="motivo"
-                  className="w-full px-5 py-4 bg-gray-50 border border-border-subtle rounded-xl focus:ring-2 focus:ring-[#3d815c]/20 focus:border-[#3d815c] outline-none appearance-none cursor-pointer transition-all text-sm text-text-soft"
-                >
-                  <option value="">Selecciona una opción</option>
-                  <option value="asistir">
-                    Quiero asistir a un próximo encuentro
-                  </option>
-                  <option value="informacion">
-                    Quiero recibir información sobre eventos
-                  </option>
-                  <option value="programas">
-                    Quiero conocer los programas
-                  </option>
-                  <option value="miembro">Quiero ser miembro</option>
-                  <option value="aliado">Quiero ser aliado estratégico</option>
-                  <option value="otro">Otro</option>
-                </select>
-              </div>
-
-              <div className="flex flex-col gap-2">
-                <label
-                  htmlFor="mensaje"
-                  className="text-[10px] font-bold tracking-[0.18em] text-[#154c66] uppercase"
-                >
-                  Mensaje (opcional)
-                </label>
-                <textarea
-                  id="mensaje"
-                  name="mensaje"
-                  rows={3}
-                  placeholder="Cuéntanos si tienes interés en algún tema, programa o tipo de encuentro."
-                  maxLength={1000}
-                  className="w-full px-5 py-4 bg-gray-50 border border-border-subtle rounded-xl focus:ring-2 focus:ring-[#3d815c]/20 focus:border-[#3d815c] outline-none transition-all placeholder:text-text-muted text-sm resize-none"
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="w-full bg-[#3d815c] hover:bg-[#2d6347] text-white font-bold py-5 rounded-xl transition-all shadow-xl shadow-[#3d815c]/20 text-sm uppercase tracking-widest"
-              >
-                Enviar registro
-              </button>
-
-              <p className="text-text-soft/60 text-xs text-center leading-relaxed">
-                Gracias por tu interés en los próximos encuentros de Acción por
-                los Derechos Fundamentales, A.C. Hemos recibido tu información.
-                Una persona del equipo se pondrá en contacto contigo para
-                compartirte información sobre próximas actividades.
-              </p>
-            </form>
+            <RegistrationForm />
           </div>
         </div>
       </section>

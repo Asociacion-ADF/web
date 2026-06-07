@@ -5,9 +5,9 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 const inputBase =
-  "w-full px-5 py-4 bg-gray-50 border border-border-subtle rounded-xl focus:ring-2 focus:ring-[#3d815c]/20 focus:border-[#3d815c] outline-none transition-all placeholder:text-gray-400 text-sm";
+  "w-full px-5 py-4 bg-gray-50 border border-border-subtle rounded-xl focus:ring-2 focus:ring-[#3d815c]/20 focus:border-[#3d815c] outline-none transition-all placeholder:text-text-muted text-sm";
 
-export default function ContactForm() {
+export default function RegistrationForm() {
   const router = useRouter();
   const [submitting, setSubmitting] = useState(false);
 
@@ -20,8 +20,8 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-6">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <form onSubmit={handleSubmit} className="flex flex-col gap-7">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
         <div className="flex flex-col gap-2">
           <label
             htmlFor="nombre"
@@ -69,7 +69,7 @@ export default function ContactForm() {
           id="email"
           name="email"
           type="email"
-          placeholder="correo@ejemplo.com"
+          placeholder="email@ejemplo.com"
           required
           maxLength={254}
           className={inputBase}
@@ -81,7 +81,7 @@ export default function ContactForm() {
           htmlFor="motivo"
           className="text-[10px] font-bold tracking-[0.18em] text-[#154c66] uppercase"
         >
-          Motivo de contacto
+          Motivo de interés
         </label>
         <select
           id="motivo"
@@ -89,15 +89,11 @@ export default function ContactForm() {
           className={`${inputBase} appearance-none cursor-pointer`}
         >
           <option value="">Selecciona una opción</option>
+          <option value="asistir">Quiero asistir a un próximo encuentro</option>
+          <option value="informacion">Quiero recibir información sobre eventos</option>
+          <option value="programas">Quiero conocer los programas</option>
           <option value="miembro">Quiero ser miembro</option>
           <option value="aliado">Quiero ser aliado estratégico</option>
-          <option value="programa">Quiero apoyar un programa específico</option>
-          <option value="encuentros">
-            Quiero información sobre próximos encuentros
-          </option>
-          <option value="programas-info">
-            Quiero información sobre programas
-          </option>
           <option value="otro">Otro</option>
         </select>
       </div>
@@ -107,16 +103,13 @@ export default function ContactForm() {
           htmlFor="mensaje"
           className="text-[10px] font-bold tracking-[0.18em] text-[#154c66] uppercase"
         >
-          Mensaje{" "}
-          <span className="text-text-muted font-normal normal-case">
-            (opcional)
-          </span>
+          Mensaje (opcional)
         </label>
         <textarea
           id="mensaje"
           name="mensaje"
-          rows={4}
-          placeholder="Cuéntanos brevemente cómo podemos ayudarte."
+          rows={3}
+          placeholder="Cuéntanos si tienes interés en algún tema, programa o tipo de encuentro."
           maxLength={1000}
           className={`${inputBase} resize-none`}
         />
@@ -127,7 +120,7 @@ export default function ContactForm() {
         disabled={submitting}
         className="w-full bg-[#3d815c] hover:bg-[#2d6347] text-white font-bold py-5 rounded-xl transition-all shadow-xl shadow-[#3d815c]/20 text-sm uppercase tracking-widest disabled:opacity-60 disabled:cursor-not-allowed"
       >
-        {submitting ? "Enviando..." : "Enviar mensaje"}
+        {submitting ? "Enviando..." : "Enviar registro"}
       </button>
 
       <p className="text-center text-[11px] text-text-muted leading-relaxed">

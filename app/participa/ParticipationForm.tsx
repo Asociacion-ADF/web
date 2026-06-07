@@ -5,9 +5,9 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 const inputBase =
-  "w-full px-5 py-4 bg-gray-50 border border-border-subtle rounded-xl focus:ring-2 focus:ring-[#3d815c]/20 focus:border-[#3d815c] outline-none transition-all placeholder:text-gray-400 text-sm";
+  "w-full px-5 py-4 bg-gray-50 border border-border-subtle rounded-xl focus:ring-2 focus:ring-[#3d815c]/20 focus:border-[#3d815c] outline-none transition-all placeholder:text-text-muted text-sm";
 
-export default function ContactForm() {
+export default function ParticipationForm() {
   const router = useRouter();
   const [submitting, setSubmitting] = useState(false);
 
@@ -20,8 +20,8 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-6">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <form onSubmit={handleSubmit} className="flex flex-col gap-7">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
         <div className="flex flex-col gap-2">
           <label
             htmlFor="nombre"
@@ -50,7 +50,7 @@ export default function ContactForm() {
             id="telefono"
             name="telefono"
             type="tel"
-            placeholder="+52 664 000 0000"
+            placeholder="664 000 0000"
             required
             maxLength={20}
             className={inputBase}
@@ -69,37 +69,53 @@ export default function ContactForm() {
           id="email"
           name="email"
           type="email"
-          placeholder="correo@ejemplo.com"
+          placeholder="email@ejemplo.com"
           required
           maxLength={254}
           className={inputBase}
         />
       </div>
 
-      <div className="flex flex-col gap-2">
-        <label
-          htmlFor="motivo"
-          className="text-[10px] font-bold tracking-[0.18em] text-[#154c66] uppercase"
-        >
-          Motivo de contacto
-        </label>
-        <select
-          id="motivo"
-          name="motivo"
-          className={`${inputBase} appearance-none cursor-pointer`}
-        >
-          <option value="">Selecciona una opción</option>
-          <option value="miembro">Quiero ser miembro</option>
-          <option value="aliado">Quiero ser aliado estratégico</option>
-          <option value="programa">Quiero apoyar un programa específico</option>
-          <option value="encuentros">
-            Quiero información sobre próximos encuentros
-          </option>
-          <option value="programas-info">
-            Quiero información sobre programas
-          </option>
-          <option value="otro">Otro</option>
-        </select>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
+        <div className="flex flex-col gap-2">
+          <label
+            htmlFor="modalidad"
+            className="text-[10px] font-bold tracking-[0.18em] text-[#154c66] uppercase"
+          >
+            Modalidad de interés
+          </label>
+          <select
+            id="modalidad"
+            name="modalidad"
+            className={`${inputBase} appearance-none cursor-pointer`}
+          >
+            <option value="">Selecciona una opción</option>
+            <option value="miembro">Miembro</option>
+            <option value="aliado">Aliado estratégico</option>
+            <option value="programa">Apoyar un programa específico</option>
+            <option value="informacion">Deseo recibir más información</option>
+          </select>
+        </div>
+        <div className="flex flex-col gap-2">
+          <label
+            htmlFor="programa"
+            className="text-[10px] font-bold tracking-[0.18em] text-[#154c66] uppercase"
+          >
+            Programa de interés, si aplica
+          </label>
+          <select
+            id="programa"
+            name="programa"
+            className={`${inputBase} appearance-none cursor-pointer`}
+          >
+            <option value="">Selecciona un programa</option>
+            <option value="valores">Fortaleciendo Valores</option>
+            <option value="dialogos">Diálogos con la Sociedad</option>
+            <option value="vigilancia">Vigilancia Ciudadana</option>
+            <option value="propiedad">Derecho de Propiedad</option>
+            <option value="sin-decidir">Aún no estoy seguro</option>
+          </select>
+        </div>
       </div>
 
       <div className="flex flex-col gap-2">
@@ -107,16 +123,13 @@ export default function ContactForm() {
           htmlFor="mensaje"
           className="text-[10px] font-bold tracking-[0.18em] text-[#154c66] uppercase"
         >
-          Mensaje{" "}
-          <span className="text-text-muted font-normal normal-case">
-            (opcional)
-          </span>
+          Mensaje (opcional)
         </label>
         <textarea
           id="mensaje"
           name="mensaje"
-          rows={4}
-          placeholder="Cuéntanos brevemente cómo podemos ayudarte."
+          rows={3}
+          placeholder="Cuéntanos brevemente cómo te gustaría participar o qué información necesitas."
           maxLength={1000}
           className={`${inputBase} resize-none`}
         />
@@ -127,7 +140,7 @@ export default function ContactForm() {
         disabled={submitting}
         className="w-full bg-[#3d815c] hover:bg-[#2d6347] text-white font-bold py-5 rounded-xl transition-all shadow-xl shadow-[#3d815c]/20 text-sm uppercase tracking-widest disabled:opacity-60 disabled:cursor-not-allowed"
       >
-        {submitting ? "Enviando..." : "Enviar mensaje"}
+        {submitting ? "Enviando..." : "Enviar solicitud"}
       </button>
 
       <p className="text-center text-[11px] text-text-muted leading-relaxed">

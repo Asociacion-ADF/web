@@ -46,11 +46,6 @@ export default function AvisoDePrivacidadPage() {
       <section className="py-16 px-5 bg-[#f8fbfe]">
         <div className="max-w-3xl mx-auto">
 
-          {/* Nota de revisión */}
-          <div className="border border-amber-300 bg-amber-50 rounded-xl px-6 py-5 mb-10 text-sm text-amber-800 leading-relaxed">
-            <strong className="font-bold">Nota:</strong> Este texto es una base editorial para la web y debe ser revisado y aprobado por un abogado o responsable legal de la asociación antes de su publicación definitiva.
-          </div>
-
           <div className="bg-white rounded-2xl border border-[#d1e9f8] shadow-sm px-8 py-10">
 
             {/* Responsable */}

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { Lock, MapPin, Phone, Mail } from "lucide-react";
 
 interface FormData {
@@ -289,6 +290,15 @@ export default function ContactFormSection() {
                     <Lock size={11} aria-hidden="true" />
                     Sus datos están protegidos y solo se usarán para fines de
                     contacto institucional.
+                  </p>
+                  <p className="text-center text-[11px] text-text-muted leading-relaxed">
+                    Al enviar tus datos aceptas el{" "}
+                    <Link
+                      href="/aviso-de-privacidad"
+                      className="underline hover:text-[#3d815c] transition-colors"
+                    >
+                      Aviso de privacidad
+                    </Link>
                   </p>
                 </div>
               </form>
