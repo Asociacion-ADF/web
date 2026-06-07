@@ -186,7 +186,7 @@ export default function TrayectoriaRufoIbarraBatista() {
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
-            <div className="absolute -bottom-6 -right-6 bg-[#3d815c] text-white p-8 rounded-lg z-20 shadow-xl">
+            <div className="absolute bottom-2 right-2 md:-bottom-6 md:-right-6 bg-[#3d815c] text-white p-8 rounded-lg z-20 shadow-xl">
               <div className="font-display text-4xl font-bold mb-1">20+</div>
               <p className="text-sm font-semibold">Años de Docencia</p>
             </div>

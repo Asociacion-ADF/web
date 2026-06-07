@@ -155,7 +155,7 @@ export default function NosotrosPage() {
 
         <div className="max-w-7xl mx-auto px-5 relative z-10 grid grid-cols-12 gap-6 items-center py-24 w-full">
           <div className="col-span-12 lg:col-span-7 text-white">
-            <h1 className="font-display text-5xl lg:text-7xl font-bold leading-tight mb-6">
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight mb-6">
               Somos una asociación civil para participar, dialogar y construir soluciones
             </h1>
             <p className="text-lg mb-10 text-[#c5e7ff] max-w-2xl leading-relaxed">
@@ -561,7 +561,7 @@ export default function NosotrosPage() {
       </section>
 
       {/* ─── A QUIÉN CONVOCAMOS ─── */}
-      <section className="py-20 lg:py-28 px-5 bg-[#f8fbfe]">
+      <section className="py-20 lg:py-28 px-5 bg-[#f8fbfe] overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -737,7 +737,7 @@ export default function NosotrosPage() {
       {/* ─── CTA FINAL ─── */}
       <section className="py-20 lg:py-28 px-5 bg-[#f8fbfe]">
         <div className="max-w-7xl mx-auto">
-          <div className="bg-[#3d815c] rounded-2xl p-16 text-center text-white relative overflow-hidden shadow-2xl">
+          <div className="bg-[#3d815c] rounded-2xl p-8 md:p-16 text-center text-white relative overflow-hidden shadow-2xl">
             <div
               aria-hidden="true"
               className="absolute inset-0 opacity-10 pointer-events-none"

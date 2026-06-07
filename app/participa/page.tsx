@@ -152,7 +152,7 @@ export default function ParticipaPage() {
               Acción por los Derechos Fundamentales, A.C.
             </span>
             <h1
-              className="font-display text-5xl lg:text-7xl font-bold text-white leading-[1.05] mb-6"
+              className="font-display text-4xl sm:text-5xl lg:text-7xl font-bold text-white leading-[1.05] mb-6"
               style={{ textShadow: "0 4px 20px rgba(0,0,0,0.3)" }}
             >
               Participa en Acción por los Derechos Fundamentales

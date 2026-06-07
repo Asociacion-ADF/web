@@ -230,7 +230,7 @@ export default function ProgramasPage() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-32">
+          <div className="flex flex-col gap-16 md:gap-32">
 
             {/* ── 01: Fortaleciendo Valores — image left, content right ── */}
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">

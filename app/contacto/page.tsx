@@ -47,7 +47,7 @@ export default function ContactoPage() {
               Estamos en Tijuana, Baja California
             </span>
             <h1
-              className="font-display text-5xl lg:text-7xl font-bold text-white leading-[1.05] mb-8"
+              className="font-display text-4xl sm:text-5xl lg:text-7xl font-bold text-white leading-[1.05] mb-8"
               style={{ textShadow: "0 4px 20px rgba(0,0,0,0.3)" }}
             >
               Contacta a Acción por los Derechos Fundamentales
@@ -240,7 +240,7 @@ export default function ContactoPage() {
         />
 
         <div className="max-w-7xl mx-auto px-5 relative z-10 w-full flex justify-end">
-          <div className="max-w-lg bg-white/90 backdrop-blur-sm border border-white/40 rounded-3xl p-10 lg:p-12 shadow-2xl">
+          <div className="w-full md:max-w-lg md:ml-auto bg-white/90 backdrop-blur-sm border border-white/40 rounded-3xl p-10 lg:p-12 shadow-2xl">
             <span className="text-[10px] font-bold tracking-[0.4em] text-[#3d815c] uppercase block mb-4">
               Sede
             </span>

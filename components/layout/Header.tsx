@@ -18,7 +18,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="sticky top-0 w-full z-50 bg-white border-b border-border-subtle shadow-sm h-28 flex items-center">
+      <header className="sticky top-0 w-full z-50 bg-white border-b border-border-subtle shadow-sm h-20 md:h-28 flex items-center">
         <nav
           aria-label="Navegación principal"
           className="flex justify-between items-center max-w-7xl mx-auto px-5 w-full"
