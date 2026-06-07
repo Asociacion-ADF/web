@@ -228,7 +228,7 @@ export default function ContactoPage() {
       {/* ─── UBICACIÓN ─── */}
       <section className="relative h-[600px] lg:h-[700px] flex items-center overflow-hidden">
         <Image
-          src="/eventos/oficinas-asociacion-tijuana-01.peg.png"
+          src="/eventos/oficinas-asociacion-tijuana-01.png"
           alt="Oficinas de Acción por los Derechos Fundamentales en Tijuana"
           fill
           className="object-cover object-center"

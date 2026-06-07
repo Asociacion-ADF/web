@@ -501,7 +501,7 @@ export default function NosotrosPage() {
                 </p>
               </div>
               <Link
-                href="#"
+                href="/trayectoria-rufo-ibarra-batista"
                 className="mt-8 inline-flex items-center gap-2 text-[#3d815c] font-bold hover:text-[#2d6347] transition-colors text-sm"
               >
                 Ver trayectoria completa

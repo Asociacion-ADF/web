@@ -58,7 +58,7 @@ export default function HeroSection() {
               <div className="relative rounded-xl overflow-hidden border-4 border-white shadow-[0_12px_36px_rgba(21,76,102,0.14)]">
                 <div className="relative w-full aspect-[4/3]">
                   <Image
-                    src="/images/hero-dialogos-sociedad.jpeg"
+                    src="/eventos/hero-dialogos-sociedad.jpeg"
                     alt="Encuentro ciudadano de Diálogos con la Sociedad"
                     fill
                     className="object-cover"
