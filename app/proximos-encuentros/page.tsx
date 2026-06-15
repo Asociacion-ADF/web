@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import RegistrationForm from "./RegistrationForm";
+import PastEventsCarousel from "./PastEventsCarousel";
 
 export const metadata: Metadata = {
   title:
@@ -391,36 +392,7 @@ export default function ProximosEncuentrosPage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
-            {[
-              {
-                src: "/eventos/dialogos-sociedad-jesus-alejandro-ruiz-uribe-17-marzo-2026.jpeg",
-                alt: "Diálogos con la Sociedad con Jesús Alejandro Ruiz Uribe — 17 de marzo de 2026",
-              },
-              {
-                src: "/eventos/dialogos-sociedad-evangelina-moreno-guerra-06-abril-2026.jpeg",
-                alt: "Diálogos con la Sociedad con Evangelina Moreno Guerra — 6 de abril de 2026",
-              },
-              {
-                src: "/eventos/dialogos-sociedad-christopher-teal-29-mayo-2026.jpeg",
-                alt: "Diálogos con la Sociedad con Christopher Teal — 29 de mayo de 2026",
-              },
-              {
-                src: "/eventos/dialogos-sociedad-hector-osuna-jaime-flyer-cuadrado-15-junio-2026.jpeg",
-                alt: "Diálogos con la Sociedad con Héctor Osuna Jaime — 15 de junio de 2026",
-              },
-            ].map(({ src, alt }) => (
-              <div key={src} className="relative aspect-[3/4] rounded-2xl overflow-hidden border border-[#a3d3f2]/30 shadow-sm">
-                <Image
-                  src={src}
-                  alt={alt}
-                  fill
-                  className="object-cover object-center"
-                  sizes="(max-width: 768px) 50vw, 25vw"
-                />
-              </div>
-            ))}
-          </div>
+          <PastEventsCarousel />
         </div>
       </section>
 
