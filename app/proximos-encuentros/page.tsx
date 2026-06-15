@@ -238,24 +238,26 @@ export default function ProximosEncuentrosPage() {
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row bg-white rounded-2xl border border-[#a3d3f2]/40 overflow-hidden shadow-sm">
-            <div className="relative sm:w-56 lg:w-72 aspect-[4/3] sm:aspect-auto shrink-0">
+          <div className="flex flex-row items-center bg-white rounded-2xl border border-[#a3d3f2]/40 shadow-sm p-6 lg:p-8 gap-6">
+            {/* Circular speaker photo — crop toward face (upper-center of image) */}
+            <div className="relative w-20 h-20 lg:w-24 lg:h-24 rounded-full overflow-hidden shrink-0 border-2 border-[#a3d3f2]/40">
               <Image
                 src="/eventos/dialogos-sociedad-hector-osuna-jaime-15-junio-2026.jpeg"
-                alt="Diálogos con la Sociedad con Héctor Osuna Jaime"
+                alt="Héctor Osuna Jaime"
                 fill
-                className="object-cover object-center"
-                sizes="(max-width: 640px) 100vw, 288px"
+                className="object-cover"
+                style={{ objectPosition: "center 15%" }}
+                sizes="96px"
               />
             </div>
-            <div className="flex flex-col justify-center gap-4 p-8 lg:p-10">
+            <div className="flex flex-col gap-3 min-w-0">
               <span className="text-[10px] font-bold tracking-[0.3em] text-[#3d815c] uppercase">
                 Diálogos con la Sociedad
               </span>
-              <h3 className="font-display text-xl font-bold text-[#154c66] leading-snug">
+              <h3 className="font-display text-lg lg:text-xl font-bold text-[#154c66] leading-snug">
                 Diálogos con la Sociedad con Héctor Osuna Jaime
               </h3>
-              <div className="flex flex-wrap gap-x-6 gap-y-1 text-sm text-text-soft">
+              <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm text-text-soft">
                 <span>Héctor Osuna Jaime — Ex-Presidente de Tijuana, B.C.</span>
                 <span>15 de junio · 2:00 PM · Oryx Restaurante</span>
               </div>
