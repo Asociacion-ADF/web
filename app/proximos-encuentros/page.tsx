@@ -242,7 +242,7 @@ export default function ProximosEncuentrosPage() {
             {/* Circular speaker photo — crop toward face (upper-center of image) */}
             <div className="relative w-20 h-20 lg:w-24 lg:h-24 rounded-full overflow-hidden shrink-0 border-2 border-[#a3d3f2]/40">
               <Image
-                src="/eventos/dialogos-sociedad-cesar-damian-retes-flyer-22-junio-2026.jpeg"
+                src="/eventos/dialogos-sociedad-cesar-damian-retes-perfil.jpeg"
                 alt="César Damián Retes"
                 fill
                 className="object-cover object-center"
@@ -286,14 +286,14 @@ export default function ProximosEncuentrosPage() {
               Calendario de Diálogos con la Sociedad 2026
             </h2>
           </div>
-          <div className="relative w-full rounded-2xl overflow-hidden border border-[#a3d3f2]/40 shadow-sm">
+          <div className="max-w-2xl mx-auto rounded-2xl overflow-hidden border border-[#a3d3f2]/40 shadow-sm">
             <Image
               src="/eventos/calendario-encuentros-dialogos-2026.jpeg"
               alt="Calendario de Diálogos con la Sociedad 2026"
-              width={1400}
-              height={900}
+              width={800}
+              height={600}
               className="w-full h-auto object-contain"
-              sizes="(max-width: 1280px) 100vw, 1280px"
+              sizes="(max-width: 768px) 100vw, 672px"
             />
           </div>
         </div>
@@ -406,7 +406,7 @@ export default function ProximosEncuentrosPage() {
                 alt: "Diálogos con la Sociedad con Christopher Teal — 29 de mayo de 2026",
               },
               {
-                src: "/eventos/dialogos-sociedad-hector-osuna-jaime-15-junio-2026.jpeg",
+                src: "/eventos/dialogos-sociedad-hector-osuna-jaime-flyer-cuadrado-15-junio-2026.jpeg",
                 alt: "Diálogos con la Sociedad con Héctor Osuna Jaime — 15 de junio de 2026",
               },
             ].map(({ src, alt }) => (
