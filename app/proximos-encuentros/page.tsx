@@ -242,11 +242,10 @@ export default function ProximosEncuentrosPage() {
             {/* Circular speaker photo — crop toward face (upper-center of image) */}
             <div className="relative w-20 h-20 lg:w-24 lg:h-24 rounded-full overflow-hidden shrink-0 border-2 border-[#a3d3f2]/40">
               <Image
-                src="/eventos/dialogos-sociedad-hector-osuna-jaime-15-junio-2026.jpeg"
+                src="/eventos/hector-osuna-jaime-perfil.jpeg"
                 alt="Héctor Osuna Jaime"
                 fill
-                className="object-cover"
-                style={{ objectPosition: "center 15%" }}
+                className="object-cover object-center"
                 sizes="96px"
               />
             </div>
