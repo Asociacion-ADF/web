@@ -118,8 +118,8 @@ export default function ProximosEncuentrosPage() {
               {/* Event image */}
               <div className="relative w-full aspect-[16/9]">
                 <Image
-                  src="/eventos/dialogos-sociedad-hector-osuna-jaime-15-junio-2026.jpeg"
-                  alt="Diálogos con la Sociedad con Héctor Osuna Jaime"
+                  src="/eventos/dialogos-sociedad-cesar-damian-retes-22-junio-2026.jpeg"
+                  alt="Diálogos con la Sociedad con César Damián Retes"
                   fill
                   className="object-cover object-center"
                   sizes="(max-width: 1024px) 100vw, 768px"
@@ -137,7 +137,7 @@ export default function ProximosEncuentrosPage() {
                 Diálogos con la Sociedad
               </span>
               <h3 className="font-display text-2xl font-bold text-[#154c66] mb-8">
-                Diálogos con la Sociedad con Héctor Osuna Jaime
+                Diálogos con la Sociedad con César Damián Retes
               </h3>
 
               <div className="flex flex-col gap-6 mb-8">
@@ -150,7 +150,7 @@ export default function ProximosEncuentrosPage() {
                   </div>
                   <div>
                     <p className="text-[10px] font-bold tracking-[0.18em] text-text-muted uppercase mb-1">Invitado</p>
-                    <p className="text-[#154c66] font-semibold text-sm">Héctor Osuna Jaime</p>
+                    <p className="text-[#154c66] font-semibold text-sm">César Damián Retes</p>
                   </div>
                 </div>
                 {/* Cargo */}
@@ -163,7 +163,7 @@ export default function ProximosEncuentrosPage() {
                   </div>
                   <div>
                     <p className="text-[10px] font-bold tracking-[0.18em] text-text-muted uppercase mb-1">Cargo</p>
-                    <p className="text-[#154c66] font-semibold text-sm">Ex-Presidente de Tijuana, B.C.</p>
+                    <p className="text-[#154c66] font-semibold text-sm">Diputado Federal por B.C.</p>
                   </div>
                 </div>
                 {/* Fecha */}
@@ -175,7 +175,7 @@ export default function ProximosEncuentrosPage() {
                   </div>
                   <div>
                     <p className="text-[10px] font-bold tracking-[0.18em] text-text-muted uppercase mb-1">Fecha</p>
-                    <p className="text-[#154c66] font-semibold text-sm">15 de junio</p>
+                    <p className="text-[#154c66] font-semibold text-sm">22 de junio de 2026</p>
                   </div>
                 </div>
                 {/* Hora */}
@@ -242,8 +242,8 @@ export default function ProximosEncuentrosPage() {
             {/* Circular speaker photo — crop toward face (upper-center of image) */}
             <div className="relative w-20 h-20 lg:w-24 lg:h-24 rounded-full overflow-hidden shrink-0 border-2 border-[#a3d3f2]/40">
               <Image
-                src="/eventos/hector-osuna-jaime-perfil.jpeg"
-                alt="Héctor Osuna Jaime"
+                src="/eventos/dialogos-sociedad-cesar-damian-retes-flyer-22-junio-2026.jpeg"
+                alt="César Damián Retes"
                 fill
                 className="object-cover object-center"
                 sizes="96px"
@@ -254,11 +254,11 @@ export default function ProximosEncuentrosPage() {
                 Diálogos con la Sociedad
               </span>
               <h3 className="font-display text-lg lg:text-xl font-bold text-[#154c66] leading-snug">
-                Diálogos con la Sociedad con Héctor Osuna Jaime
+                Diálogos con la Sociedad con César Damián Retes
               </h3>
               <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm text-text-soft">
-                <span>Héctor Osuna Jaime — Ex-Presidente de Tijuana, B.C.</span>
-                <span>15 de junio · 2:00 PM · Oryx Restaurante</span>
+                <span>César Damián Retes — Diputado Federal por B.C.</span>
+                <span>22 de junio de 2026 · 2:00 PM · Oryx Restaurante</span>
               </div>
               <div>
                 <Link
@@ -270,6 +270,31 @@ export default function ProximosEncuentrosPage() {
                 </Link>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── CALENDARIO DIÁLOGOS 2026 ─── */}
+      <section className="py-20 lg:py-28 px-5 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-14">
+            <span className="text-[10px] font-bold tracking-[0.4em] text-[#3d815c] uppercase block mb-4">
+              Programa 2026
+            </span>
+            <FineLine />
+            <h2 className="font-display text-3xl lg:text-4xl font-bold text-[#154c66]">
+              Calendario de Diálogos con la Sociedad 2026
+            </h2>
+          </div>
+          <div className="relative w-full rounded-2xl overflow-hidden border border-[#a3d3f2]/40 shadow-sm">
+            <Image
+              src="/eventos/calendario-encuentros-dialogos-2026.jpeg"
+              alt="Calendario de Diálogos con la Sociedad 2026"
+              width={1400}
+              height={900}
+              className="w-full h-auto object-contain"
+              sizes="(max-width: 1280px) 100vw, 1280px"
+            />
           </div>
         </div>
       </section>
@@ -366,29 +391,35 @@ export default function ProximosEncuentrosPage() {
             </div>
           </div>
 
-          {/* Empty state — no invented past events */}
-          <div className="bg-[#f8fbfe] border border-dashed border-[#a3d3f2] rounded-2xl py-20 px-10 flex flex-col items-center text-center">
-            <div className="w-16 h-16 bg-[#154c66]/5 rounded-2xl flex items-center justify-center mb-6">
-              <svg
-                viewBox="0 0 24 24"
-                className="w-7 h-7 text-[#154c66]/40"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={1.5}
-                aria-hidden="true"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+            {[
+              {
+                src: "/eventos/dialogos-sociedad-jesus-alejandro-ruiz-uribe-17-marzo-2026.jpeg",
+                alt: "Diálogos con la Sociedad con Jesús Alejandro Ruiz Uribe — 17 de marzo de 2026",
+              },
+              {
+                src: "/eventos/dialogos-sociedad-evangelina-moreno-guerra-06-abril-2026.jpeg",
+                alt: "Diálogos con la Sociedad con Evangelina Moreno Guerra — 6 de abril de 2026",
+              },
+              {
+                src: "/eventos/dialogos-sociedad-christopher-teal-29-mayo-2026.jpeg",
+                alt: "Diálogos con la Sociedad con Christopher Teal — 29 de mayo de 2026",
+              },
+              {
+                src: "/eventos/dialogos-sociedad-hector-osuna-jaime-15-junio-2026.jpeg",
+                alt: "Diálogos con la Sociedad con Héctor Osuna Jaime — 15 de junio de 2026",
+              },
+            ].map(({ src, alt }) => (
+              <div key={src} className="relative aspect-[3/4] rounded-2xl overflow-hidden border border-[#a3d3f2]/30 shadow-sm">
+                <Image
+                  src={src}
+                  alt={alt}
+                  fill
+                  className="object-cover object-center"
+                  sizes="(max-width: 768px) 50vw, 25vw"
                 />
-              </svg>
-            </div>
-            <p className="text-text-soft text-sm leading-relaxed max-w-md">
-              Próximamente compartiremos notas, fotografías y resúmenes de
-              encuentros realizados por Acción por los Derechos Fundamentales,
-              A.C.
-            </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
