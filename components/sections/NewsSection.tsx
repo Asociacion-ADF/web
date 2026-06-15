@@ -168,7 +168,7 @@ export default function NewsSection() {
               </p>
               <div>
                 <Link
-                  href="/noticias"
+                  href="/comunicados"
                   className="inline-flex items-center gap-2 text-sm font-semibold text-white bg-[#3d815c] hover:bg-[#2d6347] px-5 py-2.5 rounded-lg transition-colors"
                 >
                   Ver comunicado

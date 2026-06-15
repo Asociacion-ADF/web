@@ -92,9 +92,9 @@ const navColumns = [
   {
     title: "Noticias",
     links: [
-      { label: "Últimas noticias", href: "/noticias" },
-      { label: "Próximos encuentros", href: "/proximos-encuentros" },
-      { label: "Comunicados", href: "/noticias#comunicados" },
+      { label: "En medios", href: "/noticias" },
+      { label: "Actividades / Próximos encuentros", href: "/proximos-encuentros" },
+      { label: "Comunicados", href: "/comunicados" },
     ],
   },
 ];

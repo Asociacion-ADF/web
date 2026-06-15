@@ -305,10 +305,10 @@ export default function NoticiasPage() {
               </div>
               <div className="mt-8 pt-6 border-t border-[#154c66]/20">
                 <Link
-                  href="/contacto"
+                  href="/comunicados"
                   className="inline-flex items-center gap-2 text-sm font-semibold text-[#154c66] hover:text-[#154c66]/60 transition-colors"
                 >
-                  Contactar a la asociación
+                  Ver comunicados
                   <ArrowRight size={14} aria-hidden="true" />
                 </Link>
               </div>
