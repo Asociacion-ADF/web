@@ -29,6 +29,9 @@ const modalidades = [
 const inputBase =
   "w-full h-12 border border-border-subtle rounded-lg px-4 text-sm text-text-main bg-white/70 outline-none transition-all focus:border-text-blue focus:ring-1 focus:ring-text-blue/30 placeholder:text-slate-400";
 
+const selectBase =
+  "w-full h-12 border border-border-subtle rounded-lg px-4 text-sm bg-white/70 outline-none transition-all focus:border-text-blue focus:ring-1 focus:ring-text-blue/30 appearance-none cursor-pointer";
+
 const errorBase = "border-red-400 focus:border-red-500 focus:ring-red-400/30";
 
 export default function ContactFormSection() {
@@ -37,7 +40,7 @@ export default function ContactFormSection() {
     nombre: "",
     email: "",
     telefono: "",
-    modalidad: "Miembro",
+    modalidad: "",
     mensaje: "",
   });
   const [errors, setErrors] = useState<FormErrors>({});
@@ -243,8 +246,9 @@ export default function ContactFormSection() {
                       name="modalidad"
                       value={formData.modalidad}
                       onChange={handleChange}
-                      className={inputBase}
+                      className={`${selectBase} ${formData.modalidad === "" ? "text-slate-400" : "text-gray-900"}`}
                     >
+                      <option value="">Selecciona una modalidad</option>
                       {modalidades.map((m) => (
                         <option key={m} value={m}>
                           {m}
@@ -273,7 +277,7 @@ export default function ContactFormSection() {
                     maxLength={1000}
                     value={formData.mensaje}
                     onChange={handleChange}
-                    className="w-full border border-border-subtle rounded-lg px-4 py-3 text-sm text-text-main bg-white/70 outline-none transition-all focus:border-text-blue focus:ring-1 focus:ring-text-blue/30 placeholder:text-slate-400 resize-none"
+                    className="w-full border border-border-subtle rounded-lg px-4 py-3 text-sm text-gray-800 bg-white/70 outline-none transition-all focus:border-text-blue focus:ring-1 focus:ring-text-blue/30 placeholder:text-slate-400 resize-none"
                   />
                 </div>
 
@@ -286,12 +290,12 @@ export default function ContactFormSection() {
                   >
                     {submitting ? "Enviando..." : "Enviar solicitud"}
                   </button>
-                  <p className="text-center mt-5 text-xs text-text-muted flex items-center justify-center gap-2">
+                  <p className="text-center mt-5 text-xs text-slate-400 flex items-center justify-center gap-2">
                     <Lock size={11} aria-hidden="true" />
                     Sus datos están protegidos y solo se usarán para fines de
                     contacto institucional.
                   </p>
-                  <p className="text-center text-[11px] text-text-muted leading-relaxed">
+                  <p className="text-center text-[11px] text-slate-400 leading-relaxed">
                     Al enviar tus datos aceptas el{" "}
                     <Link
                       href="/aviso-de-privacidad"

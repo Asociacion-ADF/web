@@ -42,7 +42,7 @@ export default function NewsSection() {
               role="tab"
               aria-selected={activeTab === tab}
               onClick={() => setActiveTab(tab)}
-              className={`px-4 py-1.5 rounded-md text-xs font-semibold tracking-wide border transition-colors ${
+              className={`px-4 py-1.5 rounded-md text-xs font-semibold tracking-wide border transition-colors whitespace-nowrap ${
                 activeTab === tab
                   ? "bg-[#154c66] text-white border-[#154c66]"
                   : "bg-white text-text-soft border-border-subtle hover:text-text-blue hover:border-text-blue/30"

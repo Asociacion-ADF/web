@@ -197,7 +197,7 @@ export default function Footer() {
 
         {/* Bottom: copyright + legal */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 border-t border-white/10">
-          <p className="text-white/40 text-[11px] tracking-widest uppercase">
+          <p className="text-white/40 text-[11px] tracking-widest uppercase text-center md:text-left">
             © {year} Acción por los Derechos Fundamentales, A.C. — Todos los
             derechos reservados.
           </p>
