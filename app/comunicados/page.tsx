@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, FileText } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Comunicados | Acción por los Derechos Fundamentales, A.C.",
@@ -101,54 +101,132 @@ export default function ComunicadosPage() {
         <div className="max-w-7xl mx-auto">
           <div className="mb-14">
             <span className="text-[10px] font-bold tracking-[0.4em] text-[#3d815c] uppercase block mb-4">
-              Estado actual
+              Archivo oficial
             </span>
             <FineLine />
             <h2 className="font-display text-3xl lg:text-4xl font-bold text-[#154c66] mb-4">
               Comunicados oficiales
             </h2>
             <p className="text-text-soft text-base lg:text-lg leading-relaxed max-w-2xl">
-              En esta sección se mostrarán los comunicados más recientes de
-              Acción por los Derechos Fundamentales, A.C.
+              Documentos, posturas institucionales y comunicados públicos de Acción por los Derechos Fundamentales, A.C.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10">
-            {[1, 2, 3].map((n) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                fecha: "Junio de 2026",
+                etiqueta: "Diálogos con la Sociedad",
+                titulo: "A la opinión pública: postura sobre Diálogos con la Sociedad",
+                resumen: "Acción por los Derechos Fundamentales, A.C. aclara que el programa Diálogos con la Sociedad es un espacio plural, abierto y respetuoso, cuyo propósito es fomentar la participación ciudadana y el intercambio de ideas sin representar respaldo político, electoral o partidista para persona alguna.",
+                imageSrc: "/comunicados/comunicado-publicado-prensa.jpeg",
+                imageAlt: "Comunicado publicado en prensa — A la opinión pública, junio de 2026",
+                href: "/comunicados/comunicado-publicado-prensa.jpeg",
+                btnLabel: "Ver comunicado publicado",
+              },
+              {
+                fecha: "15 de junio de 2026",
+                etiqueta: "Comunidad Católica de Tijuana",
+                titulo: "Fortaleciendo Valores: invitación a la Comunidad Católica de Tijuana",
+                resumen: "Acción por los Derechos Fundamentales, A.C. comparte una invitación a familias de la Comunidad Católica de Tijuana para fortalecer, desde el hogar y la comunidad, la formación en valores de niñas, niños y adolescentes.",
+                imageSrc: undefined,
+                imageAlt: undefined,
+                href: "/comunicados/Carta-programa-valores-comunidad-catolica-tijuana.pdf",
+                btnLabel: "Descargar PDF",
+              },
+              {
+                fecha: "27 de abril de 2026",
+                etiqueta: "Estado de Derecho y certeza jurídica",
+                titulo: "Carta dirigida a Claudia Sheinbaum Pardo",
+                resumen: "Carta institucional dirigida a la Presidenta de México para expresar preocupación por reformas legales con posibles efectos retroactivos y su impacto en la certeza jurídica, la confianza institucional y la estabilidad económica.",
+                imageSrc: undefined,
+                imageAlt: undefined,
+                href: "/comunicados/claudia-sheinbaum-pardo-abril-2026.pdf",
+                btnLabel: "Descargar PDF",
+              },
+              {
+                fecha: "22 de abril de 2026",
+                etiqueta: "Bloqueo de cuentas y prevención financiera",
+                titulo: "Mensaje a la ciudadanía en general",
+                resumen: "Comunicado dirigido a la ciudadanía sobre la importancia de mantenerse informada y tomar medidas preventivas ante posibles riesgos relacionados con bloqueos o inmovilización de cuentas bancarias.",
+                imageSrc: undefined,
+                imageAlt: undefined,
+                href: "/comunicados/mensaje-ciudadania-general-tijuana-abril-2026.pdf",
+                btnLabel: "Descargar PDF",
+              },
+              {
+                fecha: "19 de marzo de 2026",
+                etiqueta: "Reforma al artículo 141 del Código Fiscal",
+                titulo: "Mensaje al sector empresarial de México",
+                resumen: "Comunicado dirigido al sector empresarial sobre la importancia de fortalecer la certeza jurídica, la confianza institucional y condiciones más equilibradas para la inversión y la actividad productiva.",
+                imageSrc: undefined,
+                imageAlt: undefined,
+                href: "/comunicados/mensaje-sector-empresarial-marzo-2026.pdf",
+                btnLabel: "Descargar PDF",
+              },
+              {
+                fecha: "Sin fecha",
+                etiqueta: "Democracia, derechos humanos y libertad",
+                titulo: "Felicitación y reconocimiento a María Corina Machado",
+                resumen: "Acción por los Derechos Fundamentales, A.C. expresa su felicitación y reconocimiento a María Corina Machado por su firmeza, valentía y compromiso con los valores democráticos y los derechos fundamentales.",
+                imageSrc: undefined,
+                imageAlt: undefined,
+                href: "/comunicados/felcitaciones-maria-corina-machado.pdf",
+                btnLabel: "Descargar PDF",
+              },
+            ].map(({ fecha, etiqueta, titulo, resumen, imageSrc, imageAlt, href, btnLabel }) => (
               <div
-                key={n}
-                className="rounded-2xl border border-[#a3d3f2] overflow-hidden"
+                key={titulo}
+                className="rounded-2xl border border-[#154c66]/20 overflow-hidden flex flex-col bg-white"
               >
-                <div className="bg-[#a3d3f2]/30 px-6 py-4 flex items-center justify-between">
-                  <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-[#154c66]">
-                    Comunicados
-                  </span>
-                  <span className="text-[10px] font-bold tracking-widest uppercase px-2 py-0.5 rounded-full bg-white/15 text-[#154c66]">
-                    Próximamente
-                  </span>
-                </div>
-                <div className="bg-white px-6 py-8 flex flex-col gap-4">
-                  {[1, 2, 3].map((i) => (
-                    <div
-                      key={i}
-                      className="flex items-start gap-3 pb-4 border-b border-[#e8f4fd] last:border-0 last:pb-0"
+                {imageSrc ? (
+                  <div className="relative w-full aspect-[4/3] bg-gray-50 shrink-0">
+                    <Image
+                      src={imageSrc}
+                      alt={imageAlt ?? ""}
+                      fill
+                      className="object-contain object-center"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
+                  </div>
+                ) : (
+                  <div className="w-full aspect-[4/3] bg-[#154c66]/5 flex items-center justify-center shrink-0">
+                    <FileText size={48} className="text-[#154c66]/25" aria-hidden="true" />
+                  </div>
+                )}
+                <div className="flex flex-col gap-3 p-6 flex-1">
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <span className="text-[10px] font-bold tracking-[0.3em] uppercase px-2.5 py-1 rounded-full bg-[#154c66]/10 text-[#154c66]">
+                      Comunicado oficial
+                    </span>
+                  </div>
+                  <p className="text-[10px] font-semibold tracking-wide text-text-soft uppercase">
+                    {etiqueta}
+                  </p>
+                  <p className="text-[10px] font-semibold tracking-[0.2em] text-text-soft/70 uppercase">
+                    {fecha}
+                  </p>
+                  <h3 className="font-display text-base font-bold text-[#154c66] leading-snug">
+                    {titulo}
+                  </h3>
+                  <p className="text-text-soft text-sm leading-relaxed flex-1">
+                    {resumen}
+                  </p>
+                  <div className="mt-auto pt-2">
+                    <Link
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-sm font-semibold text-[#154c66] hover:text-[#0d3347] transition-colors"
                     >
-                      <div className="w-1.5 h-1.5 rounded-full mt-2 shrink-0 bg-[#154c66] opacity-30" />
-                      <div className="flex-1">
-                        <div className="h-3 bg-gray-100 rounded w-3/4 mb-2" />
-                        <div className="h-2.5 bg-gray-100 rounded w-1/2" />
-                      </div>
-                    </div>
-                  ))}
+                      {btnLabel}
+                      <ArrowRight size={14} aria-hidden="true" />
+                    </Link>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
-
-          <p className="text-text-soft text-sm leading-relaxed max-w-xl">
-            Próximamente compartiremos comunicados e información oficial de
-            Acción por los Derechos Fundamentales, A.C.
-          </p>
         </div>
       </section>
 
