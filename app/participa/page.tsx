@@ -127,7 +127,7 @@ export default function ParticipaPage() {
   return (
     <>
       {/* ─── HERO ─── */}
-      <section className="relative min-h-[680px] flex items-center justify-center overflow-hidden bg-[#154c66]">
+      <section className="relative lg:min-h-[680px] flex items-center justify-center overflow-hidden bg-[#154c66]">
         <div
           aria-hidden="true"
           className="absolute inset-0 opacity-[0.07] pointer-events-none"
@@ -145,7 +145,7 @@ export default function ParticipaPage() {
           className="absolute left-0 bottom-0 w-96 h-96 bg-[#a3d3f2]/10 blur-[120px] rounded-full pointer-events-none"
         />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-5 py-24 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center w-full">
+        <div className="relative z-10 max-w-7xl mx-auto px-5 py-14 lg:py-24 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center w-full">
           <div className="lg:col-span-8">
             <div className="w-14 h-px bg-[#3d815c] mb-8" aria-hidden="true" />
             <span className="text-[10px] font-bold tracking-[0.4em] text-white/70 uppercase block mb-5">
@@ -161,7 +161,7 @@ export default function ParticipaPage() {
               Súmate como miembro, aliado estratégico o apoya un programa
               específico
             </p>
-            <div className="flex flex-col gap-3 text-base text-white/75 leading-relaxed max-w-2xl mb-10">
+            <div className="hidden sm:flex flex-col gap-3 text-base text-white/75 leading-relaxed max-w-2xl mb-10">
               <p>
                 Acción por los Derechos Fundamentales, A.C. es una asociación
                 civil apartidista con sede en Tijuana, Baja California, que
@@ -176,6 +176,11 @@ export default function ParticipaPage() {
                 apoyar un programa específico.
               </p>
             </div>
+            <p className="sm:hidden text-base text-white/75 leading-relaxed max-w-2xl mb-10">
+              Forma parte de una iniciativa ciudadana que impulsa el diálogo,
+              la participación y la defensa de los derechos fundamentales en
+              Baja California.
+            </p>
             <div className="flex flex-wrap gap-4">
               <Link
                 href="#form"
@@ -239,6 +244,43 @@ export default function ParticipaPage() {
         />
       </section>
 
+      {/* ─── FORMAS DE PARTICIPAR — solo móvil ─── */}
+      <section className="lg:hidden py-10 px-5 bg-white border-b border-border-subtle">
+        <div className="max-w-7xl mx-auto">
+          <span className="text-[10px] font-bold tracking-[0.4em] text-[#3d815c] uppercase block mb-5">
+            Formas de participar
+          </span>
+          <div className="flex flex-col gap-3">
+            {[
+              {
+                title: "Hazte miembro",
+                desc: "Participa activamente en encuentros, programas y espacios de colaboración.",
+              },
+              {
+                title: "Sé aliado estratégico",
+                desc: "Vincula tu empresa o institución con iniciativas de impacto social.",
+              },
+              {
+                title: "Apoya un programa",
+                desc: "Contribuye al impulso de proyectos concretos en educación, participación y comunidad.",
+              },
+            ].map(({ title, desc }) => (
+              <Link
+                key={title}
+                href="#form"
+                className="flex items-center justify-between gap-4 p-4 bg-white border border-border-subtle rounded-xl hover:border-[#3d815c]/40 hover:shadow-sm transition-all"
+              >
+                <div>
+                  <p className="font-bold text-[#154c66] text-sm leading-snug">{title}</p>
+                  <p className="text-text-soft text-xs leading-relaxed mt-0.5">{desc}</p>
+                </div>
+                <ArrowRight size={16} className="text-[#3d815c] shrink-0" aria-hidden="true" />
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ─── ¿CÓMO PUEDO PARTICIPAR? — MODALIDADES ─── */}
       <section className="py-20 lg:py-28 px-5 bg-white">
         <div className="max-w-7xl mx-auto">
@@ -256,12 +298,12 @@ export default function ParticipaPage() {
                 tres formas principales: como miembro, como aliado estratégico
                 o apoyando un programa específico.
               </p>
-              <p>
+              <p className="hidden sm:block">
                 Cada modalidad permite involucrarte de una manera distinta,
                 según tu interés, tu experiencia, tu institución o la forma en
                 que deseas aportar.
               </p>
-              <p>
+              <p className="hidden sm:block">
                 La asociación está abierta a ciudadanos, empresarios,
                 profesionistas, educadores, estudiantes, instituciones,
                 organizaciones y líderes sociales interesados en participar de
@@ -304,7 +346,7 @@ export default function ParticipaPage() {
                   comprometida con la participación ciudadana y los derechos
                   fundamentales.
                 </p>
-                <p>
+                <p className="hidden sm:block">
                   Como miembro puedes acercarte a las actividades, encuentros,
                   programas y espacios de participación de Acción por los
                   Derechos Fundamentales.
@@ -367,7 +409,7 @@ export default function ParticipaPage() {
                   líderes sociales y profesionistas que desean colaborar de
                   manera más activa con Acción por los Derechos Fundamentales.
                 </p>
-                <p>
+                <p className="hidden sm:block">
                   Esta modalidad permite apoyar el crecimiento institucional de
                   la asociación y fortalecer sus programas, encuentros y
                   espacios de participación ciudadana.
@@ -422,7 +464,7 @@ export default function ParticipaPage() {
                   También puedes apoyar directamente uno de los programas de
                   Acción por los Derechos Fundamentales.
                 </p>
-                <p>
+                <p className="hidden sm:block">
                   Esta modalidad está dirigida a personas, empresas,
                   instituciones u organizaciones que desean contribuir con una
                   iniciativa específica, según su interés social, educativo,
@@ -430,7 +472,7 @@ export default function ParticipaPage() {
                 </p>
               </div>
               <div className="border-t border-border-subtle pt-7 w-full">
-                <p className="text-text-soft text-sm text-center mb-6">
+                <p className="hidden sm:block text-text-soft text-sm text-center mb-6">
                   Esta modalidad es ideal para apoyar un programa concreto.
                 </p>
                 <Link
@@ -475,8 +517,8 @@ export default function ParticipaPage() {
               que promueve diálogo, formación, programas e iniciativas
               ciudadanas con sentido social.
             </p>
-            <p>No necesitas ser experto para comenzar.</p>
-            <p>
+            <p className="hidden sm:block">No necesitas ser experto para comenzar.</p>
+            <p className="hidden sm:block">
               Puedes sumarte desde tu experiencia, profesión, empresa,
               institución o interés ciudadano.
             </p>
@@ -776,8 +818,8 @@ export default function ParticipaPage() {
                   asociación civil independiente y apartidista.
                 </p>
                 <p>No somos un partido político.</p>
-                <p>No somos una campaña electoral.</p>
-                <p>No representamos intereses de ningún partido político.</p>
+                <p className="hidden sm:block">No somos una campaña electoral.</p>
+                <p className="hidden sm:block">No representamos intereses de ningún partido político.</p>
                 <p>
                   Participar en Acción por los Derechos Fundamentales no
                   significa militar en un partido.
@@ -905,7 +947,7 @@ export default function ParticipaPage() {
                   Tu participación puede fortalecer programas, encuentros,
                   conversaciones y acciones con impacto social.
                 </p>
-                <p>
+                <p className="hidden sm:block">
                   Si quieres formar parte de una asociación civil seria, cercana
                   y comprometida con Tijuana y Baja California, este es un buen
                   lugar para comenzar.

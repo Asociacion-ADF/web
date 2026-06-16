@@ -23,7 +23,7 @@ export default function ContactoPage() {
   return (
     <>
       {/* ─── HERO ─── */}
-      <section className="relative min-h-[560px] flex items-center overflow-hidden bg-[#154c66]">
+      <section className="relative lg:min-h-[560px] flex items-center overflow-hidden bg-[#154c66]">
         <div
           aria-hidden="true"
           className="absolute inset-0 opacity-[0.06] pointer-events-none"
@@ -40,7 +40,7 @@ export default function ContactoPage() {
           ACCIÓN
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-5 py-24 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center w-full">
+        <div className="relative z-10 max-w-7xl mx-auto px-5 py-14 lg:py-24 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center w-full">
           <div className="lg:col-span-8">
             <div className="w-14 h-px bg-[#3d815c] mb-8" aria-hidden="true" />
             <span className="text-[10px] font-bold tracking-[0.4em] text-[#a3d3f2] uppercase block mb-5">
@@ -52,15 +52,21 @@ export default function ContactoPage() {
             >
               Contacta a Acción por los Derechos Fundamentales
             </h1>
-            <div className="flex flex-col gap-3 text-base text-white/75 leading-relaxed max-w-2xl mb-10">
-              <p>
-                ¿Quieres recibir información, participar en un próximo encuentro,
-                sumarte como miembro o conocer más sobre nuestros programas?
+            <div className="max-w-2xl mb-10">
+              <p className="text-base text-white/75 leading-relaxed sm:hidden">
+                Estamos para atenderte. Escríbenos si deseas más información
+                sobre encuentros, programas o formas de participación.
               </p>
-              <p>
-                Déjanos tus datos y una persona del equipo se pondrá en contacto
-                contigo en un lapso de 24 horas.
-              </p>
+              <div className="hidden sm:flex flex-col gap-3 text-base text-white/75 leading-relaxed">
+                <p>
+                  ¿Quieres recibir información, participar en un próximo encuentro,
+                  sumarte como miembro o conocer más sobre nuestros programas?
+                </p>
+                <p>
+                  Déjanos tus datos y una persona del equipo se pondrá en contacto
+                  contigo en un lapso de 24 horas.
+                </p>
+              </div>
             </div>
             <div className="flex flex-wrap gap-4">
               <Link
@@ -104,7 +110,7 @@ export default function ContactoPage() {
                y escala visual general, porque varias páginas se sienten sobredimensionadas en desktop. */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {/* Dirección — azul profundo */}
-            <div className="bg-[#154c66] rounded-2xl p-5 md:p-8 flex flex-col items-center text-center gap-6">
+            <div className="order-3 md:order-none bg-[#154c66] rounded-2xl p-5 md:p-8 flex flex-col items-center text-center gap-6">
               <div className="w-10 h-10 bg-white/15 rounded-xl flex items-center justify-center">
                 <svg
                   viewBox="0 0 24 24"
@@ -143,7 +149,7 @@ export default function ContactoPage() {
             </div>
 
             {/* Teléfono — verde institucional */}
-            <div className="bg-[#3d815c] rounded-2xl p-5 md:p-8 flex flex-col items-center text-center gap-6">
+            <div className="order-2 md:order-none bg-[#3d815c] rounded-2xl p-5 md:p-8 flex flex-col items-center text-center gap-6">
               <div className="w-10 h-10 bg-white/15 rounded-xl flex items-center justify-center">
                 <svg
                   viewBox="0 0 24 24"
@@ -174,7 +180,7 @@ export default function ContactoPage() {
             </div>
 
             {/* Correo — azul claro */}
-            <div className="bg-[#a3d3f2] rounded-2xl p-5 md:p-8 flex flex-col items-center text-center gap-6">
+            <div className="order-1 md:order-none bg-[#a3d3f2] rounded-2xl p-5 md:p-8 flex flex-col items-center text-center gap-6">
               <div className="w-10 h-10 bg-[#154c66]/10 rounded-xl flex items-center justify-center">
                 <svg
                   viewBox="0 0 24 24"
@@ -226,7 +232,7 @@ export default function ContactoPage() {
       </section>
 
       {/* ─── UBICACIÓN ─── */}
-      <section className="relative h-[600px] lg:h-[700px] flex items-center overflow-hidden">
+      <section className="relative h-[420px] lg:h-[700px] flex items-center overflow-hidden">
         <Image
           src="/eventos/oficinas-asociacion-tijuana-01.png"
           alt="Oficinas de Acción por los Derechos Fundamentales en Tijuana"
