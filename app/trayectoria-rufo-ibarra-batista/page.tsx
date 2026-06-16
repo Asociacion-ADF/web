@@ -142,7 +142,7 @@ export default function TrayectoriaRufoIbarraBatista() {
               {
                 Icon: Briefcase,
                 title: "Desarrollo Empresarial",
-                body: "Socio principal en RSM México y fundador de la firma Rufo Ibarra de la Cruz y Mier.",
+                body: "Socio principal en RSM México y fundador de la firma Rufo Ibarra Consultores.",
                 tag: "Visión Global",
               },
               {
@@ -287,7 +287,7 @@ export default function TrayectoriaRufoIbarraBatista() {
               <div>
                 <div className="flex items-center gap-3 mb-4">
                   <Building2 size={22} className="text-[#3d815c]" aria-hidden="true" />
-                  <h3 className="font-display text-2xl font-bold">Rufo Ibarra de la Cruz y Mier</h3>
+                  <h3 className="font-display text-2xl font-bold">Rufo Ibarra Consultores</h3>
                 </div>
                 <p className="text-text-soft text-base leading-relaxed">
                   Firma de asesoría contable y financiera con alcance regional y nacional.
