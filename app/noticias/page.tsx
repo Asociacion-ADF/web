@@ -114,39 +114,41 @@ export default function NoticiasPage() {
             </p>
           </div>
 
-          {/* Tarjeta ZETA */}
-          <div className="rounded-2xl border border-[#a3d3f2] overflow-hidden flex flex-col md:flex-row max-w-4xl">
-            <div className="relative w-full aspect-[4/3] md:w-72 md:aspect-auto shrink-0 bg-gray-50">
-              <Image
-                src="/noticias/zeta-dichoz-hechoz-dialogos-sociedad-marzo-2026.jpeg"
-                alt="Columna DICHOS Y HECHOS de ZETA Tijuana — Diálogos con la Sociedad, marzo 2026"
-                fill
-                className="object-contain object-center"
-                sizes="(max-width: 768px) 100vw, 288px"
-              />
-            </div>
-            <div className="flex flex-col justify-center gap-4 p-8 lg:p-10">
-              <div className="flex items-center gap-2 flex-wrap">
-                <span className="text-[10px] font-bold tracking-[0.3em] uppercase px-2.5 py-1 rounded-full bg-[#154c66]/10 text-[#154c66]">
-                  En medios
-                </span>
-                <span className="text-text-soft/40 text-xs" aria-hidden="true">·</span>
-                <span className="text-[10px] font-semibold tracking-wide text-text-soft uppercase">
-                  ZETA Tijuana
-                </span>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Tarjeta ZETA */}
+            <div className="rounded-2xl border border-[#a3d3f2] overflow-hidden flex flex-col bg-white">
+              <div className="relative w-full aspect-[4/3] bg-gray-50 shrink-0">
+                <Image
+                  src="/noticias/zeta-dichoz-hechoz-dialogos-sociedad-marzo-2026.jpeg"
+                  alt="Columna DICHOS Y HECHOS de ZETA Tijuana — Diálogos con la Sociedad, marzo 2026"
+                  fill
+                  className="object-contain object-center"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
               </div>
-              <p className="text-[10px] font-semibold tracking-[0.2em] text-text-soft/70 uppercase">
-                Semana del 20 al 26 de marzo de 2026
-              </p>
-              <h3 className="font-display text-xl lg:text-2xl font-bold text-[#154c66] leading-snug">
-                Acción por los Derechos Fundamentales aparece en columna de ZETA sobre Diálogos con la Sociedad
-              </h3>
-              <p className="text-text-soft text-sm leading-relaxed">
-                La columna DICHOS Y HECHOS de ZETA Tijuana hizo referencia a las
-                actividades de Acción por los Derechos Fundamentales, A.C. y a su
-                programa Diálogos con la Sociedad, un espacio ciudadano de
-                encuentro, conversación y participación pública.
-              </p>
+              <div className="flex flex-col gap-3 p-6">
+                <div className="flex items-center gap-2 flex-wrap">
+                  <span className="text-[10px] font-bold tracking-[0.3em] uppercase px-2.5 py-1 rounded-full bg-[#154c66]/10 text-[#154c66]">
+                    En medios
+                  </span>
+                  <span className="text-text-soft/40 text-xs" aria-hidden="true">·</span>
+                  <span className="text-[10px] font-semibold tracking-wide text-text-soft uppercase">
+                    ZETA Tijuana
+                  </span>
+                </div>
+                <p className="text-[10px] font-semibold tracking-[0.2em] text-text-soft/70 uppercase">
+                  Semana del 20 al 26 de marzo de 2026
+                </p>
+                <h3 className="font-display text-base lg:text-lg font-bold text-[#154c66] leading-snug">
+                  Acción por los Derechos Fundamentales aparece en columna de ZETA sobre Diálogos con la Sociedad
+                </h3>
+                <p className="text-text-soft text-sm leading-relaxed">
+                  La columna DICHOS Y HECHOS de ZETA Tijuana hizo referencia a las
+                  actividades de Acción por los Derechos Fundamentales, A.C. y a su
+                  programa Diálogos con la Sociedad, un espacio ciudadano de
+                  encuentro, conversación y participación pública.
+                </p>
+              </div>
             </div>
           </div>
         </div>
