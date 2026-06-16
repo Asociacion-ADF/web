@@ -103,86 +103,52 @@ export default function NoticiasPage() {
         <div className="max-w-7xl mx-auto">
           <div className="mb-14">
             <span className="text-[10px] font-bold tracking-[0.4em] text-[#3d815c] uppercase block mb-4">
-              Estado actual
+              Publicaciones recientes
             </span>
             <FineLine />
             <h2 className="font-display text-3xl lg:text-4xl font-bold text-[#154c66] mb-4">
-              Publicaciones
+              En medios
             </h2>
             <p className="text-text-soft text-base lg:text-lg leading-relaxed max-w-2xl">
-              En esta sección se mostrarán las publicaciones más recientes de
-              Acción por los Derechos Fundamentales, A.C.
+              Referencias y apariciones de Acción por los Derechos Fundamentales, A.C. en medios de comunicación.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10">
-            {(
-              [
-                {
-                  category: "Encuentros",
-                  color: "bg-[#154c66]",
-                  textAccent: "text-[#a3d3f2]",
-                  border: "border-[#154c66]/20",
-                  dot: "bg-[#154c66]",
-                },
-                {
-                  category: "Programas",
-                  color: "bg-[#3d815c]",
-                  textAccent: "text-[#a8efc3]",
-                  border: "border-[#3d815c]/20",
-                  dot: "bg-[#3d815c]",
-                },
-                {
-                  category: "Comunicados",
-                  color: "bg-[#a3d3f2]/30",
-                  textAccent: "text-[#154c66]",
-                  border: "border-[#a3d3f2]",
-                  dot: "bg-[#154c66]",
-                },
-              ] as Array<{
-                category: string;
-                color: string;
-                textAccent: string;
-                border: string;
-                dot: string;
-              }>
-            ).map(({ category, color, textAccent, border, dot }) => (
-              <div
-                key={category}
-                className={`rounded-2xl border ${border} overflow-hidden`}
-              >
-                <div className={`${color} px-6 py-4 flex items-center justify-between`}>
-                  <span className={`text-[10px] font-bold tracking-[0.3em] uppercase ${textAccent}`}>
-                    {category}
-                  </span>
-                  <span className={`text-[10px] font-bold tracking-widest uppercase px-2 py-0.5 rounded-full bg-white/15 ${textAccent}`}>
-                    Próximamente
-                  </span>
-                </div>
-                <div className="bg-white px-6 py-8 flex flex-col gap-4">
-                  {[1, 2, 3].map((n) => (
-                    <div
-                      key={n}
-                      className="flex items-start gap-3 pb-4 border-b border-[#e8f4fd] last:border-0 last:pb-0"
-                    >
-                      <div
-                        className={`w-1.5 h-1.5 rounded-full mt-2 shrink-0 ${dot} opacity-30`}
-                      />
-                      <div className="flex-1">
-                        <div className="h-3 bg-gray-100 rounded w-3/4 mb-2" />
-                        <div className="h-2.5 bg-gray-100 rounded w-1/2" />
-                      </div>
-                    </div>
-                  ))}
-                </div>
+          {/* Tarjeta ZETA */}
+          <div className="rounded-2xl border border-[#a3d3f2] overflow-hidden flex flex-col md:flex-row max-w-4xl">
+            <div className="relative w-full aspect-[4/3] md:w-72 md:aspect-auto shrink-0 bg-gray-50">
+              <Image
+                src="/noticias/zeta-dichoz-hechoz-dialogos-sociedad-marzo-2026.jpeg"
+                alt="Columna DICHOS Y HECHOS de ZETA Tijuana — Diálogos con la Sociedad, marzo 2026"
+                fill
+                className="object-contain object-center"
+                sizes="(max-width: 768px) 100vw, 288px"
+              />
+            </div>
+            <div className="flex flex-col justify-center gap-4 p-8 lg:p-10">
+              <div className="flex items-center gap-2 flex-wrap">
+                <span className="text-[10px] font-bold tracking-[0.3em] uppercase px-2.5 py-1 rounded-full bg-[#154c66]/10 text-[#154c66]">
+                  En medios
+                </span>
+                <span className="text-text-soft/40 text-xs" aria-hidden="true">·</span>
+                <span className="text-[10px] font-semibold tracking-wide text-text-soft uppercase">
+                  ZETA Tijuana
+                </span>
               </div>
-            ))}
+              <p className="text-[10px] font-semibold tracking-[0.2em] text-text-soft/70 uppercase">
+                Semana del 20 al 26 de marzo de 2026
+              </p>
+              <h3 className="font-display text-xl lg:text-2xl font-bold text-[#154c66] leading-snug">
+                Acción por los Derechos Fundamentales aparece en columna de ZETA sobre Diálogos con la Sociedad
+              </h3>
+              <p className="text-text-soft text-sm leading-relaxed">
+                La columna DICHOS Y HECHOS de ZETA Tijuana hizo referencia a las
+                actividades de Acción por los Derechos Fundamentales, A.C. y a su
+                programa Diálogos con la Sociedad, un espacio ciudadano de
+                encuentro, conversación y participación pública.
+              </p>
+            </div>
           </div>
-
-          <p className="text-text-soft text-sm leading-relaxed max-w-xl">
-            Próximamente compartiremos noticias, encuentros, comunicados y
-            avances de Acción por los Derechos Fundamentales, A.C.
-          </p>
         </div>
       </section>
 
