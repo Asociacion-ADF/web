@@ -165,7 +165,17 @@ export default function ComunicadosPage() {
                 btnLabel: "Descargar PDF",
               },
               {
-                fecha: "Sin fecha",
+                fecha: "Diciembre de 2025",
+                etiqueta: "Estímulo fiscal del 8% de IVA en regiones fronterizas y perímetros libres",
+                titulo: "Solicitud de permanencia del estímulo fiscal del 8% del IVA en regiones fronterizas",
+                resumen: "Acción por los Derechos Fundamentales, A.C. solicita la permanencia o prórroga del estímulo fiscal del 8% de IVA en regiones fronterizas y perímetros libres, al considerarlo un mecanismo de equilibrio económico y social para proteger empleo, consumo, inversión y estabilidad de las familias fronterizas.",
+                imageSrc: undefined,
+                imageAlt: undefined,
+                href: "/comunicados/Accion_Tasa del 8% de IVA en la Zona Fronteriza 1 (1).pdf",
+                btnLabel: "Descargar PDF",
+              },
+              {
+                fecha: "Octubre de 2025",
                 etiqueta: "Democracia, derechos humanos y libertad",
                 titulo: "Felicitación y reconocimiento a María Corina Machado",
                 resumen: "Acción por los Derechos Fundamentales, A.C. expresa su felicitación y reconocimiento a María Corina Machado por su firmeza, valentía y compromiso con los valores democráticos y los derechos fundamentales.",
