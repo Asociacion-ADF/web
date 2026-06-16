@@ -119,8 +119,6 @@ export default function ComunicadosPage() {
                 etiqueta: "Diálogos con la Sociedad",
                 titulo: "A la opinión pública: postura sobre Diálogos con la Sociedad",
                 resumen: "Acción por los Derechos Fundamentales, A.C. aclara que el programa Diálogos con la Sociedad es un espacio plural, abierto y respetuoso, cuyo propósito es fomentar la participación ciudadana y el intercambio de ideas sin representar respaldo político, electoral o partidista para persona alguna.",
-                imageSrc: "/comunicados/comunicado-publicado-prensa.jpeg",
-                imageAlt: "Comunicado publicado en prensa — A la opinión pública, junio de 2026",
                 href: "/comunicados/comunicado-publicado-prensa.jpeg",
                 btnLabel: "Ver comunicado publicado",
               },
@@ -129,8 +127,7 @@ export default function ComunicadosPage() {
                 etiqueta: "Comunidad Católica de Tijuana",
                 titulo: "Fortaleciendo Valores: invitación a la Comunidad Católica de Tijuana",
                 resumen: "Acción por los Derechos Fundamentales, A.C. comparte una invitación a familias de la Comunidad Católica de Tijuana para fortalecer, desde el hogar y la comunidad, la formación en valores de niñas, niños y adolescentes.",
-                imageSrc: undefined,
-                imageAlt: undefined,
+
                 href: "/comunicados/Carta-programa-valores-comunidad-catolica-tijuana.pdf",
                 btnLabel: "Descargar PDF",
               },
@@ -139,8 +136,7 @@ export default function ComunicadosPage() {
                 etiqueta: "Estado de Derecho y certeza jurídica",
                 titulo: "Carta dirigida a Claudia Sheinbaum Pardo",
                 resumen: "Carta institucional dirigida a la Presidenta de México para expresar preocupación por reformas legales con posibles efectos retroactivos y su impacto en la certeza jurídica, la confianza institucional y la estabilidad económica.",
-                imageSrc: undefined,
-                imageAlt: undefined,
+
                 href: "/comunicados/claudia-sheinbaum-pardo-abril-2026.pdf",
                 btnLabel: "Descargar PDF",
               },
@@ -149,8 +145,7 @@ export default function ComunicadosPage() {
                 etiqueta: "Bloqueo de cuentas y prevención financiera",
                 titulo: "Mensaje a la ciudadanía en general",
                 resumen: "Comunicado dirigido a la ciudadanía sobre la importancia de mantenerse informada y tomar medidas preventivas ante posibles riesgos relacionados con bloqueos o inmovilización de cuentas bancarias.",
-                imageSrc: undefined,
-                imageAlt: undefined,
+
                 href: "/comunicados/mensaje-ciudadania-general-tijuana-abril-2026.pdf",
                 btnLabel: "Descargar PDF",
               },
@@ -159,8 +154,7 @@ export default function ComunicadosPage() {
                 etiqueta: "Reforma al artículo 141 del Código Fiscal",
                 titulo: "Mensaje al sector empresarial de México",
                 resumen: "Comunicado dirigido al sector empresarial sobre la importancia de fortalecer la certeza jurídica, la confianza institucional y condiciones más equilibradas para la inversión y la actividad productiva.",
-                imageSrc: undefined,
-                imageAlt: undefined,
+
                 href: "/comunicados/mensaje-sector-empresarial-marzo-2026.pdf",
                 btnLabel: "Descargar PDF",
               },
@@ -169,8 +163,7 @@ export default function ComunicadosPage() {
                 etiqueta: "Estímulo fiscal del 8% de IVA en regiones fronterizas y perímetros libres",
                 titulo: "Solicitud de permanencia del estímulo fiscal del 8% del IVA en regiones fronterizas",
                 resumen: "Acción por los Derechos Fundamentales, A.C. solicita la permanencia o prórroga del estímulo fiscal del 8% de IVA en regiones fronterizas y perímetros libres, al considerarlo un mecanismo de equilibrio económico y social para proteger empleo, consumo, inversión y estabilidad de las familias fronterizas.",
-                imageSrc: undefined,
-                imageAlt: undefined,
+
                 href: "/comunicados/Accion_Tasa del 8% de IVA en la Zona Fronteriza 1 (1).pdf",
                 btnLabel: "Descargar PDF",
               },
@@ -179,47 +172,35 @@ export default function ComunicadosPage() {
                 etiqueta: "Democracia, derechos humanos y libertad",
                 titulo: "Felicitación y reconocimiento a María Corina Machado",
                 resumen: "Acción por los Derechos Fundamentales, A.C. expresa su felicitación y reconocimiento a María Corina Machado por su firmeza, valentía y compromiso con los valores democráticos y los derechos fundamentales.",
-                imageSrc: undefined,
-                imageAlt: undefined,
+
                 href: "/comunicados/felcitaciones-maria-corina-machado.pdf",
                 btnLabel: "Descargar PDF",
               },
-            ].map(({ fecha, etiqueta, titulo, resumen, imageSrc, imageAlt, href, btnLabel }) => (
+            ].map(({ fecha, etiqueta, titulo, resumen, href, btnLabel }) => (
               <div
                 key={titulo}
-                className="rounded-2xl border border-[#154c66]/20 overflow-hidden flex flex-col bg-white"
+                className="rounded-2xl border border-[#a3d3f2] overflow-hidden flex flex-col bg-white"
               >
-                {imageSrc ? (
-                  <div className="relative w-full aspect-[4/3] bg-[#f8fbfe] shrink-0">
-                    <Image
-                      src={imageSrc}
-                      alt={imageAlt ?? ""}
-                      fill
-                      className="object-contain object-center p-3"
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    />
-                  </div>
-                ) : (
-                  <div className="w-full aspect-[4/3] bg-[#f8fbfe] flex flex-col shrink-0 overflow-hidden">
-                    <div className="h-[3px] bg-[#3d815c] w-full shrink-0" aria-hidden="true" />
-                    <div className="flex flex-col items-center justify-center gap-3 p-6 text-center flex-1">
-                      <div className="w-11 h-11 rounded-xl bg-white shadow-sm border border-[#154c66]/10 flex items-center justify-center">
-                        <FileText size={22} className="text-[#154c66]" aria-hidden="true" />
-                      </div>
-                      <div className="flex flex-col gap-1.5">
-                        <span className="text-[9px] font-bold tracking-[0.4em] text-[#3d815c] uppercase">
-                          Comunicado oficial
-                        </span>
-                        <p className="text-sm font-bold text-[#154c66] leading-snug line-clamp-2">
-                          {etiqueta}
-                        </p>
-                        <span className="text-[10px] text-text-soft/70 mt-0.5">
-                          {fecha}
-                        </span>
-                      </div>
+                {/* Portada institucional uniforme */}
+                <div className="w-full aspect-[4/3] bg-[#a3d3f2] flex flex-col shrink-0 overflow-hidden">
+                  <div className="h-[3px] bg-[#3d815c] w-full shrink-0" aria-hidden="true" />
+                  <div className="flex flex-col items-center justify-center gap-3 p-6 text-center flex-1">
+                    <div className="w-11 h-11 rounded-xl bg-white/50 flex items-center justify-center">
+                      <FileText size={22} className="text-[#154c66]" aria-hidden="true" />
+                    </div>
+                    <div className="flex flex-col gap-1.5">
+                      <span className="text-[9px] font-bold tracking-[0.4em] text-[#3d815c] uppercase">
+                        Comunicado oficial
+                      </span>
+                      <p className="text-sm font-bold text-[#154c66] leading-snug line-clamp-2">
+                        {etiqueta}
+                      </p>
+                      <span className="text-[10px] text-[#154c66]/70 mt-0.5">
+                        {fecha}
+                      </span>
                     </div>
                   </div>
-                )}
+                </div>
                 <div className="flex flex-col gap-3 p-6 flex-1">
                   <div className="flex items-center gap-2 flex-wrap">
                     <span className="text-[10px] font-bold tracking-[0.3em] uppercase px-2.5 py-1 rounded-full bg-[#154c66]/10 text-[#154c66]">
