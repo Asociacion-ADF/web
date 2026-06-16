@@ -24,7 +24,7 @@ export default function NoticiasPage() {
       {/* ─── HERO ─── */}
       <section className="relative min-h-[640px] flex items-center justify-center overflow-hidden">
         <Image
-          src="/eventos/dialogos-sociedad-asistentes-01.jpeg"
+          src="/noticias/hero-noticias-dialogos-hector-osuna.jpeg"
           alt="Encuentro ciudadano de Acción por los Derechos Fundamentales"
           fill
           className="object-cover object-center"
