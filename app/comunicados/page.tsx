@@ -190,36 +190,33 @@ export default function ComunicadosPage() {
                 className="rounded-2xl border border-[#154c66]/20 overflow-hidden flex flex-col bg-white"
               >
                 {imageSrc ? (
-                  <div className="relative w-full aspect-[4/3] bg-gray-50 shrink-0">
+                  <div className="relative w-full aspect-[4/3] bg-[#f8fbfe] shrink-0">
                     <Image
                       src={imageSrc}
                       alt={imageAlt ?? ""}
                       fill
-                      className="object-contain object-center"
+                      className="object-contain object-center p-3"
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
                   </div>
                 ) : (
-                  <div className="w-full aspect-[4/3] bg-gradient-to-br from-[#154c66] to-[#0f3a52] flex flex-col items-center justify-center gap-4 px-6 text-center shrink-0 relative overflow-hidden">
-                    <div
-                      aria-hidden="true"
-                      className="absolute inset-0 opacity-[0.05] pointer-events-none"
-                      style={{
-                        backgroundImage: "radial-gradient(#a3d3f2 1px, transparent 1px)",
-                        backgroundSize: "20px 20px",
-                      }}
-                    />
-                    <FileText size={36} className="text-white/40 relative z-10" aria-hidden="true" />
-                    <div className="flex flex-col gap-1.5 relative z-10">
-                      <span className="text-[9px] font-bold tracking-[0.4em] text-[#a3d3f2]/80 uppercase">
-                        Comunicado oficial
-                      </span>
-                      <p className="text-sm font-bold text-white leading-snug line-clamp-2">
-                        {etiqueta}
-                      </p>
-                      <span className="text-[10px] text-white/60 tracking-wide mt-0.5">
-                        {fecha}
-                      </span>
+                  <div className="w-full aspect-[4/3] bg-[#f8fbfe] flex flex-col shrink-0 overflow-hidden">
+                    <div className="h-[3px] bg-[#3d815c] w-full shrink-0" aria-hidden="true" />
+                    <div className="flex flex-col items-center justify-center gap-3 p-6 text-center flex-1">
+                      <div className="w-11 h-11 rounded-xl bg-white shadow-sm border border-[#154c66]/10 flex items-center justify-center">
+                        <FileText size={22} className="text-[#154c66]" aria-hidden="true" />
+                      </div>
+                      <div className="flex flex-col gap-1.5">
+                        <span className="text-[9px] font-bold tracking-[0.4em] text-[#3d815c] uppercase">
+                          Comunicado oficial
+                        </span>
+                        <p className="text-sm font-bold text-[#154c66] leading-snug line-clamp-2">
+                          {etiqueta}
+                        </p>
+                        <span className="text-[10px] text-text-soft/70 mt-0.5">
+                          {fecha}
+                        </span>
+                      </div>
                     </div>
                   </div>
                 )}
