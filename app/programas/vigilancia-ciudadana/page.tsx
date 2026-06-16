@@ -154,85 +154,58 @@ export default function VigilanciaCiudadanaPage() {
   return (
     <>
       {/* ─── HERO ─── */}
-      <section className="relative min-h-[88vh] flex items-center overflow-hidden bg-[#154c66]">
-        {/* Dot pattern */}
+      <section className="relative h-[88vh] min-h-[580px] w-full flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/eventos/vigilancia-ciudadana-mesa-trabajo-01.jpeg"
+            alt="Mesa de trabajo del programa Vigilancia Ciudadana"
+            fill
+            priority
+            className="object-cover object-center"
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-[#154c66]/82" />
+        </div>
+
+        <div className="relative z-10 text-center px-5 max-w-4xl mx-auto">
+          <div className="w-14 h-px bg-[#3d815c] mx-auto mb-8" aria-hidden="true" />
+          <span className="text-[10px] font-bold tracking-[0.4em] text-white/80 uppercase block mb-5">
+            Programa institucional · Acción por los Derechos Fundamentales
+          </span>
+          <h1
+            className="font-display text-4xl sm:text-5xl lg:text-7xl xl:text-[84px] font-bold leading-tight text-white mb-6 break-words max-w-full"
+            style={{ textShadow: "0 4px 20px rgba(0,0,0,0.4)" }}
+          >
+            Vigilancia Ciudadana
+          </h1>
+          <p
+            className="text-lg lg:text-xl text-white/85 font-semibold leading-snug max-w-2xl mx-auto mb-10"
+            style={{ textShadow: "0 2px 8px rgba(0,0,0,0.35)" }}
+          >
+            Participación responsable, legalidad y defensa de la vida democrática
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/contacto"
+              className="inline-flex items-center justify-center gap-2 text-sm font-semibold text-white bg-[#3d815c] hover:bg-[#2d6347] px-8 py-4 rounded-lg transition-all hover:shadow-lg"
+            >
+              Quiero recibir información
+              <ArrowRight size={15} aria-hidden="true" />
+            </Link>
+            <Link
+              href="/programas"
+              className="inline-flex items-center justify-center gap-2 text-sm font-semibold text-white border border-white/50 hover:border-white px-8 py-4 rounded-lg transition-colors"
+            >
+              Conocer otros programas
+              <ArrowRight size={15} aria-hidden="true" />
+            </Link>
+          </div>
+        </div>
+
         <div
           aria-hidden="true"
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            backgroundImage:
-              "radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1px)",
-            backgroundSize: "40px 40px",
-          }}
+          className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-white to-transparent z-10"
         />
-        {/* Decorative circles */}
-        <div
-          aria-hidden="true"
-          className="absolute right-0 bottom-0 hidden lg:flex items-center justify-center translate-x-1/4 translate-y-1/4 pointer-events-none"
-        >
-          <div className="w-96 h-96 border border-[#a3d3f2]/15 rounded-full flex items-center justify-center">
-            <div className="w-64 h-64 border border-[#a3d3f2]/25 rounded-full flex items-center justify-center">
-              <div className="w-32 h-32 bg-[#a3d3f2]/10 rounded-full" />
-            </div>
-          </div>
-        </div>
-
-        <div className="relative z-10 max-w-7xl mx-auto px-5 w-full py-28 lg:py-36">
-          <div className="max-w-3xl space-y-8">
-            <div className="flex items-center gap-4">
-              <span className="w-px h-12 bg-[#3d815c]" aria-hidden="true" />
-              <span className="text-[10px] font-bold tracking-[0.35em] text-[#a3d3f2] uppercase">
-                Programa Institucional · Acción por los Derechos Fundamentales
-              </span>
-            </div>
-
-            <h1 className="font-display text-6xl lg:text-8xl font-bold text-white leading-[1.02]">
-              Vigilancia<br />
-              Ciudadana
-            </h1>
-
-            <p className="font-display text-xl lg:text-2xl font-semibold text-[#a3d3f2] leading-snug max-w-2xl">
-              Participación responsable, legalidad y defensa de la vida democrática
-            </p>
-
-            <div className="flex flex-col gap-4 text-white/80 text-base lg:text-lg leading-relaxed max-w-2xl">
-              <p>
-                Vigilancia Ciudadana es un programa de Acción por los Derechos
-                Fundamentales, A.C. orientado a promover la participación
-                responsable, la observación ciudadana, la documentación con
-                evidencia y la defensa de la vida democrática desde la sociedad
-                civil.
-              </p>
-              <p>
-                El programa busca que más ciudadanos comprendan la importancia
-                de involucrarse de manera informada, ordenada y responsable en
-                los temas que afectan la legalidad, la confianza institucional y
-                la participación pública.
-              </p>
-              <p className="text-white/60 text-sm font-medium italic">
-                No se trata de actuar desde la confrontación ni desde la especulación.<br />
-                Se trata de participar con evidencia, responsabilidad, legalidad y compromiso ciudadano.
-              </p>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-3 pt-2">
-              <Link
-                href="/contacto"
-                className="inline-flex items-center justify-center gap-2 text-sm font-semibold text-white bg-[#3d815c] hover:bg-[#2d6347] px-8 py-4 rounded-lg transition-all hover:shadow-lg"
-              >
-                Quiero recibir información
-                <ArrowRight size={15} aria-hidden="true" />
-              </Link>
-              <Link
-                href="/programas"
-                className="inline-flex items-center justify-center gap-2 text-sm font-semibold text-white bg-white/10 hover:bg-white/20 border border-white/20 px-8 py-4 rounded-lg transition-colors"
-              >
-                Conocer otros programas
-                <ArrowRight size={15} aria-hidden="true" />
-              </Link>
-            </div>
-          </div>
-        </div>
       </section>
 
       {/* ─── ¿QUÉ ES VIGILANCIA CIUDADANA? + FICHA RÁPIDA ─── */}

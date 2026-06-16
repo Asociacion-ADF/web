@@ -190,87 +190,58 @@ export default function FortaliciendoValoresPage() {
   return (
     <>
       {/* ─── HERO ─── */}
-      <section className="relative pt-20 pb-28 lg:pb-36 px-5 overflow-hidden bg-white">
-        <div
-          aria-hidden="true"
-          className="absolute -top-20 right-0 w-96 h-96 rounded-full blur-3xl pointer-events-none"
-          style={{ background: "rgba(163,211,242,0.18)" }}
-        />
+      <section className="relative h-[88vh] min-h-[580px] w-full flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/eventos/fortaleciendo-valores-programa-piloto-educacion-basica-01.jpeg"
+            alt="Programa Fortaleciendo Valores en educación básica"
+            fill
+            priority
+            className="object-cover object-center"
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-[#154c66]/82" />
+        </div>
 
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          {/* Left — text */}
-          <div className="lg:col-span-6 z-10">
-            <span className="text-[10px] font-bold tracking-[0.22em] text-[#3d815c] uppercase block mb-5">
-              Programa Educativo
-            </span>
-            <h1 className="font-display text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-[#154c66] mb-5">
-              Fortaleciendo Valores
-            </h1>
-            <p className="text-lg lg:text-xl font-semibold text-[#154c66]/80 leading-snug mb-6">
-              Formación cívica y valores para niñas, niños y jóvenes de Tijuana
-            </p>
-            <div className="flex flex-col gap-4 text-text-soft text-base leading-relaxed mb-10 max-w-xl">
-              <p>
-                Fortaleciendo Valores es un programa de Acción por los Derechos
-                Fundamentales, A.C. orientado a promover valores, cultura cívica
-                y responsabilidad social en niñas, niños y jóvenes de Tijuana.
-              </p>
-              <p>
-                El programa busca involucrar a familias, docentes, instituciones
-                educativas, especialistas y ciudadanos comprometidos con la
-                formación de nuevas generaciones.
-              </p>
-              <p>
-                Su enfoque parte de una idea clara: los valores no solo deben
-                enseñarse, también deben vivirse en la familia, la escuela y la
-                comunidad.
-              </p>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-3">
-              <Link
-                href="/contacto"
-                className="inline-flex items-center justify-center gap-2 text-sm font-semibold text-white bg-[#3d815c] hover:bg-[#2d6347] px-8 py-4 rounded-lg transition-all hover:shadow-lg"
-              >
-                Quiero recibir información
-                <ArrowRight size={15} aria-hidden="true" />
-              </Link>
-              <Link
-                href="/programas"
-                className="inline-flex items-center justify-center gap-2 text-sm font-semibold text-[#154c66] border border-[#154c66]/30 hover:border-[#154c66] px-8 py-4 rounded-lg transition-colors"
-              >
-                Conocer otros programas
-                <ArrowRight size={15} aria-hidden="true" />
-              </Link>
-            </div>
-          </div>
-
-          {/* Right — hero image */}
-          <div className="lg:col-span-6 relative mt-12 lg:mt-0">
-            <div
-              aria-hidden="true"
-              className="absolute -top-10 -right-10 w-64 h-64 rounded-full blur-3xl pointer-events-none"
-              style={{ background: "rgba(163,211,242,0.22)" }}
-            />
-            <div className="relative overflow-hidden rounded-xl shadow-2xl">
-              <div className="bg-[#a3d3f2]/20 p-4 rounded-xl">
-                <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
-                  <Image
-                    src="/eventos/fortaleciendo-valores-nino-estudiando-01.jpeg"
-                    alt="Niño realizando actividades escolares del programa Fortaleciendo Valores"
-                    fill
-                    priority
-                    className="object-cover object-center"
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                  />
-                </div>
-              </div>
-            </div>
-            <div
-              aria-hidden="true"
-              className="absolute -bottom-6 -left-6 w-32 h-32 border-l-2 border-b-2 border-[#3d815c]/40 pointer-events-none"
-            />
+        <div className="relative z-10 text-center px-5 max-w-4xl mx-auto">
+          <div className="w-14 h-px bg-[#3d815c] mx-auto mb-8" aria-hidden="true" />
+          <span className="text-[10px] font-bold tracking-[0.4em] text-white/80 uppercase block mb-5">
+            Programa institucional · Acción por los Derechos Fundamentales
+          </span>
+          <h1
+            className="font-display text-4xl sm:text-5xl lg:text-7xl xl:text-[84px] font-bold leading-tight text-white mb-6 break-words max-w-full"
+            style={{ textShadow: "0 4px 20px rgba(0,0,0,0.4)" }}
+          >
+            Fortaleciendo Valores
+          </h1>
+          <p
+            className="text-lg lg:text-xl text-white/85 font-semibold leading-snug max-w-2xl mx-auto mb-10"
+            style={{ textShadow: "0 2px 8px rgba(0,0,0,0.35)" }}
+          >
+            Formación cívica y valores para niñas, niños y jóvenes de Tijuana
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/contacto"
+              className="inline-flex items-center justify-center gap-2 text-sm font-semibold text-white bg-[#3d815c] hover:bg-[#2d6347] px-8 py-4 rounded-lg transition-all hover:shadow-lg"
+            >
+              Quiero recibir información
+              <ArrowRight size={15} aria-hidden="true" />
+            </Link>
+            <Link
+              href="/programas"
+              className="inline-flex items-center justify-center gap-2 text-sm font-semibold text-white border border-white/50 hover:border-white px-8 py-4 rounded-lg transition-colors"
+            >
+              Conocer otros programas
+              <ArrowRight size={15} aria-hidden="true" />
+            </Link>
           </div>
         </div>
+
+        <div
+          aria-hidden="true"
+          className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-white to-transparent z-10"
+        />
       </section>
 
       {/* ─── ¿QUÉ ES FORTALECIENDO VALORES? + FICHA RÁPIDA ─── */}

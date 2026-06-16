@@ -186,7 +186,7 @@ export default function DialogosConLaSociedadPage() {
             className="object-cover object-center"
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/25 to-black/65" />
+          <div className="absolute inset-0 bg-[#154c66]/82" />
         </div>
 
         <div className="relative z-10 text-center px-5 max-w-4xl mx-auto">
@@ -198,7 +198,7 @@ export default function DialogosConLaSociedadPage() {
             Programa institucional · Acción por los Derechos Fundamentales
           </span>
           <h1
-            className="font-display text-5xl lg:text-7xl xl:text-[84px] font-bold leading-[1.05] text-white mb-6"
+            className="font-display text-4xl sm:text-5xl lg:text-7xl xl:text-[84px] font-bold leading-tight text-white mb-6 break-words max-w-full"
             style={{ textShadow: "0 4px 20px rgba(0,0,0,0.4)" }}
           >
             Diálogos con la Sociedad
