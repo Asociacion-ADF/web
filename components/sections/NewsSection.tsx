@@ -35,7 +35,7 @@ export default function NewsSection() {
         </div>
 
         {/* Tabs */}
-        <div className="flex gap-2 mb-7" role="tablist">
+        <div className="flex flex-wrap gap-2 mb-7" role="tablist">
           {tabs.map((tab) => (
             <button
               key={tab}

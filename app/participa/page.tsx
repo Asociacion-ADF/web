@@ -321,7 +321,7 @@ export default function ParticipaPage() {
                 </div>
                 <Link
                   href="#form"
-                  className="w-full inline-flex justify-center items-center gap-2 text-sm font-semibold text-[#154c66] bg-[#154c66]/5 hover:bg-[#154c66] hover:text-white py-4 rounded-lg transition-all"
+                  className="w-full inline-flex justify-center items-center gap-2 text-sm font-semibold text-[#154c66] bg-[#154c66]/5 hover:bg-[#154c66] hover:text-white px-4 py-4 leading-snug text-center rounded-lg transition-all"
                 >
                   Quiero ser miembro
                   <ArrowRight size={14} aria-hidden="true" />
@@ -384,7 +384,7 @@ export default function ParticipaPage() {
                 </div>
                 <Link
                   href="#form"
-                  className="w-full inline-flex justify-center items-center gap-2 text-sm font-semibold text-white bg-[#3d815c] hover:bg-[#2d6347] py-4 rounded-lg transition-all shadow-lg shadow-[#3d815c]/20"
+                  className="w-full inline-flex justify-center items-center gap-2 text-sm font-semibold text-white bg-[#3d815c] hover:bg-[#2d6347] px-4 py-4 leading-snug text-center rounded-lg transition-all shadow-lg shadow-[#3d815c]/20"
                 >
                   Quiero ser aliado estratégico
                   <ArrowRight size={14} aria-hidden="true" />
@@ -435,7 +435,7 @@ export default function ParticipaPage() {
                 </p>
                 <Link
                   href="#form"
-                  className="w-full inline-flex justify-center items-center gap-2 text-sm font-semibold text-[#154c66] bg-[#154c66]/5 hover:bg-[#154c66] hover:text-white py-4 rounded-lg transition-all"
+                  className="w-full inline-flex justify-center items-center gap-2 text-sm font-semibold text-[#154c66] bg-[#154c66]/5 hover:bg-[#154c66] hover:text-white px-4 py-4 leading-snug text-center rounded-lg transition-all"
                 >
                   Quiero apoyar un programa
                   <ArrowRight size={14} aria-hidden="true" />

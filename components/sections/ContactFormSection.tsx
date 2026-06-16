@@ -273,7 +273,7 @@ export default function ContactFormSection() {
                     maxLength={1000}
                     value={formData.mensaje}
                     onChange={handleChange}
-                    className="w-full border border-border-subtle rounded-lg px-4 py-3 text-sm text-text-main bg-white/70 outline-none transition-all focus:border-text-blue focus:ring-1 focus:ring-text-blue/30 placeholder:text-text-muted resize-none"
+                    className="w-full border border-border-subtle rounded-lg px-4 py-3 text-sm text-text-main bg-white/70 outline-none transition-all focus:border-text-blue focus:ring-1 focus:ring-text-blue/30 placeholder:text-slate-400 resize-none"
                   />
                 </div>
 
