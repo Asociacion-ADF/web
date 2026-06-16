@@ -98,7 +98,7 @@ export default function NoticiasPage() {
         />
       </section>
 
-      {/* ─── PUBLICACIONES ─── */}
+      {/* ─── EN MEDIOS ─── */}
       <section className="py-20 lg:py-28 px-5 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="mb-14">
@@ -115,41 +115,119 @@ export default function NoticiasPage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {/* Tarjeta ZETA */}
-            <div className="rounded-2xl border border-[#a3d3f2] overflow-hidden flex flex-col bg-white">
-              <div className="relative w-full aspect-[4/3] bg-gray-50 shrink-0">
-                <Image
-                  src="/noticias/zeta-dichoz-hechoz-dialogos-sociedad-marzo-2026.jpeg"
-                  alt="Columna DICHOS Y HECHOS de ZETA Tijuana — Diálogos con la Sociedad, marzo 2026"
-                  fill
-                  className="object-contain object-center"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                />
-              </div>
-              <div className="flex flex-col gap-3 p-6">
-                <div className="flex items-center gap-2 flex-wrap">
-                  <span className="text-[10px] font-bold tracking-[0.3em] uppercase px-2.5 py-1 rounded-full bg-[#154c66]/10 text-[#154c66]">
-                    En medios
-                  </span>
-                  <span className="text-text-soft/40 text-xs" aria-hidden="true">·</span>
-                  <span className="text-[10px] font-semibold tracking-wide text-text-soft uppercase">
-                    ZETA Tijuana
-                  </span>
+            {[
+              {
+                src: "/noticias/esquina32-sector-productivo-julieta-ramirez.jpeg",
+                alt: "Esquina 32 — Sector productivo de BC, junio de 2026",
+                medio: "Esquina 32",
+                fecha: "Junio de 2026",
+                titulo: "Sector productivo de BC presenta propuestas durante encuentro con Julieta Ramírez",
+                resumen: "Durante el encuentro Diálogos con la Sociedad, integrantes de Acción por los Derechos Fundamentales expusieron inquietudes del sector productivo sobre movilidad, agua, energía, certeza jurídica, inversión e infraestructura educativa.",
+                href: "https://esquina32.info/tag/accion-por-los-derechos-fundamentales/",
+              },
+              {
+                src: "/noticias/tijuanotas-academia-conocimiento-accion-derechos-fundamentales-2020.jpeg",
+                alt: "Tijuanotas — Presentación de Acción por los Derechos Fundamentales, noviembre de 2020",
+                medio: "Tijuanotas",
+                fecha: "Noviembre de 2020",
+                titulo: "Presentan academia del conocimiento \"Acción por los Derechos Fundamentales\"",
+                resumen: "La nota presenta a Acción por los Derechos Fundamentales como una asociación civil integrada por profesionistas, académicos y organismos colegiados, orientada al análisis social, el diálogo público y la generación de propuestas.",
+                href: "https://tijuanotas.com/2020/11/presentan-academia-del-conocimiento-accion-por-los-derechos-fundamentales/",
+              },
+              {
+                src: "/noticias/Infobaja-presentan nueva organización-2020.jpeg",
+                alt: "Infobaja — Presentación de Acción por los Derechos Fundamentales A.C., noviembre de 2020",
+                medio: "Infobaja",
+                fecha: "Noviembre de 2020",
+                titulo: "Presentan nueva organización \"Acción por los Derechos Fundamentales A.C.\"",
+                resumen: "Infobaja reseñó la presentación de la organización y su propósito de contribuir con la sociedad civil y autoridades mediante análisis, diálogo y propuestas en áreas como derecho constitucional, economía, educación y derechos humanos.",
+                href: "https://www.infobaja.info/presentan-nueva-organizacion-accion-por-los-derechos-fundamentales-a-c/",
+              },
+              {
+                src: "/noticias/zeta-valores-noviembre-2025.jpeg",
+                alt: "ZETA — Valores, noviembre de 2025",
+                medio: "ZETA Tijuana",
+                fecha: "Noviembre de 2025",
+                titulo: "Valores",
+                resumen: "ZETA hizo referencia al programa Fortaleciendo Valores en la Educación Básica, iniciativa impulsada por Acción por los Derechos Fundamentales para fortalecer el desarrollo integral de niñas, niños y familias.",
+                href: "https://zetatijuana.com/2025/11/valores/",
+              },
+              {
+                src: "/noticias/zeta-ley-ingresos-2024-diciembre-2023.jpeg",
+                alt: "ZETA — Ley de Ingresos 2024, diciembre de 2023",
+                medio: "ZETA Tijuana",
+                fecha: "Diciembre de 2023",
+                titulo: "Expresa Acción por los Derechos Fundamentales preocupación por iniciativa de Ley de Ingresos 2024",
+                resumen: "La publicación recoge la postura de la asociación sobre la propuesta de Ley de Ingresos 2024 y sus posibles efectos en educación, seguridad pública y desarrollo económico.",
+                href: "https://zetatijuana.com/2023/12/expresa-accion-por-los-derechos-fundamentales-preocupacion-por-iniciativa-de-ley-de-ingresos-2024/",
+              },
+              {
+                src: "/noticias/zeta-personaje-marzo-2026.jpeg",
+                alt: "ZETA — Personaje, marzo de 2026",
+                medio: "ZETA Tijuana",
+                fecha: "Marzo de 2026",
+                titulo: "Personaje",
+                resumen: "ZETA destacó la trayectoria de Rufo Ibarra Batista y el trabajo de Acción por los Derechos Fundamentales en temas sociales, legislativos, humanos y educativos.",
+                href: "https://zetatijuana.com/2026/03/personaje/",
+              },
+              {
+                src: "/noticias/zeta-dichoz-hechoz-dialogos-sociedad-marzo-2026.jpeg",
+                alt: "ZETA — Columna Dichoz y Hechoz, Diálogos con la Sociedad, marzo de 2026",
+                medio: "ZETA Tijuana",
+                fecha: "Semana del 20 al 26 de marzo de 2026",
+                titulo: "Acción por los Derechos Fundamentales aparece en columna de ZETA sobre Diálogos con la Sociedad",
+                resumen: "La columna Dichoz y Hechoz hizo referencia a las actividades de Acción por los Derechos Fundamentales y a su programa Diálogos con la Sociedad como espacio ciudadano de conversación y participación pública.",
+                href: undefined,
+              },
+            ].map(({ src, alt, medio, fecha, titulo, resumen, href }) => (
+              <div
+                key={src}
+                className="rounded-2xl border border-[#a3d3f2] overflow-hidden flex flex-col bg-white"
+              >
+                <div className="relative w-full aspect-[4/3] bg-gray-50 shrink-0">
+                  <Image
+                    src={src}
+                    alt={alt}
+                    fill
+                    className="object-contain object-center"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
                 </div>
-                <p className="text-[10px] font-semibold tracking-[0.2em] text-text-soft/70 uppercase">
-                  Semana del 20 al 26 de marzo de 2026
-                </p>
-                <h3 className="font-display text-base lg:text-lg font-bold text-[#154c66] leading-snug">
-                  Acción por los Derechos Fundamentales aparece en columna de ZETA sobre Diálogos con la Sociedad
-                </h3>
-                <p className="text-text-soft text-sm leading-relaxed">
-                  La columna DICHOS Y HECHOS de ZETA Tijuana hizo referencia a las
-                  actividades de Acción por los Derechos Fundamentales, A.C. y a su
-                  programa Diálogos con la Sociedad, un espacio ciudadano de
-                  encuentro, conversación y participación pública.
-                </p>
+                <div className="flex flex-col gap-3 p-6 flex-1">
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <span className="text-[10px] font-bold tracking-[0.3em] uppercase px-2.5 py-1 rounded-full bg-[#154c66]/10 text-[#154c66]">
+                      En medios
+                    </span>
+                    <span className="text-text-soft/40 text-xs" aria-hidden="true">·</span>
+                    <span className="text-[10px] font-semibold tracking-wide text-text-soft uppercase">
+                      {medio}
+                    </span>
+                  </div>
+                  <p className="text-[10px] font-semibold tracking-[0.2em] text-text-soft/70 uppercase">
+                    {fecha}
+                  </p>
+                  <h3 className="font-display text-base font-bold text-[#154c66] leading-snug">
+                    {titulo}
+                  </h3>
+                  <p className="text-text-soft text-sm leading-relaxed flex-1">
+                    {resumen}
+                  </p>
+                  {href && (
+                    <div className="mt-auto pt-2">
+                      <Link
+                        href={href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-sm font-semibold text-[#3d815c] hover:text-[#2d6347] transition-colors"
+                      >
+                        Leer nota original
+                        <ArrowRight size={14} aria-hidden="true" />
+                      </Link>
+                    </div>
+                  )}
+                </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
