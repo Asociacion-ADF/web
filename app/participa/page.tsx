@@ -247,7 +247,7 @@ export default function ParticipaPage() {
               Modalidades
             </span>
             <FineLine />
-            <h2 className="font-display text-3xl lg:text-5xl font-bold text-[#154c66] mb-8">
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-[#154c66] mb-8">
               ¿Cómo puedo participar?
             </h2>
             <div className="flex flex-col gap-4 text-text-soft text-base lg:text-lg leading-relaxed max-w-3xl mx-auto">
@@ -273,7 +273,7 @@ export default function ParticipaPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-14">
             {/* Miembro */}
-            <div className="bg-white border border-border-subtle rounded-2xl p-10 flex flex-col items-center shadow-sm hover:shadow-md transition-all duration-300">
+            <div className="bg-white border border-border-subtle rounded-2xl p-6 lg:p-10 flex flex-col items-center shadow-sm hover:shadow-md transition-all duration-300">
               <div className="w-14 h-14 bg-[#154c66]/5 rounded-2xl flex items-center justify-center mb-6">
                 <svg
                   viewBox="0 0 24 24"
@@ -330,7 +330,7 @@ export default function ParticipaPage() {
             </div>
 
             {/* Aliado Estratégico — featured */}
-            <div className="bg-white border-2 border-[#3d815c] rounded-2xl p-10 flex flex-col items-center shadow-md hover:shadow-xl transition-all duration-300 relative overflow-hidden">
+            <div className="bg-white border-2 border-[#3d815c] rounded-2xl p-6 lg:p-10 flex flex-col items-center shadow-md hover:shadow-xl transition-all duration-300 relative overflow-hidden">
               <div
                 className="absolute top-0 right-0 bg-[#3d815c] text-white text-[10px] px-5 py-2 rounded-bl-2xl font-bold tracking-wider uppercase"
                 aria-label="Modalidad más completa"
@@ -393,7 +393,7 @@ export default function ParticipaPage() {
             </div>
 
             {/* Apoyo a programa */}
-            <div className="bg-white border border-border-subtle rounded-2xl p-10 flex flex-col items-center shadow-sm hover:shadow-md transition-all duration-300">
+            <div className="bg-white border border-border-subtle rounded-2xl p-6 lg:p-10 flex flex-col items-center shadow-sm hover:shadow-md transition-all duration-300">
               <div className="w-14 h-14 bg-[#a3d3f2]/20 rounded-2xl flex items-center justify-center mb-6">
                 <svg
                   viewBox="0 0 24 24"

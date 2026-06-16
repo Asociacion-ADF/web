@@ -104,7 +104,7 @@ export default function ContactoPage() {
                y escala visual general, porque varias páginas se sienten sobredimensionadas en desktop. */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {/* Dirección — azul profundo */}
-            <div className="bg-[#154c66] rounded-2xl p-8 flex flex-col items-center text-center gap-6">
+            <div className="bg-[#154c66] rounded-2xl p-5 md:p-8 flex flex-col items-center text-center gap-6">
               <div className="w-10 h-10 bg-white/15 rounded-xl flex items-center justify-center">
                 <svg
                   viewBox="0 0 24 24"
@@ -143,7 +143,7 @@ export default function ContactoPage() {
             </div>
 
             {/* Teléfono — verde institucional */}
-            <div className="bg-[#3d815c] rounded-2xl p-8 flex flex-col items-center text-center gap-6">
+            <div className="bg-[#3d815c] rounded-2xl p-5 md:p-8 flex flex-col items-center text-center gap-6">
               <div className="w-10 h-10 bg-white/15 rounded-xl flex items-center justify-center">
                 <svg
                   viewBox="0 0 24 24"
@@ -174,7 +174,7 @@ export default function ContactoPage() {
             </div>
 
             {/* Correo — azul claro */}
-            <div className="bg-[#a3d3f2] rounded-2xl p-8 flex flex-col items-center text-center gap-6">
+            <div className="bg-[#a3d3f2] rounded-2xl p-5 md:p-8 flex flex-col items-center text-center gap-6">
               <div className="w-10 h-10 bg-[#154c66]/10 rounded-xl flex items-center justify-center">
                 <svg
                   viewBox="0 0 24 24"
@@ -219,7 +219,7 @@ export default function ContactoPage() {
               Completa el formulario y te contactaremos en un lapso de 24 horas.
             </p>
           </div>
-          <div className="lg:col-span-8 bg-white border border-border-subtle rounded-3xl p-10 lg:p-14 shadow-md">
+          <div className="lg:col-span-8 bg-white border border-border-subtle rounded-3xl p-6 lg:p-14 shadow-md">
             <ContactForm />
           </div>
         </div>
@@ -240,7 +240,7 @@ export default function ContactoPage() {
         />
 
         <div className="max-w-7xl mx-auto px-5 relative z-10 w-full flex justify-end">
-          <div className="w-full md:max-w-lg md:ml-auto bg-white/90 backdrop-blur-sm border border-white/40 rounded-3xl p-10 lg:p-12 shadow-2xl">
+          <div className="w-full md:max-w-lg md:ml-auto bg-white/90 backdrop-blur-sm border border-white/40 rounded-3xl p-6 lg:p-12 shadow-2xl">
             <span className="text-[10px] font-bold tracking-[0.4em] text-[#3d815c] uppercase block mb-4">
               Sede
             </span>

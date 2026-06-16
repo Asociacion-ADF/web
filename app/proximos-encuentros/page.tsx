@@ -47,14 +47,14 @@ export default function ProximosEncuentrosPage() {
           }}
         />
 
-        <div className="relative z-20 max-w-7xl mx-auto px-5 py-24 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center w-full">
+        <div className="relative z-20 max-w-7xl mx-auto px-5 py-16 md:py-24 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center w-full">
           <div className="lg:col-span-8">
             <div className="w-14 h-px bg-[#3d815c] mb-8" aria-hidden="true" />
             <span className="text-[10px] font-bold tracking-[0.4em] text-white/70 uppercase block mb-5">
               Acción por los Derechos Fundamentales, A.C.
             </span>
             <h1
-              className="font-display text-5xl lg:text-7xl font-bold text-white leading-[1.05] mb-6"
+              className="font-display text-4xl sm:text-5xl lg:text-7xl font-bold text-white leading-[1.05] mb-6"
               style={{ textShadow: "0 4px 20px rgba(0,0,0,0.3)" }}
             >
               Próximos encuentros
@@ -133,7 +133,7 @@ export default function ProximosEncuentrosPage() {
                 </div>
               </div>
 
-              <div className="p-10">
+              <div className="p-6 lg:p-10">
               <span className="text-[10px] font-bold tracking-[0.3em] text-[#3d815c] uppercase block mb-3">
                 Diálogos con la Sociedad
               </span>

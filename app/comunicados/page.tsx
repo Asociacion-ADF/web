@@ -44,7 +44,7 @@ export default function ComunicadosPage() {
           }}
         />
 
-        <div className="relative z-20 max-w-7xl mx-auto px-5 py-24 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center w-full">
+        <div className="relative z-20 max-w-7xl mx-auto px-5 py-16 md:py-24 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center w-full">
           <div className="lg:col-span-8">
             <div className="w-14 h-px bg-[#3d815c] mb-8" aria-hidden="true" />
             <span className="text-[10px] font-bold tracking-[0.4em] text-white/70 uppercase block mb-5">
@@ -182,7 +182,7 @@ export default function ComunicadosPage() {
                 className="rounded-2xl border border-[#a3d3f2] overflow-hidden flex flex-col bg-white"
               >
                 {/* Portada institucional uniforme */}
-                <div className="w-full aspect-[4/3] bg-[#a3d3f2] flex flex-col shrink-0 overflow-hidden">
+                <div className="w-full aspect-[16/9] md:aspect-[4/3] bg-[#a3d3f2] flex flex-col shrink-0 overflow-hidden">
                   <div className="h-[3px] bg-[#3d815c] w-full shrink-0" aria-hidden="true" />
                   <div className="flex flex-col items-center justify-center gap-3 p-6 text-center flex-1">
                     <div className="w-11 h-11 rounded-xl bg-white/50 flex items-center justify-center">

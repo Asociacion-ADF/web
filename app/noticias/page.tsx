@@ -45,14 +45,14 @@ export default function NoticiasPage() {
           }}
         />
 
-        <div className="relative z-20 max-w-7xl mx-auto px-5 py-24 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center w-full">
+        <div className="relative z-20 max-w-7xl mx-auto px-5 py-16 md:py-24 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center w-full">
           <div className="lg:col-span-8">
             <div className="w-14 h-px bg-[#3d815c] mb-8" aria-hidden="true" />
             <span className="text-[10px] font-bold tracking-[0.4em] text-white/70 uppercase block mb-5">
               Acción por los Derechos Fundamentales, A.C.
             </span>
             <h1
-              className="font-display text-5xl lg:text-7xl font-bold text-white leading-[1.05] mb-6"
+              className="font-display text-4xl sm:text-5xl lg:text-7xl font-bold text-white leading-[1.05] mb-6"
               style={{ textShadow: "0 4px 20px rgba(0,0,0,0.3)" }}
             >
               Noticias
@@ -134,7 +134,7 @@ export default function NoticiasPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {/* Encuentros */}
-            <div className="bg-[#154c66] p-10 rounded-2xl flex flex-col justify-between min-h-[380px]">
+            <div className="bg-[#154c66] p-6 lg:p-10 rounded-2xl flex flex-col justify-between min-h-[260px] md:min-h-[380px]">
               <div>
                 <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center mb-6">
                   <svg
@@ -172,7 +172,7 @@ export default function NoticiasPage() {
             </div>
 
             {/* Programas */}
-            <div className="bg-[#3d815c] p-10 rounded-2xl flex flex-col justify-between min-h-[380px]">
+            <div className="bg-[#3d815c] p-6 lg:p-10 rounded-2xl flex flex-col justify-between min-h-[260px] md:min-h-[380px]">
               <div>
                 <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center mb-6">
                   <svg
@@ -210,7 +210,7 @@ export default function NoticiasPage() {
             </div>
 
             {/* Comunicados */}
-            <div className="bg-[#a3d3f2] p-10 rounded-2xl flex flex-col justify-between min-h-[380px]">
+            <div className="bg-[#a3d3f2] p-6 lg:p-10 rounded-2xl flex flex-col justify-between min-h-[260px] md:min-h-[380px]">
               <div>
                 <div className="w-12 h-12 bg-[#154c66]/10 rounded-xl flex items-center justify-center mb-6">
                   <svg

@@ -40,10 +40,10 @@ export default function TrayectoriaRufoIbarraBatista() {
             <span className="inline-block px-4 py-1 border border-[#a3d3f2] text-[#a3d3f2] rounded-full text-sm font-semibold mb-6 uppercase tracking-widest">
               Trayectoria Profesional
             </span>
-            <h1 className="font-display text-5xl lg:text-7xl font-bold mb-6 leading-tight">
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl font-bold mb-6 leading-tight">
               Rufo Ibarra Batista
             </h1>
-            <p className="font-display text-2xl font-bold text-[#c5e7ff] mb-8 max-w-2xl leading-snug">
+            <p className="font-display text-xl md:text-2xl font-bold text-[#c5e7ff] mb-8 max-w-2xl leading-snug">
               Fundador y presidente de Acción por los Derechos Fundamentales, A.C.
             </p>
             <p className="text-lg text-[#c5e7ff]/80 mb-10 max-w-xl leading-relaxed">

@@ -103,8 +103,8 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-brand-green text-white pt-14 pb-10 px-5">
-      <div className="max-w-7xl mx-auto flex flex-col gap-10">
+    <footer className="bg-brand-green text-white pt-10 pb-8 md:pt-14 md:pb-10 px-5">
+      <div className="max-w-7xl mx-auto flex flex-col gap-8 md:gap-10">
         {/* Main grid: brand + nav columns + contact */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
           {/* Brand */}
@@ -146,7 +146,7 @@ export default function Footer() {
           </div>
 
           {/* Nav columns + Contact column */}
-          <div className="md:col-span-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8">
+          <div className="md:col-span-8 grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-8">
             {navColumns.map((col) => (
               <div key={col.title}>
                 <h4 className="text-[10px] font-bold text-white/50 uppercase tracking-[0.22em] mb-5">
