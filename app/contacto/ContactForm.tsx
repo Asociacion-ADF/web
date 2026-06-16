@@ -10,6 +10,7 @@ const inputBase =
 export default function ContactForm() {
   const router = useRouter();
   const [submitting, setSubmitting] = useState(false);
+  const [motivo, setMotivo] = useState("");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -86,7 +87,9 @@ export default function ContactForm() {
         <select
           id="motivo"
           name="motivo"
-          className={`${inputBase} appearance-none cursor-pointer`}
+          value={motivo}
+          onChange={(e) => setMotivo(e.target.value)}
+          className={`${inputBase} appearance-none cursor-pointer ${motivo === "" ? "text-slate-400" : "text-gray-800"}`}
         >
           <option value="">Selecciona una opción</option>
           <option value="miembro">Quiero ser miembro</option>

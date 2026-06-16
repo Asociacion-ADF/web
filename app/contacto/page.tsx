@@ -197,7 +197,7 @@ export default function ContactoPage() {
                 </p>
                 <a
                   href="mailto:contacto@asociacionaccion.com"
-                  className="font-semibold text-[#154c66] hover:text-[#154c66]/70 transition-colors break-all text-base"
+                  className="font-semibold text-[#154c66] hover:text-[#154c66]/70 transition-colors text-sm md:text-base leading-snug break-words"
                 >
                   contacto@asociacionaccion.com
                 </a>

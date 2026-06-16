@@ -10,6 +10,8 @@ const inputBase =
 export default function ParticipationForm() {
   const router = useRouter();
   const [submitting, setSubmitting] = useState(false);
+  const [modalidad, setModalidad] = useState("");
+  const [programa, setPrograma] = useState("");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -87,7 +89,9 @@ export default function ParticipationForm() {
           <select
             id="modalidad"
             name="modalidad"
-            className={`${inputBase} appearance-none cursor-pointer`}
+            value={modalidad}
+            onChange={(e) => setModalidad(e.target.value)}
+            className={`${inputBase} appearance-none cursor-pointer ${modalidad === "" ? "text-slate-400" : "text-gray-800"}`}
           >
             <option value="">Selecciona una opción</option>
             <option value="miembro">Miembro</option>
@@ -106,7 +110,9 @@ export default function ParticipationForm() {
           <select
             id="programa"
             name="programa"
-            className={`${inputBase} appearance-none cursor-pointer`}
+            value={programa}
+            onChange={(e) => setPrograma(e.target.value)}
+            className={`${inputBase} appearance-none cursor-pointer ${programa === "" ? "text-slate-400" : "text-gray-800"}`}
           >
             <option value="">Selecciona un programa</option>
             <option value="valores">Fortaleciendo Valores</option>
