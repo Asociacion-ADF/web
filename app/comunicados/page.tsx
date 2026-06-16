@@ -200,8 +200,27 @@ export default function ComunicadosPage() {
                     />
                   </div>
                 ) : (
-                  <div className="w-full aspect-[4/3] bg-[#154c66]/5 flex items-center justify-center shrink-0">
-                    <FileText size={48} className="text-[#154c66]/25" aria-hidden="true" />
+                  <div className="w-full aspect-[4/3] bg-gradient-to-br from-[#154c66] to-[#0f3a52] flex flex-col items-center justify-center gap-4 px-6 text-center shrink-0 relative overflow-hidden">
+                    <div
+                      aria-hidden="true"
+                      className="absolute inset-0 opacity-[0.05] pointer-events-none"
+                      style={{
+                        backgroundImage: "radial-gradient(#a3d3f2 1px, transparent 1px)",
+                        backgroundSize: "20px 20px",
+                      }}
+                    />
+                    <FileText size={36} className="text-white/40 relative z-10" aria-hidden="true" />
+                    <div className="flex flex-col gap-1.5 relative z-10">
+                      <span className="text-[9px] font-bold tracking-[0.4em] text-[#a3d3f2]/80 uppercase">
+                        Comunicado oficial
+                      </span>
+                      <p className="text-sm font-bold text-white leading-snug line-clamp-2">
+                        {etiqueta}
+                      </p>
+                      <span className="text-[10px] text-white/60 tracking-wide mt-0.5">
+                        {fecha}
+                      </span>
+                    </div>
                   </div>
                 )}
                 <div className="flex flex-col gap-3 p-6 flex-1">
