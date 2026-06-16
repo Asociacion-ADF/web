@@ -33,13 +33,13 @@ export default function HeroSection() {
             <div className="flex flex-col gap-4 sm:flex-row pt-2">
               <a
                 href="/participa"
-                className="inline-flex h-14 px-8 items-center justify-center bg-brand-green text-white font-semibold text-sm tracking-wide rounded shadow-md hover:brightness-110 active:scale-[0.98] transition-all"
+                className="inline-flex h-14 px-8 items-center justify-center bg-brand-green text-white font-semibold text-sm tracking-wide rounded shadow-md hover:brightness-110 active:scale-[0.98] transition-all w-full sm:w-auto"
               >
                 Quiero ser miembro
               </a>
               <a
                 href="/proximos-encuentros"
-                className="inline-flex h-14 px-8 items-center justify-center border-2 border-text-blue/30 text-text-blue font-semibold text-sm tracking-wide rounded hover:border-text-blue hover:bg-brand-blue/10 transition-all"
+                className="inline-flex h-14 px-8 items-center justify-center border-2 border-text-blue/30 text-text-blue font-semibold text-sm tracking-wide rounded hover:border-text-blue hover:bg-brand-blue/10 transition-all w-full sm:w-auto"
               >
                 Ver próximos encuentros
               </a>

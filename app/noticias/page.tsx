@@ -74,17 +74,17 @@ export default function NoticiasPage() {
                 ciudadanas.
               </p>
             </div>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/proximos-encuentros"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-white bg-[#3d815c] hover:bg-[#2d6347] px-8 py-4 rounded-lg transition-all hover:shadow-lg"
+                className="inline-flex items-center justify-center gap-2 text-sm font-semibold text-white bg-[#3d815c] hover:bg-[#2d6347] px-8 py-4 rounded-lg transition-all hover:shadow-lg w-full sm:w-auto"
               >
                 Ver próximos encuentros
                 <ArrowRight size={15} aria-hidden="true" />
               </Link>
               <Link
                 href="/contacto"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-white border border-white/30 hover:border-white/60 px-8 py-4 rounded-lg transition-colors"
+                className="inline-flex items-center justify-center gap-2 text-sm font-semibold text-white border border-white/30 hover:border-white/60 px-8 py-4 rounded-lg transition-colors w-full sm:w-auto"
               >
                 Contactar a la asociación
                 <ArrowRight size={15} aria-hidden="true" />
@@ -280,14 +280,14 @@ export default function NoticiasPage() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/contacto"
-                className="inline-flex items-center justify-center gap-2 text-sm font-semibold text-white bg-[#3d815c] hover:bg-[#2d6347] px-8 py-4 rounded-lg transition-all hover:shadow-lg shadow-md"
+                className="inline-flex items-center justify-center gap-2 text-sm font-semibold text-white bg-[#3d815c] hover:bg-[#2d6347] px-8 py-4 rounded-lg transition-all hover:shadow-lg shadow-md w-full sm:w-auto"
               >
                 Quiero recibir información
                 <ArrowRight size={15} aria-hidden="true" />
               </Link>
               <Link
                 href="/proximos-encuentros"
-                className="inline-flex items-center justify-center gap-2 text-sm font-semibold text-white border border-white/30 hover:border-white/60 px-8 py-4 rounded-lg transition-colors"
+                className="inline-flex items-center justify-center gap-2 text-sm font-semibold text-white border border-white/30 hover:border-white/60 px-8 py-4 rounded-lg transition-colors w-full sm:w-auto"
               >
                 Ver próximos encuentros
                 <ArrowRight size={15} aria-hidden="true" />

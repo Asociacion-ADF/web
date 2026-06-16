@@ -27,7 +27,7 @@ const modalidades = [
 ];
 
 const inputBase =
-  "w-full h-12 border border-border-subtle rounded-lg px-4 text-sm text-text-main bg-white/70 outline-none transition-all focus:border-text-blue focus:ring-1 focus:ring-text-blue/30 placeholder:text-text-muted";
+  "w-full h-12 border border-border-subtle rounded-lg px-4 text-sm text-text-main bg-white/70 outline-none transition-all focus:border-text-blue focus:ring-1 focus:ring-text-blue/30 placeholder:text-slate-400";
 
 const errorBase = "border-red-400 focus:border-red-500 focus:ring-red-400/30";
 

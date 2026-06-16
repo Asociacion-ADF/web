@@ -26,14 +26,14 @@ export default function UpcomingMeetingsSection() {
           <div className="flex flex-col sm:flex-row gap-4">
             <a
               href="/proximos-encuentros"
-              className="inline-flex h-14 px-8 items-center justify-center gap-2 bg-white text-brand-green font-semibold text-sm tracking-wide rounded shadow-md hover:bg-white/90 active:scale-[0.98] transition-all"
+              className="inline-flex h-14 px-8 items-center justify-center gap-2 bg-white text-brand-green font-semibold text-sm tracking-wide rounded shadow-md hover:bg-white/90 active:scale-[0.98] transition-all w-full sm:w-auto"
             >
               Ver próximos encuentros
               <ArrowRight size={16} aria-hidden="true" />
             </a>
             <a
               href="/contacto"
-              className="inline-flex h-14 px-8 items-center justify-center border-2 border-white/40 text-white font-semibold text-sm tracking-wide rounded hover:border-white hover:bg-white/10 transition-all"
+              className="inline-flex h-14 px-8 items-center justify-center border-2 border-white/40 text-white font-semibold text-sm tracking-wide rounded hover:border-white hover:bg-white/10 transition-all w-full sm:w-auto"
             >
               Quiero recibir información
             </a>

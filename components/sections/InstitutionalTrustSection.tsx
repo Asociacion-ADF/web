@@ -33,7 +33,7 @@ export default function InstitutionalTrustSection() {
         </div>
 
         {/* Right: quote block */}
-        <div className="border-l-4 border-brand-green bg-brand-blue/30 rounded-r-2xl px-10 py-10">
+        <div className="border-l-4 border-brand-green bg-brand-blue/30 rounded-r-2xl px-6 md:px-10 py-8 md:py-10">
           <blockquote className="not-italic space-y-6">
             <p className="text-text-soft text-base leading-relaxed">
               Nuestro único compromiso es con la legalidad y la participación

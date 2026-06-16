@@ -76,17 +76,17 @@ export default function ProximosEncuentrosPage() {
                 mejor nuestro entorno y participar de forma informada.
               </p>
             </div>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="#registro"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-white bg-[#3d815c] hover:bg-[#2d6347] px-8 py-4 rounded-lg transition-all hover:shadow-lg"
+                className="inline-flex items-center justify-center gap-2 text-sm font-semibold text-white bg-[#3d815c] hover:bg-[#2d6347] px-8 py-4 rounded-lg transition-all hover:shadow-lg w-full sm:w-auto"
               >
                 Registrarme a un encuentro
                 <ArrowRight size={15} aria-hidden="true" />
               </Link>
               <Link
                 href="/contacto"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-white border border-white/30 hover:border-white/60 px-8 py-4 rounded-lg transition-colors"
+                className="inline-flex items-center justify-center gap-2 text-sm font-semibold text-white border border-white/30 hover:border-white/60 px-8 py-4 rounded-lg transition-colors w-full sm:w-auto"
               >
                 Quiero recibir información
                 <ArrowRight size={15} aria-hidden="true" />

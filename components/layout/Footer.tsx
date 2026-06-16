@@ -167,11 +167,11 @@ export default function Footer() {
             ))}
 
             {/* Contact column */}
-            <div>
-              <h4 className="text-[10px] font-bold text-white/50 uppercase tracking-[0.22em] mb-5">
+            <div className="col-span-2 md:col-span-1">
+              <h4 className="text-[10px] font-bold text-white/50 uppercase tracking-[0.22em] mb-5 text-center md:text-left">
                 Contacto
               </h4>
-              <div className="flex flex-col gap-4 text-sm">
+              <div className="flex flex-col gap-4 text-sm items-center md:items-start">
                 <a
                   href="tel:+526646817278"
                   className="flex items-center gap-2 text-white/80 hover:text-white transition-colors"
@@ -184,11 +184,11 @@ export default function Footer() {
                   className="flex items-center gap-2 text-white/80 hover:text-white transition-colors"
                 >
                   <Mail size={14} className="shrink-0" aria-hidden="true" />
-                  contacto@asociacionaccion.com
+                  <span className="break-all">contacto@asociacionaccion.com</span>
                 </a>
-                <address className="not-italic flex items-start gap-2 text-white/70 leading-relaxed">
-                  <MapPin size={14} className="shrink-0 mt-0.5" aria-hidden="true" />
-                  Blvd. Agua Caliente 4558, Int. 1403-B, Col. Aviación, C.P. 22014, Tijuana, B.C.
+                <address className="not-italic flex items-start gap-2 text-white/70 leading-relaxed text-center md:text-left">
+                  <MapPin size={14} className="shrink-0 mt-0.5 hidden md:block" aria-hidden="true" />
+                  Blvd. Agua Caliente 4558, Int. 1403-B,<br className="hidden md:inline" /> Col. Aviación, C.P. 22014, Tijuana, B.C.
                 </address>
               </div>
             </div>

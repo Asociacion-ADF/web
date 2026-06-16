@@ -101,15 +101,15 @@ export default function ProgramasPage() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
           {/* Left 7 cols — text */}
           <div className="md:col-span-7 z-10">
-            <span className="text-[10px] font-bold tracking-[0.22em] text-[#3d815c] uppercase block mb-5">
+            <span className="text-[10px] font-bold tracking-[0.22em] text-[#3d815c] uppercase block mb-5 text-center md:text-left">
               Programas
             </span>
-            <h1 className="font-display text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-[#154c66] mb-8">
+            <h1 className="font-display text-4xl lg:text-5xl xl:text-6xl font-bold leading-[1.1] text-[#154c66] mb-8 text-center md:text-left">
               Programas para convertir la{" "}
               <em className="not-italic text-[#3d815c]">participación ciudadana</em>{" "}
               en acción
             </h1>
-            <div className="flex flex-col gap-4 text-text-soft text-base lg:text-lg leading-relaxed mb-10 max-w-xl">
+            <div className="flex flex-col gap-4 text-text-soft text-base lg:text-lg leading-relaxed mb-10 max-w-xl text-center md:text-left mx-auto md:mx-0">
               <p>
                 Acción por los Derechos Fundamentales, A.C. impulsa programas de
                 participación ciudadana, formación cívica, diálogo social, vigilancia
@@ -122,17 +122,17 @@ export default function ProgramasPage() {
                 social.
               </p>
             </div>
-            <div className="flex flex-col sm:flex-row gap-3">
+            <div className="flex flex-col sm:flex-row gap-3 items-center md:items-start">
               <Link
                 href="#programas"
-                className="inline-flex items-center justify-center gap-2 text-sm font-semibold text-white bg-[#3d815c] hover:bg-[#2d6347] px-8 py-4 rounded-lg transition-all hover:shadow-lg"
+                className="inline-flex items-center justify-center gap-2 text-sm font-semibold text-white bg-[#3d815c] hover:bg-[#2d6347] px-8 py-4 rounded-lg transition-all hover:shadow-lg w-full sm:w-auto"
               >
                 Conocer programas
                 <ArrowRight size={15} aria-hidden="true" />
               </Link>
               <Link
                 href="/proximos-encuentros"
-                className="inline-flex items-center justify-center gap-2 text-sm font-semibold text-[#154c66] border border-[#154c66]/30 hover:border-[#154c66] px-8 py-4 rounded-lg transition-colors"
+                className="inline-flex items-center justify-center gap-2 text-sm font-semibold text-[#154c66] border border-[#154c66]/30 hover:border-[#154c66] px-8 py-4 rounded-lg transition-colors w-full sm:w-auto"
               >
                 Ver próximos encuentros
                 <ArrowRight size={15} aria-hidden="true" />

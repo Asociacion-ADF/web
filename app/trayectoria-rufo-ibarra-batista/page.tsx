@@ -52,13 +52,13 @@ export default function TrayectoriaRufoIbarraBatista() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/nosotros"
-                className="bg-[#3d815c] px-8 py-4 rounded-lg text-sm font-semibold text-white hover:bg-[#2d6347] transition-all flex items-center justify-center gap-2"
+                className="bg-[#3d815c] px-8 py-4 rounded-lg text-sm font-semibold text-white hover:bg-[#2d6347] transition-all flex items-center justify-center gap-2 w-full sm:w-auto"
               >
                 <ArrowLeft size={15} aria-hidden="true" /> Volver a Nosotros
               </Link>
               <Link
                 href="/nosotros"
-                className="border border-white/30 px-8 py-4 rounded-lg text-sm font-semibold text-white hover:bg-white/10 transition-all text-center"
+                className="border border-white/30 px-8 py-4 rounded-lg text-sm font-semibold text-white hover:bg-white/10 transition-all text-center w-full sm:w-auto"
               >
                 Conocer Acción por los Derechos Fundamentales
               </Link>
@@ -186,7 +186,7 @@ export default function TrayectoriaRufoIbarraBatista() {
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
-            <div className="absolute bottom-2 right-2 md:-bottom-6 md:-right-6 bg-[#3d815c] text-white p-8 rounded-lg z-20 shadow-xl">
+            <div className="hidden md:block absolute md:-bottom-6 md:-right-6 bg-[#3d815c] text-white p-8 rounded-lg z-20 shadow-xl">
               <div className="font-display text-4xl font-bold mb-1">20+</div>
               <p className="text-sm font-semibold">Años de Docencia</p>
             </div>
