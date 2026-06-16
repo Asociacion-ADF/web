@@ -105,18 +105,29 @@ export default function ProgramasPage() {
               Programas
             </span>
             <h1 className="font-display text-4xl lg:text-5xl xl:text-6xl font-bold leading-[1.1] text-[#154c66] mb-8 text-center md:text-left">
-              Programas para convertir la{" "}
-              <em className="not-italic text-[#3d815c]">participación ciudadana</em>{" "}
-              en acción
+              <span className="md:hidden">
+                Programas para convertir la{" "}
+                <em className="not-italic text-[#3d815c]">participación</em>{" "}
+                en acción
+              </span>
+              <span className="hidden md:inline">
+                Programas para convertir la{" "}
+                <em className="not-italic text-[#3d815c]">participación ciudadana</em>{" "}
+                en acción
+              </span>
             </h1>
             <div className="flex flex-col gap-4 text-text-soft text-base lg:text-lg leading-relaxed mb-10 max-w-xl text-center md:text-left mx-auto md:mx-0">
-              <p>
+              <p className="md:hidden">
+                Conoce las líneas de trabajo de la asociación para promover valores,
+                diálogo, vigilancia ciudadana y defensa de derechos fundamentales.
+              </p>
+              <p className="hidden md:block">
                 Acción por los Derechos Fundamentales, A.C. impulsa programas de
                 participación ciudadana, formación cívica, diálogo social, vigilancia
                 ciudadana y defensa de derechos fundamentales en Tijuana, Baja
                 California.
               </p>
-              <p>
+              <p className="hidden md:block">
                 Cada programa abre una forma distinta de entender los problemas,
                 reunir voces, construir comunidad y generar acciones con sentido
                 social.
@@ -213,14 +224,14 @@ export default function ProgramasPage() {
 
         <div className="max-w-7xl mx-auto">
           {/* Section header with border-bottom (Stitch pattern) */}
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-24 border-b border-border-subtle pb-8 gap-6">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-24 border-b border-border-subtle pb-8 gap-6">
             <div className="max-w-2xl">
               <span className="text-[10px] font-bold tracking-[0.22em] text-[#3d815c] uppercase block mb-4">
                 Nuestras iniciativas
               </span>
               <h2 className="font-display text-3xl lg:text-5xl font-bold text-[#154c66]">
-                Conoce las cuatro áreas de trabajo de Acción por los Derechos
-                Fundamentales
+                <span className="md:hidden">Cuatro áreas de trabajo</span>
+                <span className="hidden md:inline">Conoce las cuatro áreas de trabajo de Acción por los Derechos Fundamentales</span>
               </h2>
             </div>
             <p className="text-text-soft text-sm leading-relaxed max-w-xs md:text-right shrink-0">
@@ -263,12 +274,12 @@ export default function ProgramasPage() {
                     valores, cultura cívica y responsabilidad social en niñas,
                     niños y jóvenes de Tijuana.
                   </p>
-                  <p>
+                  <p className="hidden sm:block">
                     Busca involucrar a familias, docentes, instituciones educativas,
                     especialistas y ciudadanos comprometidos con la formación de
                     nuevas generaciones.
                   </p>
-                  <p>
+                  <p className="hidden sm:block">
                     El programa parte de una idea central: los valores no solo deben
                     enseñarse, también deben vivirse en la familia, la escuela y la
                     comunidad.
@@ -298,12 +309,12 @@ export default function ProgramasPage() {
                     con líderes, especialistas, autoridades, empresarios, académicos
                     y voces relevantes de la comunidad.
                   </p>
-                  <p>
+                  <p className="hidden sm:block">
                     Su objetivo es abrir conversaciones claras, serias y
                     participativas sobre temas que impactan a Tijuana, Baja
                     California y México.
                   </p>
-                  <p>
+                  <p className="hidden sm:block">
                     Este programa también funciona como espacio de networking,
                     participación empresarial, liderazgo regional y diálogo
                     ciudadano.
@@ -349,12 +360,12 @@ export default function ProgramasPage() {
                       legalidad y defensa de la vida democrática desde la ciudadanía
                       organizada.
                     </p>
-                    <p>
+                    <p className="hidden sm:block">
                       Su enfoque está en formar ciudadanos presentes, informados y
                       comprometidos con el cuidado de los procesos públicos y la
                       confianza institucional.
                     </p>
-                    <p>
+                    <p className="hidden sm:block">
                       Se trata de participar con evidencia, responsabilidad y
                       compromiso ciudadano.
                     </p>
@@ -416,11 +427,11 @@ export default function ProgramasPage() {
                     importancia de la certeza jurídica, la defensa del patrimonio y
                     su relación con el desarrollo urbano.
                   </p>
-                  <p>
+                  <p className="hidden sm:block">
                     La propiedad, la inversión y el orden urbano son temas que
                     impactan directamente a familias, empresas y comunidades.
                   </p>
-                  <p>
+                  <p className="hidden sm:block">
                     Este programa busca abrir espacios de análisis, diálogo y
                     participación alrededor de estos temas, con una visión
                     ciudadana e institucional.

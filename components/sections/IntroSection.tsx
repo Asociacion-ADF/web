@@ -20,14 +20,14 @@ export default function IntroSection() {
             participación ciudadana, formación cívica y diálogo social en
             Tijuana, Baja California.
           </p>
-          <p>
+          <p className="hidden md:block">
             Muchas personas se sienten afectadas por decisiones públicas que
             impactan su vida, su comunidad y su futuro. Personas que quieren
             entender qué pasa, opinar con fundamentos, organizarse con otros,
             hacer algo al respecto.
           </p>
           <p>Pero no siempre saben cómo participar.</p>
-          <p>
+          <p className="hidden md:block">
             A veces los temas parecen lejanos, complicados o reservados para
             expertos. A veces falta un espacio donde la conversación sea
             posible, clara y respetuosa.

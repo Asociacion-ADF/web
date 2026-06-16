@@ -24,10 +24,16 @@ export default function HeroSection() {
             </h1>
 
             <p className="text-lg text-text-soft leading-relaxed max-w-lg">
-              Acción por los Derechos Fundamentales, A.C. es una asociación
-              civil apartidista con sede en Tijuana, Baja California.
-              Promovemos participación ciudadana, formación cívica y diálogo
-              social desde la sociedad.
+              <span className="sm:hidden">
+                Asociación civil apartidista en Tijuana, Baja California.
+                Participación ciudadana, formación cívica y derechos fundamentales.
+              </span>
+              <span className="hidden sm:inline">
+                Acción por los Derechos Fundamentales, A.C. es una asociación
+                civil apartidista con sede en Tijuana, Baja California.
+                Promovemos participación ciudadana, formación cívica y diálogo
+                social desde la sociedad.
+              </span>
             </p>
 
             <div className="flex flex-col gap-4 sm:flex-row pt-2">
