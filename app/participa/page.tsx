@@ -147,19 +147,20 @@ export default function ParticipaPage() {
 
         <div className="relative z-10 max-w-7xl mx-auto px-5 py-14 lg:py-24 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center w-full">
           <div className="lg:col-span-8">
-            <div className="w-14 h-px bg-[#3d815c] mb-8" aria-hidden="true" />
-            <span className="text-[10px] font-bold tracking-[0.4em] text-white/70 uppercase block mb-5">
+            <div className="w-14 h-px bg-[#3d815c] mb-5 sm:mb-8" aria-hidden="true" />
+            <span className="text-[10px] font-bold tracking-[0.4em] text-white/70 uppercase block mb-3 sm:mb-5">
               Acción por los Derechos Fundamentales, A.C.
             </span>
             <h1
-              className="font-display text-4xl sm:text-5xl lg:text-7xl font-bold text-white leading-[1.05] mb-6"
+              className="font-display text-3xl sm:text-5xl lg:text-7xl font-bold text-white leading-tight sm:leading-[1.05] mb-4 sm:mb-6"
               style={{ textShadow: "0 4px 20px rgba(0,0,0,0.3)" }}
             >
-              Participa en Acción por los Derechos Fundamentales
+              <span className="sm:hidden">Participa en Acción</span>
+              <span className="hidden sm:inline">Participa en Acción por los Derechos Fundamentales</span>
             </h1>
-            <p className="text-lg lg:text-xl text-[#a3d3f2] font-semibold leading-snug max-w-2xl mb-5 opacity-90">
+            <p className="text-base lg:text-xl text-[#a3d3f2] font-semibold leading-snug max-w-2xl mb-3 sm:mb-5 opacity-90">
               Súmate como miembro, aliado estratégico o apoya un programa
-              específico
+              específico.
             </p>
             <div className="hidden sm:flex flex-col gap-3 text-base text-white/75 leading-relaxed max-w-2xl mb-10">
               <p>
@@ -176,7 +177,7 @@ export default function ParticipaPage() {
                 apoyar un programa específico.
               </p>
             </div>
-            <p className="sm:hidden text-base text-white/75 leading-relaxed max-w-2xl mb-10">
+            <p className="sm:hidden text-sm text-white/75 leading-relaxed max-w-2xl mb-6">
               Forma parte de una iniciativa ciudadana que impulsa el diálogo,
               la participación y la defensa de los derechos fundamentales en
               Baja California.

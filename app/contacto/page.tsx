@@ -42,20 +42,21 @@ export default function ContactoPage() {
 
         <div className="relative z-10 max-w-7xl mx-auto px-5 py-14 lg:py-24 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center w-full">
           <div className="lg:col-span-8">
-            <div className="w-14 h-px bg-[#3d815c] mb-8" aria-hidden="true" />
-            <span className="text-[10px] font-bold tracking-[0.4em] text-[#a3d3f2] uppercase block mb-5">
+            <div className="w-14 h-px bg-[#3d815c] mb-5 sm:mb-8" aria-hidden="true" />
+            <span className="text-[10px] font-bold tracking-[0.4em] text-[#a3d3f2] uppercase block mb-3 sm:mb-5">
               Estamos en Tijuana, Baja California
             </span>
             <h1
-              className="font-display text-4xl sm:text-5xl lg:text-7xl font-bold text-white leading-[1.05] mb-8"
+              className="font-display text-3xl sm:text-5xl lg:text-7xl font-bold text-white leading-tight sm:leading-[1.05] mb-4 sm:mb-8"
               style={{ textShadow: "0 4px 20px rgba(0,0,0,0.3)" }}
             >
-              Contacta a Acción por los Derechos Fundamentales
+              <span className="sm:hidden">Contacta con nosotros</span>
+              <span className="hidden sm:inline">Contacta a Acción por los Derechos Fundamentales</span>
             </h1>
-            <div className="max-w-2xl mb-10">
-              <p className="text-base text-white/75 leading-relaxed sm:hidden">
-                Estamos para atenderte. Escríbenos si deseas más información
-                sobre encuentros, programas o formas de participación.
+            <div className="max-w-2xl mb-6 sm:mb-10">
+              <p className="text-sm text-white/75 leading-relaxed sm:hidden">
+                Escríbenos si deseas información sobre encuentros, programas
+                o formas de participación.
               </p>
               <div className="hidden sm:flex flex-col gap-3 text-base text-white/75 leading-relaxed">
                 <p>
