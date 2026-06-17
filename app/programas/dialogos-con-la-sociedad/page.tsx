@@ -646,7 +646,7 @@ export default function DialogosConLaSociedadPage() {
             <div className="bg-[#f8fbfe] flex items-center justify-center p-6 lg:p-8">
               <div className="relative w-full" style={{ maxHeight: 520 }}>
                 <Image
-                  src="/eventos/calendario-encuentros-dialogos-2026.jpeg"
+                  src="/eventos/calendario-dialogos-sociedad-2026-reprogramado.png"
                   alt="Calendario de próximos encuentros de Diálogos con la Sociedad 2026"
                   width={800}
                   height={1000}

@@ -169,7 +169,7 @@ export default function ProximosEncuentrosPage() {
           </div>
           <div className="max-w-2xl mx-auto rounded-2xl overflow-hidden border border-[#a3d3f2]/40 shadow-sm">
             <Image
-              src="/eventos/calendario-dialogos-sociedad-2026-reprogramado.jpeg"
+              src="/eventos/calendario-dialogos-sociedad-2026-reprogramado.png"
               alt="Calendario de Diálogos con la Sociedad 2026"
               width={853}
               height={1280}

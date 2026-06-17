@@ -61,7 +61,7 @@ export default function NewsSection() {
           >
             <div className="relative w-full aspect-[3/4] md:w-56 md:aspect-auto lg:w-64 shrink-0 bg-blue-50/50">
               <Image
-                src="/eventos/calendario-dialogos-sociedad-2026-reprogramado.jpeg"
+                src="/eventos/calendario-dialogos-sociedad-2026-reprogramado.png"
                 alt="Calendario de eventos Diálogos con la Sociedad 2026"
                 fill
                 className="object-contain"
