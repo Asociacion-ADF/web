@@ -119,8 +119,8 @@ export default function ProximosEncuentrosPage() {
               {/* Event image */}
               <div className="relative w-full aspect-[16/9]">
                 <Image
-                  src="/eventos/dialogos-sociedad-cesar-damian-retes-22-junio-2026.jpeg"
-                  alt="Diálogos con la Sociedad con César Damián Retes"
+                  src="/eventos/dialogos-sociedad-lorena-becerra-22-junio-2026.jpeg"
+                  alt="Diálogos con la Sociedad con la Dra. Lorena Becerra"
                   fill
                   className="object-cover object-center"
                   sizes="(max-width: 1024px) 100vw, 768px"
@@ -138,7 +138,7 @@ export default function ProximosEncuentrosPage() {
                 Diálogos con la Sociedad
               </span>
               <h3 className="font-display text-2xl font-bold text-[#154c66] mb-8">
-                Diálogos con la Sociedad con César Damián Retes
+                Diálogos con la Sociedad con la Dra. Lorena Becerra
               </h3>
 
               <div className="flex flex-col gap-6 mb-8">
@@ -150,8 +150,8 @@ export default function ProximosEncuentrosPage() {
                     </svg>
                   </div>
                   <div>
-                    <p className="text-[10px] font-bold tracking-[0.18em] text-text-muted uppercase mb-1">Invitado</p>
-                    <p className="text-[#154c66] font-semibold text-sm">César Damián Retes</p>
+                    <p className="text-[10px] font-bold tracking-[0.18em] text-text-muted uppercase mb-1">Invitada</p>
+                    <p className="text-[#154c66] font-semibold text-sm">Dra. Lorena Becerra</p>
                   </div>
                 </div>
                 {/* Cargo */}
@@ -164,7 +164,7 @@ export default function ProximosEncuentrosPage() {
                   </div>
                   <div>
                     <p className="text-[10px] font-bold tracking-[0.18em] text-text-muted uppercase mb-1">Cargo</p>
-                    <p className="text-[#154c66] font-semibold text-sm">Diputado Federal por B.C.</p>
+                    <p className="text-[#154c66] font-semibold text-sm">Directora de investigación y análisis de Latinus</p>
                   </div>
                 </div>
                 {/* Fecha */}
@@ -243,8 +243,8 @@ export default function ProximosEncuentrosPage() {
             {/* Circular speaker photo — crop toward face (upper-center of image) */}
             <div className="relative w-20 h-20 lg:w-24 lg:h-24 rounded-full overflow-hidden shrink-0 border-2 border-[#a3d3f2]/40">
               <Image
-                src="/eventos/dialogos-sociedad-cesar-damian-retes-perfil.jpeg"
-                alt="César Damián Retes"
+                src="/eventos/dialogos-sociedad-dra-lorena-becerra-perfil.jpeg"
+                alt="Dra. Lorena Becerra"
                 fill
                 className="object-cover object-center"
                 sizes="96px"
@@ -255,10 +255,10 @@ export default function ProximosEncuentrosPage() {
                 Diálogos con la Sociedad
               </span>
               <h3 className="font-display text-lg lg:text-xl font-bold text-[#154c66] leading-snug">
-                Diálogos con la Sociedad con César Damián Retes
+                Diálogos con la Sociedad con la Dra. Lorena Becerra
               </h3>
               <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm text-text-soft">
-                <span>César Damián Retes — Diputado Federal por B.C.</span>
+                <span>Dra. Lorena Becerra — Directora de investigación y análisis de Latinus</span>
                 <span>22 de junio de 2026 · 2:00 PM · Oryx Restaurante</span>
               </div>
               <div>
@@ -289,7 +289,7 @@ export default function ProximosEncuentrosPage() {
           </div>
           <div className="max-w-2xl mx-auto rounded-2xl overflow-hidden border border-[#a3d3f2]/40 shadow-sm">
             <Image
-              src="/eventos/calendario-encuentros-dialogos-2026.jpeg"
+              src="/eventos/calendario-dialogos-sociedad-2026-reprogramado.jpeg"
               alt="Calendario de Diálogos con la Sociedad 2026"
               width={800}
               height={600}
