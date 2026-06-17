@@ -309,11 +309,11 @@ export default function TrayectoriaRufoIbarraBatista() {
               </div>
             </div>
             <div className="md:col-span-4 bg-[#3d815c] text-white p-8 rounded-lg flex flex-col md:flex-row items-center justify-between gap-8">
-              <div className="flex items-center gap-6">
+              <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6 w-full md:w-auto">
                 <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center shrink-0">
                   <Heart size={28} aria-hidden="true" />
                 </div>
-                <div>
+                <div className="text-center md:text-left px-2 md:px-0">
                   <h3 className="font-display text-2xl font-bold mb-1">
                     Acción por los Derechos Fundamentales, A.C.
                   </h3>
@@ -358,7 +358,7 @@ export default function TrayectoriaRufoIbarraBatista() {
       {/* ─── CTA ─── */}
       <section className="py-20 lg:py-28 px-5 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="bg-[#154c66] rounded-xl p-12 text-center text-white relative overflow-hidden">
+          <div className="bg-[#154c66] rounded-xl px-6 py-10 sm:p-12 text-center text-white relative overflow-hidden">
             <div
               aria-hidden="true"
               className="absolute inset-0 opacity-5 pointer-events-none"

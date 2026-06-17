@@ -192,12 +192,9 @@ export default function ComunicadosPage() {
                       <span className="text-[9px] font-bold tracking-[0.4em] text-[#3d815c] uppercase">
                         Comunicado oficial
                       </span>
-                      <p className="text-sm font-bold text-[#154c66] leading-snug line-clamp-2">
+                      <p className="text-sm font-bold text-[#154c66] leading-snug line-clamp-3">
                         {etiqueta}
                       </p>
-                      <span className="text-[10px] text-[#154c66]/70 mt-0.5">
-                        {fecha}
-                      </span>
                     </div>
                   </div>
                 </div>
