@@ -171,9 +171,9 @@ export default function ProximosEncuentrosPage() {
             <Image
               src="/eventos/calendario-dialogos-sociedad-2026-reprogramado.jpeg"
               alt="Calendario de Diálogos con la Sociedad 2026"
-              width={800}
-              height={600}
-              className="w-full h-auto object-contain"
+              width={853}
+              height={1280}
+              className="w-full h-auto"
               sizes="(max-width: 768px) 100vw, 672px"
             />
           </div>
