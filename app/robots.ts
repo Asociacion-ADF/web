@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: "/confirmacion",
     },
-    sitemap: "https://asociacionaccion.com/sitemap.xml",
+    sitemap: "https://www.asociacionaccion.com/sitemap.xml",
   };
 }

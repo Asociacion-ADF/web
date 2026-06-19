@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   description:
     "Asociación civil apartidista con sede en Tijuana, Baja California. Promovemos participación ciudadana, formación cívica, diálogo social, defensa de derechos fundamentales e incidencia institucional.",
-  metadataBase: new URL("https://asociacionaccion.com"),
+  metadataBase: new URL("https://www.asociacionaccion.com"),
   openGraph: {
     type: "website",
     locale: "es_MX",

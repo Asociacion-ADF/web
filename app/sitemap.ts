@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const BASE = "https://asociacionaccion.com";
+const BASE = "https://www.asociacionaccion.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
@@ -69,6 +69,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
+    },
+    {
+      url: `${BASE}/comunicados`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
     },
     {
       url: `${BASE}/contacto`,
