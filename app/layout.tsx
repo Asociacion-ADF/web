@@ -33,6 +33,7 @@ export const metadata: Metadata = {
   },
   twitter: { card: "summary_large_image" },
   robots: { index: true, follow: true },
+  verification: { google: "vDjnI0T4gY-jw8dpaQcSbxlNwxgCiES_3yCU4fzvuOY" },
 };
 
 export default function RootLayout({
