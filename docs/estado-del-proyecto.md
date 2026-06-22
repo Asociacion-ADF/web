@@ -345,6 +345,73 @@ Antes de hacer cambios futuros:
 
 ---
 
+## Seguridad — estado actual y reglas para fase 2 de formularios
+
+### Estado de seguridad auditado (22 de junio de 2026)
+
+| Área | Estado |
+|------|--------|
+| Secretos hardcodeados | ✓ Limpio — no hay API keys, tokens ni credenciales en el código |
+| Variables de entorno | ✓ Limpio — no se usa ninguna `NEXT_PUBLIC_` ni `process.env` |
+| Formularios | ✓ Stubs UI — los 3 formularios no envían datos a ningún endpoint todavía |
+| `dangerouslySetInnerHTML` | ✓ Limpio — ninguna ocurrencia en el proyecto |
+| API routes / Server Actions | ✓ Limpio — no existe ningún endpoint activo |
+| Base de datos | ✓ Sin conectar — no hay Supabase, Prisma, Firebase ni equivalente |
+| Archivos en `public/` | ✓ Limpio — solo PDFs institucionales e imágenes aprobadas |
+| Headers de seguridad | ✓ Excelente — CSP completa, HSTS, X-Frame-Options, Referrer-Policy, Permissions-Policy |
+
+El sitio es un static export sin backend activo. No hay superficie de ataque real en producción.
+
+### Headers de seguridad configurados
+
+Definidos en `next.config.ts`, aplicados a todas las rutas:
+
+- `Content-Security-Policy` — `default-src 'self'`, `script-src 'self' 'unsafe-inline'`, `frame-ancestors 'none'`, `form-action 'self'`
+- `X-Frame-Options: DENY`
+- `X-Content-Type-Options: nosniff`
+- `Referrer-Policy: strict-origin-when-cross-origin`
+- `Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()`
+- `Strict-Transport-Security: max-age=63072000; includeSubDomains`
+
+> **Nota fase 2:** La CSP tiene `connect-src 'self'`. Si en fase 2 el fetch va a través de una API route propia (`/api/...`), este header es suficiente. Si se llama directamente a un proveedor externo desde el cliente (Resend, Supabase), habrá que agregar su dominio a `connect-src` en `next.config.ts`.
+
+### Reglas de seguridad para fase 2 de formularios
+
+Antes de conectar cualquier endpoint real de formularios:
+
+**Validación y sanitización**
+1. Validar siempre en servidor — la validación de cliente es UX, no seguridad.
+2. Sanitizar y normalizar todas las entradas antes de procesarlas.
+3. Limitar longitud de campos: nombre ≤ 100 chars, email ≤ 254, teléfono ≤ 20, mensaje ≤ 1000.
+4. Rechazar entradas que contengan etiquetas HTML o scripts — strip o reject.
+5. No guardar HTML crudo en base de datos.
+6. No usar `dangerouslySetInnerHTML` con ningún dato proveniente del usuario.
+
+**Infraestructura del endpoint**
+7. Implementar rate limiting por IP en cualquier endpoint público (máximo recomendado: 5 envíos por minuto por IP).
+8. Agregar honeypot field (campo oculto) como primera defensa anti-spam, antes de considerar reCAPTCHA.
+9. Si el volumen de spam es alto, implementar Google reCAPTCHA v3 — recordar agregar `https://www.google.com` a `connect-src` y `script-src` en la CSP.
+10. Manejar errores del servidor sin exponer stack traces ni detalles internos al cliente.
+11. Logs sin datos sensibles — no registrar contraseñas, tokens ni contenido completo de mensajes.
+
+**Secretos y variables de entorno**
+12. Nunca hardcodear API keys, tokens SMTP ni service role keys en el código.
+13. Usar variables de entorno en Vercel (Panel → Settings → Environment Variables) para todos los secretos.
+14. Si se usa Supabase: usar solo la `anon/public key` en el cliente. La `service_role key` solo en servidor, nunca en un Client Component.
+15. Nunca exponer la `service_role key` de Supabase en frontend — tiene permisos de bypass total de RLS.
+
+**Base de datos (si aplica)**
+16. Activar Row Level Security (RLS) en Supabase antes de conectar cualquier formulario a producción.
+17. Definir políticas RLS explícitas — no asumir que el bloqueo por defecto es suficiente sin validar.
+18. No dar acceso de escritura libre a tablas sin políticas de inserción controladas.
+
+**Operaciones**
+19. Probar el flujo completo de formularios en preview de Vercel antes de anunciarlo públicamente.
+20. Verificar que los emails de notificación llegan correctamente antes de activar en producción.
+21. Confirmar que el dominio remitente (`contacto@asociacionaccion.com`) tiene SPF y DKIM configurados para evitar que los emails lleguen a spam.
+
+---
+
 ## Forma de trabajo aprobada
 
 - Cambios puntuales, no rediseños completos.
