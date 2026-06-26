@@ -1,6 +1,6 @@
 # Estado del proyecto — Acción por los Derechos Fundamentales, A.C.
 
-Última actualización: 17 de junio de 2026
+Última actualización: 26 de junio de 2026
 
 ---
 
@@ -421,3 +421,91 @@ Antes de conectar cualquier endpoint real de formularios:
 - No cambiar imágenes, colores ni textos si no se pide.
 - Confirmar archivos modificados antes del commit cuando el cambio sea sensible.
 - Siempre probar lint y build antes de hacer commit.
+
+---
+
+## Cierre Fase 1 — Publicación e indexación inicial
+
+### Estado general
+
+* Sitio publicado en producción.
+* Dominio oficial funcionando: https://www.asociacionaccion.com
+* Vercel conectado y desplegando desde GitHub.
+* GitHub repo: https://github.com/Asociacion-ADF/web
+* Branch principal: main
+
+### Diseño y responsive
+
+* Revisión visual responsive completada.
+* Home aprobada.
+* Programas aprobada.
+* Noticias aprobada.
+* Comunicados aprobada.
+* Próximos encuentros aprobada.
+* Trayectoria Rufo Ibarra Batista aprobada.
+* Participa y Contacto quedan funcionales para Fase 1, con posible mejora editorial futura.
+* Heroes internos de programas aprobados con overlay azul oscuro.
+* Calendario de Diálogos con la Sociedad actualizado con César Damián Retes marcado como "Fecha reprogramada".
+* Evento destacado actualizado a Dra. Lorena Becerra.
+
+### SEO técnico
+
+* robots.txt configurado.
+* sitemap.xml configurado.
+* Canonical usando https://www.asociacionaccion.com
+* Metadata global revisada.
+* Google Search Console verificado.
+* Sitemap enviado correctamente: https://www.asociacionaccion.com/sitemap.xml
+* URLs principales solicitadas para indexación.
+* Nota: Search Console puede tardar horas o días en reflejar indexación.
+
+### Google Business Profile
+
+* Perfil de Empresa de Google verificado.
+* Web conectada: https://www.asociacionaccion.com
+* Redes sociales conectadas.
+* Pendiente completar/confirmar:
+  * categoría
+  * fotos
+  * logo
+  * reseñas iniciales
+
+### Seguridad
+
+* Auditoría básica realizada.
+* No se encontraron secretos expuestos.
+* No hay backend activo.
+* No hay base de datos conectada.
+* No hay Supabase ni reglas RLS pendientes porque aún no existe base de datos.
+* No hay endpoints públicos activos para formularios.
+* Headers de seguridad revisados.
+* Reglas para Fase 2 de formularios documentadas.
+
+### Pendientes Fase 1
+
+* Revisar Search Console en 48 horas y 7 días.
+* Confirmar páginas indexadas.
+* Completar fotos y categoría en Google Business Profile.
+* Realizar prueba pública final desde móvil y desktop.
+* Compartir web para revisión institucional.
+
+### Inicio Fase 2
+
+Fase 2 será la conexión real de formularios.
+
+Decisión recomendada:
+
+* No usar Supabase todavía.
+* No usar base de datos pública.
+* Implementar primero: formulario → backend seguro → email institucional + Google Sheets
+
+Reglas Fase 2:
+
+* validar siempre en servidor
+* sanitizar entradas
+* limitar longitud
+* usar honeypot o protección anti-spam
+* no guardar HTML crudo
+* no exponer secretos en frontend
+* usar variables de entorno en Vercel
+* probar en producción antes de anunciar formularios
