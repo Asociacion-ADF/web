@@ -31,16 +31,18 @@
 
 ### Próximo encuentro en lista
 
-- **Invitada:** Dra. Lorena Becerra
-- **Cargo:** Directora de investigación y análisis de Latinus
-- **Sustituye a:** César Damián Retes (reprogramado — sigue en calendario general con etiqueta "Fecha reprogramada")
-- **Fecha:** 22 de junio de 2026
+- **Invitado:** Dr. Ismael Burgueño Ruiz
+- **Cargo:** Alcalde de Tijuana
+- **Fecha:** 6 de julio de 2026
 - **Hora:** 2:00 PM
 - **Lugar:** Oryx Restaurante
-- **Foto circular:** `public/eventos/dialogos-sociedad-dra-lorena-becerra-perfil.jpeg`
-- **Flyer de evento:** `public/eventos/dialogos-sociedad-lorena-becerra-22-junio-2026.jpeg`
+- **Botón:** Registrarme
+- **Correo para eventos/comprobantes:** eventos@asociacionaccion.com
+- **Foto circular:** `public/eventos/foto-perfil-ismael-burgueno-ruiz-dialogos-sociedad.jpeg`
+- **Flyer de evento (asset, no usado en la card):** `public/eventos/dialogos-sociedad-ismael-burgueno-6-julio-2026.jpg`
+- Dra. Lorena Becerra pasó al histórico de encuentros anteriores (ver más abajo).
 
-> La sección "Próximo encuentro destacado" (featured hero superior) fue eliminada. La estructura actual muestra solo la lista de próximos encuentros y el calendario general.
+> La sección "Próximo encuentro destacado" (featured hero superior, con flyer grande) fue eliminada y luego reintentada por error en julio 2026; quedó revertida. La card correcta de próximo encuentro es la card horizontal con foto circular del expositor — ver detalle completo en "Actualización de próximos encuentros — julio 2026".
 
 ### Calendario de Diálogos con la Sociedad 2026
 
@@ -58,6 +60,99 @@ Carrusel horizontal con flechas de navegación (componente cliente: `PastEventsC
 | Evangelina Moreno Guerra — 6 de abril de 2026 | `dialogos-sociedad-evangelina-moreno-guerra-06-abril-2026.jpeg` |
 | Christopher Teal — 29 de mayo de 2026 | `dialogos-sociedad-christopher-teal-29-mayo-2026.jpeg` |
 | Héctor Osuna Jaime — 15 de junio de 2026 | `dialogos-sociedad-hector-osuna-jaime-flyer-cuadrado-15-junio-2026.jpeg` |
+| Dra. Lorena Becerra — 22 de junio de 2026 | `dialogos-sociedad-lorena-becerra-22-junio-2026.jpeg` |
+
+---
+
+## Actualización de próximos encuentros — julio 2026
+
+### Estado actual del próximo evento
+
+El próximo encuentro visible en /proximos-encuentros es:
+
+- Programa: Diálogos con la Sociedad
+- Ponente: Dr. Ismael Burgueño Ruiz
+- Cargo: Alcalde de Tijuana
+- Fecha: 6 de julio de 2026
+- Hora: 2:00 PM
+- Lugar: Oryx Restaurante
+- Botón: Registrarme
+- Correo para eventos/comprobantes: eventos@asociacionaccion.com
+
+### Archivos del evento Ismael Burgueño
+
+Los archivos seguros usados para este evento son:
+
+- Foto circular / retrato del expositor:
+  `public/eventos/foto-perfil-ismael-burgueno-ruiz-dialogos-sociedad.jpeg`
+- Flyer vertical del evento:
+  `public/eventos/dialogos-sociedad-ismael-burgueno-6-julio-2026.jpg`
+
+Importante: los archivos de eventos deben nombrarse sin espacios, sin acentos y sin ñ para evitar errores de rutas en producción.
+
+### Regla visual para la card de próximo encuentro
+
+La sección correcta del próximo evento en /proximos-encuentros es una card horizontal, no un flyer recortado.
+
+Debe mantener:
+
+- tarjeta blanca horizontal
+- imagen circular a la izquierda
+- texto a la derecha
+- botón "Registrarme"
+- estilo institucional sobrio
+- borde suave / sombra ligera
+
+Regla crítica: en el marco circular debe ir siempre la foto/retrato del expositor, no el flyer del evento.
+
+No hacer:
+
+- no meter el flyer vertical dentro del círculo
+- no usar el flyer como imagen principal recortada de la card
+- no crear un banner nuevo
+- no rediseñar la sección
+- no cambiar el layout aprobado
+
+### Uso del flyer
+
+El flyer vertical puede existir como asset del evento o utilizarse en otras piezas si se solicita, pero no debe usarse como imagen circular ni como imagen recortada en la card horizontal del próximo evento.
+
+### Evento anterior
+
+La Dra. Lorena Becerra debe permanecer únicamente en el histórico / eventos pasados de "Diálogos que construyen comunidad". No debe aparecer como próximo evento.
+
+### Regla de mantenimiento para futuros eventos
+
+Cuando se actualice el próximo evento:
+
+1. Cambiar únicamente:
+   - nombre del ponente
+   - cargo
+   - fecha si aplica
+   - foto circular del expositor
+   - flyer si aplica
+2. Mantener si no se indica lo contrario:
+   - hora
+   - lugar
+   - formato de la card
+   - botón
+   - estilo visual aprobado
+3. Usar siempre:
+   - imagen de perfil/retrato en la card horizontal
+   - flyer solo como material complementario
+4. Verificar siempre:
+   - desktop
+   - móvil
+   - que no haya overflow
+   - que la foto circular no esté recortada incorrectamente
+   - que no existan duplicados
+5. Después de cada actualización:
+   - npm run lint
+   - npm run build
+   - commit descriptivo
+   - push a main
+
+Nota: este ajuste quedó aprobado después de corregir el error donde se intentó usar el flyer vertical como imagen principal/circular. La versión aprobada usa la card horizontal con retrato del expositor.
 
 ---
 
@@ -74,15 +169,17 @@ Carrusel horizontal con flechas de navegación (componente cliente: `PastEventsC
 | `dialogos-sociedad-hector-osuna-jaime-flyer-cuadrado-15-junio-2026.jpeg` | Carrusel de encuentros anteriores |
 | `dialogos-sociedad-cesar-damian-retes-22-junio-2026.jpeg` | Reserva (no en uso activo) |
 | `dialogos-sociedad-cesar-damian-retes-flyer-22-junio-2026.jpeg` | Reserva (no en uso activo) |
-| `dialogos-sociedad-lorena-becerra-22-junio-2026.jpeg` | Flyer próximo encuentro (Lorena Becerra) |
+| `dialogos-sociedad-lorena-becerra-22-junio-2026.jpeg` | Carrusel de encuentros anteriores |
+| `dialogos-sociedad-ismael-burgueno-6-julio-2026.jpg` | Asset del evento (no usado en la card de próximo encuentro) |
 
 ### Fotos de perfil / retratos
 
 | Archivo | Uso |
 |---------|-----|
-| `dialogos-sociedad-dra-lorena-becerra-perfil.jpeg` | Foto circular en lista de próximos encuentros |
+| `dialogos-sociedad-dra-lorena-becerra-perfil.jpeg` | Reserva (no en uso activo, evento ya en histórico) |
 | `dialogos-sociedad-cesar-damian-retes-perfil.jpeg` | Reserva (no en uso activo) |
 | `hector-osuna-jaime-perfil.jpeg` | Disponible |
+| `foto-perfil-ismael-burgueno-ruiz-dialogos-sociedad.jpeg` | **Activo** — foto circular en lista de próximos encuentros |
 
 ### Calendario
 
@@ -255,15 +352,13 @@ Revisadas visualmente y responsive:
 
 Estado actual aprobado:
 
-- Próximo encuentro en lista: Dra. Lorena Becerra.
-- Cargo: Directora de investigación y análisis de Latinus.
-- Sustituye a César Damián Retes en el evento del 22 de junio.
-- La fecha, hora, lugar, precio y teléfonos se mantienen igual.
-- Flyer actual de evento: `public/eventos/dialogos-sociedad-lorena-becerra-22-junio-2026.jpeg`
-- Foto de perfil actual: `public/eventos/dialogos-sociedad-dra-lorena-becerra-perfil.jpeg`
-- Calendario general actualizado: `public/eventos/calendario-dialogos-sociedad-2026-reprogramado.png`
-- César Damián Retes permanece en el calendario general con etiqueta "Fecha reprogramada".
-- La sección destacada superior (featured hero) fue eliminada; solo existe la lista.
+- Próximo encuentro en lista: Dr. Ismael Burgueño Ruiz, Alcalde de Tijuana.
+- Fecha: 6 de julio de 2026 · 2:00 PM · Oryx Restaurante.
+- Foto circular actual: `public/eventos/foto-perfil-ismael-burgueno-ruiz-dialogos-sociedad.jpeg`
+- Flyer del evento (asset, no usado en la card): `public/eventos/dialogos-sociedad-ismael-burgueno-6-julio-2026.jpg`
+- Dra. Lorena Becerra pasó al histórico de encuentros anteriores; ya no aparece como próximo evento.
+- Calendario general: `public/eventos/calendario-dialogos-sociedad-2026-reprogramado.png`
+- La sección destacada superior (featured hero) permanece eliminada; solo existe la card horizontal de la lista. Ver detalle completo en "Actualización de próximos encuentros — julio 2026".
 
 ### Reglas para futuras actualizaciones de eventos
 
