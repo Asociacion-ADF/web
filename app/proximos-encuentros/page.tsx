@@ -101,166 +101,6 @@ export default function ProximosEncuentrosPage() {
         />
       </section>
 
-      {/* ─── PRÓXIMO ENCUENTRO DESTACADO ─── */}
-      <section className="py-20 lg:py-28 px-5 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-14">
-            <span className="text-[10px] font-bold tracking-[0.4em] text-[#3d815c] uppercase block mb-4">
-              Próximo encuentro destacado
-            </span>
-            <FineLine />
-            <h2 className="font-display text-3xl lg:text-4xl font-bold text-[#154c66]">
-              Información del próximo evento
-            </h2>
-          </div>
-
-          <div className="max-w-3xl mx-auto">
-            <div className="bg-white border border-[#a3d3f2]/40 rounded-2xl shadow-md overflow-hidden">
-              {/* Event image */}
-              <div className="relative w-full aspect-[16/9]">
-                <Image
-                  src="/eventos/dialogos-sociedad-ismael-burgueno-6-julio-2026.jpg"
-                  alt="Diálogos con la Sociedad con el Dr. Ismael Burgueño Ruiz"
-                  fill
-                  className="object-cover object-center"
-                  sizes="(max-width: 1024px) 100vw, 768px"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#154c66]/50 to-transparent" aria-hidden="true" />
-                <div className="absolute top-4 right-4">
-                  <span className="bg-white/90 backdrop-blur-sm text-[#154c66] text-[10px] font-bold tracking-widest uppercase px-3 py-1 rounded-full">
-                    Destacado
-                  </span>
-                </div>
-              </div>
-
-              <div className="p-6 lg:p-10">
-              <span className="text-[10px] font-bold tracking-[0.3em] text-[#3d815c] uppercase block mb-3">
-                Diálogos con la Sociedad
-              </span>
-              <h3 className="font-display text-2xl font-bold text-[#154c66] mb-8">
-                Diálogos con la Sociedad con el Dr. Ismael Burgueño Ruiz
-              </h3>
-
-              <div className="flex flex-col gap-6 mb-8">
-                {/* Invitado */}
-                <div className="flex items-start gap-4">
-                  <div className="relative w-10 h-10 rounded-full overflow-hidden shrink-0 border border-[#a3d3f2]/40">
-                    <Image
-                      src="/eventos/foto-perfil-ismael-burgueno-ruiz-dialogos-sociedad.jpeg"
-                      alt="Dr. Ismael Burgueño Ruiz"
-                      fill
-                      className="object-cover object-center"
-                      sizes="40px"
-                    />
-                  </div>
-                  <div>
-                    <p className="text-[10px] font-bold tracking-[0.18em] text-text-muted uppercase mb-1">Invitado</p>
-                    <p className="text-[#154c66] font-semibold text-sm">Dr. Ismael Burgueño Ruiz</p>
-                  </div>
-                </div>
-                {/* Cargo */}
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-[#154c66]/5 rounded-xl flex items-center justify-center shrink-0">
-                    <svg viewBox="0 0 24 24" className="w-5 h-5 text-[#154c66]" fill="none" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M9.568 3H5.25A2.25 2.25 0 003 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 005.223-5.223c.542-.827.369-1.908-.33-2.607L9.568 3z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M6 6h.008v.008H6V6z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="text-[10px] font-bold tracking-[0.18em] text-text-muted uppercase mb-1">Cargo</p>
-                    <p className="text-[#154c66] font-semibold text-sm">Alcalde de Tijuana</p>
-                  </div>
-                </div>
-                {/* Fecha */}
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-[#154c66]/5 rounded-xl flex items-center justify-center shrink-0">
-                    <svg viewBox="0 0 24 24" className="w-5 h-5 text-[#154c66]" fill="none" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="text-[10px] font-bold tracking-[0.18em] text-text-muted uppercase mb-1">Fecha</p>
-                    <p className="text-[#154c66] font-semibold text-sm">06 de julio de 2026</p>
-                  </div>
-                </div>
-                {/* Hora */}
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-[#154c66]/5 rounded-xl flex items-center justify-center shrink-0">
-                    <svg viewBox="0 0 24 24" className="w-5 h-5 text-[#154c66]" fill="none" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="text-[10px] font-bold tracking-[0.18em] text-text-muted uppercase mb-1">Hora</p>
-                    <p className="text-[#154c66] font-semibold text-sm">2:00 PM</p>
-                  </div>
-                </div>
-                {/* Lugar */}
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-[#154c66]/5 rounded-xl flex items-center justify-center shrink-0">
-                    <svg viewBox="0 0 24 24" className="w-5 h-5 text-[#154c66]" fill="none" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="text-[10px] font-bold tracking-[0.18em] text-text-muted uppercase mb-1">Lugar</p>
-                    <p className="text-[#154c66] font-semibold text-sm">Oryx Restaurante</p>
-                  </div>
-                </div>
-                {/* Comida */}
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-[#154c66]/5 rounded-xl flex items-center justify-center shrink-0">
-                    <svg viewBox="0 0 24 24" className="w-5 h-5 text-[#154c66]" fill="none" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="text-[10px] font-bold tracking-[0.18em] text-text-muted uppercase mb-1">Comida</p>
-                    <p className="text-[#154c66] font-semibold text-sm">$1,500 M.N.</p>
-                  </div>
-                </div>
-                {/* Registro */}
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-[#154c66]/5 rounded-xl flex items-center justify-center shrink-0">
-                    <svg viewBox="0 0 24 24" className="w-5 h-5 text-[#154c66]" fill="none" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="text-[10px] font-bold tracking-[0.18em] text-text-muted uppercase mb-1">Registro</p>
-                    <p className="text-[#154c66] font-semibold text-sm">664 440 4989 ó 664 351 5875</p>
-                  </div>
-                </div>
-                {/* Correo */}
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-[#154c66]/5 rounded-xl flex items-center justify-center shrink-0">
-                    <svg viewBox="0 0 24 24" className="w-5 h-5 text-[#154c66]" fill="none" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="text-[10px] font-bold tracking-[0.18em] text-text-muted uppercase mb-1">Correo para comprobantes</p>
-                    <p className="text-[#154c66] font-semibold text-sm">eventos@asociacionaccion.com</p>
-                  </div>
-                </div>
-              </div>
-
-              <Link
-                href="#registro"
-                className="w-full inline-flex justify-center items-center gap-2 text-sm font-semibold text-white bg-[#3d815c] hover:bg-[#2d6347] py-4 rounded-lg transition-all shadow-lg shadow-[#3d815c]/20"
-              >
-                <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
-                </svg>
-                Registrarme a este encuentro
-              </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ─── LISTA DE PRÓXIMOS ENCUENTROS ─── */}
       <section className="py-20 lg:py-28 px-5 bg-[#a3d3f2]/20">
         <div className="max-w-7xl mx-auto">
@@ -277,6 +117,40 @@ export default function ProximosEncuentrosPage() {
               y actividades publicadas por Acción por los Derechos
               Fundamentales, A.C.
             </p>
+          </div>
+
+          <div className="flex flex-row items-center bg-white rounded-2xl border border-[#a3d3f2]/40 shadow-sm p-6 lg:p-8 gap-6">
+            {/* Circular speaker photo — crop toward face (upper-center of image) */}
+            <div className="relative w-20 h-20 lg:w-24 lg:h-24 rounded-full overflow-hidden shrink-0 border-2 border-[#a3d3f2]/40">
+              <Image
+                src="/eventos/foto-perfil-ismael-burgueno-ruiz-dialogos-sociedad.jpeg"
+                alt="Dr. Ismael Burgueño Ruiz"
+                fill
+                className="object-cover object-center"
+                sizes="96px"
+              />
+            </div>
+            <div className="flex flex-col gap-3 min-w-0">
+              <span className="text-[10px] font-bold tracking-[0.3em] text-[#3d815c] uppercase">
+                Diálogos con la Sociedad
+              </span>
+              <h3 className="font-display text-lg lg:text-xl font-bold text-[#154c66] leading-snug">
+                Diálogos con la Sociedad con el Dr. Ismael Burgueño Ruiz
+              </h3>
+              <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm text-text-soft">
+                <span>Dr. Ismael Burgueño Ruiz — Alcalde de Tijuana</span>
+                <span>6 de julio de 2026 · 2:00 PM · Oryx Restaurante</span>
+              </div>
+              <div>
+                <Link
+                  href="#registro"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-white bg-[#154c66] hover:bg-[#0d3347] px-6 py-3 rounded-lg transition-all"
+                >
+                  Registrarme
+                  <ArrowRight size={14} aria-hidden="true" />
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
