@@ -118,40 +118,6 @@ export default function ProximosEncuentrosPage() {
               Fundamentales, A.C.
             </p>
           </div>
-
-          <div className="flex flex-row items-center bg-white rounded-2xl border border-[#a3d3f2]/40 shadow-sm p-6 lg:p-8 gap-6">
-            {/* Circular speaker photo — crop toward face (upper-center of image) */}
-            <div className="relative w-20 h-20 lg:w-24 lg:h-24 rounded-full overflow-hidden shrink-0 border-2 border-[#a3d3f2]/40">
-              <Image
-                src="/eventos/dialogos-sociedad-dra-lorena-becerra-perfil.jpeg"
-                alt="Dra. Lorena Becerra"
-                fill
-                className="object-cover object-center"
-                sizes="96px"
-              />
-            </div>
-            <div className="flex flex-col gap-3 min-w-0">
-              <span className="text-[10px] font-bold tracking-[0.3em] text-[#3d815c] uppercase">
-                Diálogos con la Sociedad
-              </span>
-              <h3 className="font-display text-lg lg:text-xl font-bold text-[#154c66] leading-snug">
-                Diálogos con la Sociedad con la Dra. Lorena Becerra
-              </h3>
-              <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm text-text-soft">
-                <span>Dra. Lorena Becerra — Directora de investigación y análisis de Latinus</span>
-                <span>22 de junio de 2026 · 2:00 PM · Oryx Restaurante</span>
-              </div>
-              <div>
-                <Link
-                  href="#registro"
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-white bg-[#154c66] hover:bg-[#0d3347] px-6 py-3 rounded-lg transition-all"
-                >
-                  Registrarme
-                  <ArrowRight size={14} aria-hidden="true" />
-                </Link>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 

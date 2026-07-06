@@ -21,6 +21,10 @@ const events = [
     src: "/eventos/dialogos-sociedad-hector-osuna-jaime-flyer-cuadrado-15-junio-2026.jpeg",
     alt: "Diálogos con la Sociedad con Héctor Osuna Jaime — 15 de junio de 2026",
   },
+  {
+    src: "/eventos/dialogos-sociedad-lorena-becerra-22-junio-2026.jpeg",
+    alt: "Diálogos con la Sociedad con la Dra. Lorena Becerra — 22 de junio de 2026",
+  },
 ];
 
 export default function PastEventsCarousel() {
