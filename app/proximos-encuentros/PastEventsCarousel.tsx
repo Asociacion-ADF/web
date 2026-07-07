@@ -25,6 +25,10 @@ const events = [
     src: "/eventos/dialogos-sociedad-lorena-becerra-22-junio-2026.jpeg",
     alt: "Diálogos con la Sociedad con la Dra. Lorena Becerra — 22 de junio de 2026",
   },
+  {
+    src: "/eventos/dialogos-sociedad-ismael-burgueno-6-julio-2026.jpg",
+    alt: "Diálogos con la Sociedad con el Dr. Ismael Burgueño Ruiz — 6 de julio de 2026",
+  },
 ];
 
 export default function PastEventsCarousel() {

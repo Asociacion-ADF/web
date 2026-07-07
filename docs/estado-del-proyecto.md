@@ -31,18 +31,18 @@
 
 ### Próximo encuentro en lista
 
-- **Invitado:** Dr. Ismael Burgueño Ruiz
-- **Cargo:** Alcalde de Tijuana
-- **Fecha:** 6 de julio de 2026
-- **Hora:** 2:00 PM
-- **Lugar:** Oryx Restaurante
-- **Botón:** Registrarme
+- **Estado:** sin ponente confirmado (placeholder institucional).
+- **Título mostrado:** "En breve anunciaremos el próximo encuentro".
+- **Resumen mostrado:** "Estamos preparando el siguiente espacio de Diálogos con la Sociedad. Próximamente compartiremos fecha, invitado y detalles de registro."
+- **Imagen circular:** `public/images/logo-aadf-transparent.png` (logo institucional, no foto de ponente).
+- **Botón "Registrarme":** oculto (no se muestra sin evento activo).
+- Dr. Ismael Burgueño Ruiz (Alcalde de Tijuana, 6 de julio de 2026, 2:00 PM, Oryx Restaurante) pasó al histórico de encuentros anteriores tras la fecha del evento.
+- Dra. Lorena Becerra permanece en el histórico de encuentros anteriores (ver más abajo).
 - **Correo para eventos/comprobantes:** eventos@asociacionaccion.com
-- **Foto circular:** `public/eventos/foto-perfil-ismael-burgueno-ruiz-dialogos-sociedad.jpeg`
-- **Flyer de evento (asset, no usado en la card):** `public/eventos/dialogos-sociedad-ismael-burgueno-6-julio-2026.jpg`
-- Dra. Lorena Becerra pasó al histórico de encuentros anteriores (ver más abajo).
 
-> La sección "Próximo encuentro destacado" (featured hero superior, con flyer grande) fue eliminada y luego reintentada por error en julio 2026; quedó revertida. La card correcta de próximo encuentro es la card horizontal con foto circular del expositor — ver detalle completo en "Actualización de próximos encuentros — julio 2026".
+> La sección "Próximo encuentro destacado" (featured hero superior, con flyer grande) fue eliminada y luego reintentada por error en julio 2026; quedó revertida. La card correcta de próximo encuentro es la card horizontal — ver detalle completo en "Actualización de próximos encuentros — julio 2026".
+>
+> El estado "sin ponente confirmado" (placeholder con logo institucional, sin botón de registro) fue aprobado en julio 2026 tras pasar a Ismael Burgueño al histórico, para no dejar la card vacía mientras no hay nuevo expositor.
 
 ### Calendario de Diálogos con la Sociedad 2026
 
@@ -61,6 +61,7 @@ Carrusel horizontal con flechas de navegación (componente cliente: `PastEventsC
 | Christopher Teal — 29 de mayo de 2026 | `dialogos-sociedad-christopher-teal-29-mayo-2026.jpeg` |
 | Héctor Osuna Jaime — 15 de junio de 2026 | `dialogos-sociedad-hector-osuna-jaime-flyer-cuadrado-15-junio-2026.jpeg` |
 | Dra. Lorena Becerra — 22 de junio de 2026 | `dialogos-sociedad-lorena-becerra-22-junio-2026.jpeg` |
+| Dr. Ismael Burgueño Ruiz — 6 de julio de 2026 | `dialogos-sociedad-ismael-burgueno-6-julio-2026.jpg` |
 
 ---
 
@@ -352,11 +353,9 @@ Revisadas visualmente y responsive:
 
 Estado actual aprobado:
 
-- Próximo encuentro en lista: Dr. Ismael Burgueño Ruiz, Alcalde de Tijuana.
-- Fecha: 6 de julio de 2026 · 2:00 PM · Oryx Restaurante.
-- Foto circular actual: `public/eventos/foto-perfil-ismael-burgueno-ruiz-dialogos-sociedad.jpeg`
-- Flyer del evento (asset, no usado en la card): `public/eventos/dialogos-sociedad-ismael-burgueno-6-julio-2026.jpg`
-- Dra. Lorena Becerra pasó al histórico de encuentros anteriores; ya no aparece como próximo evento.
+- Próximo encuentro en lista: sin ponente confirmado (placeholder institucional con logo AADF, sin botón "Registrarme").
+- Dr. Ismael Burgueño Ruiz (Alcalde de Tijuana, 6 de julio de 2026 · 2:00 PM · Oryx Restaurante) pasó al histórico de encuentros anteriores.
+- Dra. Lorena Becerra permanece en el histórico de encuentros anteriores; ya no aparece como próximo evento.
 - Calendario general: `public/eventos/calendario-dialogos-sociedad-2026-reprogramado.png`
 - La sección destacada superior (featured hero) permanece eliminada; solo existe la card horizontal de la lista. Ver detalle completo en "Actualización de próximos encuentros — julio 2026".
 
