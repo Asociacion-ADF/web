@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Plus, BookOpen, Users, Eye, Scale } from "lucide-react";
+import { ArrowRight, Plus, BookOpen, Users, Eye, Scale, FileText } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Programas | Acción por los Derechos Fundamentales, A.C. en Tijuana",
@@ -444,6 +444,44 @@ export default function ProgramasPage() {
               </div>
             </div>
 
+          </div>
+        </div>
+      </section>
+
+      {/* ─── RECURSOS CIUDADANOS ─── */}
+      <section className="py-16 lg:py-20 px-5 bg-[#a3d3f2]/10 border-y border-border-subtle">
+        <div className="max-w-7xl mx-auto">
+          <span className="text-[10px] font-bold tracking-[0.22em] text-[#3d815c] uppercase block mb-4">
+            Recursos ciudadanos
+          </span>
+          <FineLine />
+          <div className="flex flex-col sm:flex-row sm:items-center bg-white rounded-2xl border border-[#a3d3f2] shadow-sm p-6 lg:p-8 gap-6">
+            <div className="w-14 h-14 rounded-xl bg-[#a3d3f2]/20 flex items-center justify-center shrink-0">
+              <FileText className="text-[#154c66]" size={26} aria-hidden="true" />
+            </div>
+            <div className="flex flex-col gap-3 min-w-0 flex-1">
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase px-2.5 py-1 rounded-full bg-[#154c66]/10 text-[#154c66] w-fit">
+                Recurso ciudadano
+              </span>
+              <h3 className="font-display text-lg lg:text-xl font-bold text-[#154c66] leading-snug">
+                Decálogo ciudadano para el uso ético de la inteligencia artificial
+              </h3>
+              <p className="text-text-soft text-sm leading-relaxed">
+                Una guía breve para promover el uso responsable, crítico y ético
+                de la inteligencia artificial desde la ciudadanía.
+              </p>
+            </div>
+            <div className="shrink-0">
+              <Link
+                href="/recursos/decalogo-ciudadano-uso-etico-inteligencia-artificial.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-white bg-[#154c66] hover:bg-[#0d3347] px-6 py-3 rounded-lg transition-all"
+              >
+                Descargar PDF
+                <ArrowRight size={14} aria-hidden="true" />
+              </Link>
+            </div>
           </div>
         </div>
       </section>
