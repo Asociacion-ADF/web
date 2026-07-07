@@ -120,13 +120,13 @@ export default function ProximosEncuentrosPage() {
           </div>
 
           <div className="flex flex-row items-center bg-white rounded-2xl border border-[#a3d3f2]/40 shadow-sm p-6 lg:p-8 gap-6">
-            {/* No confirmed speaker yet — neutral institutional placeholder */}
-            <div className="relative w-20 h-20 lg:w-24 lg:h-24 rounded-full overflow-hidden shrink-0 border-2 border-[#a3d3f2]/40 bg-[#a3d3f2]/10">
+            {/* Circular speaker photo — crop toward face (upper-center of image) */}
+            <div className="relative w-20 h-20 lg:w-24 lg:h-24 rounded-full overflow-hidden shrink-0 border-2 border-[#a3d3f2]/40">
               <Image
-                src="/images/logo-aadf-transparent.png"
-                alt="Acción por los Derechos Fundamentales, A.C."
+                src="/eventos/foto-perfil-dialogos-sociedad-luis-enrique-palafox-13-julio-2026.jpeg"
+                alt="Dr. Luis Enrique Palafox Maestre"
                 fill
-                className="object-contain p-4"
+                className="object-cover object-center"
                 sizes="96px"
               />
             </div>
@@ -135,13 +135,21 @@ export default function ProximosEncuentrosPage() {
                 Diálogos con la Sociedad
               </span>
               <h3 className="font-display text-lg lg:text-xl font-bold text-[#154c66] leading-snug">
-                En breve anunciaremos el próximo encuentro
+                Diálogos con la Sociedad con el Dr. Luis Enrique Palafox Maestre
               </h3>
-              <p className="text-sm text-text-soft leading-relaxed">
-                Estamos preparando el siguiente espacio de Diálogos con la
-                Sociedad. Próximamente compartiremos fecha, invitado y
-                detalles de registro.
-              </p>
+              <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm text-text-soft">
+                <span>Dr. Luis Enrique Palafox Maestre — Rector de UABC</span>
+                <span>13 de julio de 2026 · 2:00 PM · Oryx Restaurante</span>
+              </div>
+              <div>
+                <Link
+                  href="#registro"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-white bg-[#154c66] hover:bg-[#0d3347] px-6 py-3 rounded-lg transition-all"
+                >
+                  Registrarme
+                  <ArrowRight size={14} aria-hidden="true" />
+                </Link>
+              </div>
             </div>
           </div>
         </div>
