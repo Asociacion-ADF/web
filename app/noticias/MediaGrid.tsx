@@ -28,6 +28,16 @@ const mentions: Mention[] = [
     cover: false,
   },
   {
+    src: "/noticias/elmexicano-presentan-asociacion-29-mayo-2026.jpeg",
+    alt: "El Mexicano — Presentan asociación \"Acción por los Derechos Fundamentales\", mayo de 2026",
+    medio: "El Mexicano",
+    fecha: "26 de mayo de 2026",
+    titulo: "Presentan asociación \"Acción por los Derechos Fundamentales\"",
+    resumen: "Buscarán impulsar propuestas relacionadas con escuelas para padres, fortalecimiento de la educación en valores y recuperación de la autoridad magisterial.",
+    href: "https://el-mexicano.com.mx/Noticia/Tijuana/94500/Presentan-asociaci%C3%B3n-%E2%80%9CAcci%C3%B3n-por-los-Derechos-Fundamentales%E2%80%9D",
+    cover: true,
+  },
+  {
     src: "/noticias/zeta-personaje-marzo-2026.jpeg",
     alt: "ZETA — Personaje, marzo de 2026",
     medio: "ZETA Tijuana",
