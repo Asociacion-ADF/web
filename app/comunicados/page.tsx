@@ -115,6 +115,14 @@ export default function ComunicadosPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
+                fecha: undefined,
+                etiqueta: "Relación México-Estados Unidos y T-MEC",
+                titulo: "Pronunciamiento a la opinión pública",
+                resumen: "Acción por los Derechos Fundamentales A.C. hace un llamado a fortalecer la confianza, la certeza jurídica, el Estado de Derecho y el diálogo en la relación México-Estados Unidos ante los desafíos del T-MEC.",
+                href: "/comunicados/PRONUNCIAMIENTO- A- LA -OPINION -PUBLICA.pdf",
+                btnLabel: "Descargar PDF",
+              },
+              {
                 fecha: "Junio de 2026",
                 etiqueta: "Diálogos con la Sociedad",
                 titulo: "A la opinión pública: postura sobre Diálogos con la Sociedad",
@@ -207,9 +215,11 @@ export default function ComunicadosPage() {
                   <p className="text-[10px] font-semibold tracking-wide text-text-soft uppercase">
                     {etiqueta}
                   </p>
-                  <p className="text-[10px] font-semibold tracking-[0.2em] text-text-soft/70 uppercase">
-                    {fecha}
-                  </p>
+                  {fecha && (
+                    <p className="text-[10px] font-semibold tracking-[0.2em] text-text-soft/70 uppercase">
+                      {fecha}
+                    </p>
+                  )}
                   <h3 className="font-display text-base font-bold text-[#154c66] leading-snug">
                     {titulo}
                   </h3>
