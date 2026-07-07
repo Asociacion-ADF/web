@@ -115,7 +115,7 @@ export default function ComunicadosPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
-                fecha: undefined,
+                fecha: "6 de julio de 2026",
                 etiqueta: "Relación México-Estados Unidos y T-MEC",
                 titulo: "Pronunciamiento a la opinión pública",
                 resumen: "Acción por los Derechos Fundamentales A.C. hace un llamado a fortalecer la confianza, la certeza jurídica, el Estado de Derecho y el diálogo en la relación México-Estados Unidos ante los desafíos del T-MEC.",
