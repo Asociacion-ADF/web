@@ -5,6 +5,12 @@ import { ArrowRight } from "lucide-react";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import RegistrationForm from "./RegistrationForm";
 import PastEventsCarousel from "./PastEventsCarousel";
+import {
+  ACTIVE_EVENT,
+  eventDateLine,
+  eventSpeakerLine,
+  eventTitle,
+} from "@/lib/active-event";
 
 export const metadata: Metadata = {
   title:
@@ -126,8 +132,8 @@ export default function ProximosEncuentrosPage() {
             {/* Circular speaker photo — crop toward face (upper-center of image) */}
             <div className="relative w-20 h-20 lg:w-24 lg:h-24 rounded-full overflow-hidden shrink-0 border-2 border-[#a3d3f2]/40">
               <Image
-                src="/eventos/foto-perfil-dialogos-sociedad-luis-enrique-palafox-13-julio-2026.jpeg"
-                alt="Dr. Luis Enrique Palafox Maestre"
+                src={ACTIVE_EVENT.fotoSrc}
+                alt={ACTIVE_EVENT.fotoAlt}
                 fill
                 className="object-cover object-center"
                 sizes="96px"
@@ -135,14 +141,14 @@ export default function ProximosEncuentrosPage() {
             </div>
             <div className="flex flex-col gap-3 min-w-0">
               <span className="text-[10px] font-bold tracking-[0.3em] text-[#3d815c] uppercase">
-                Diálogos con la Sociedad
+                {ACTIVE_EVENT.programa}
               </span>
               <h3 className="font-display text-lg lg:text-xl font-bold text-[#154c66] leading-snug">
-                Diálogos con la Sociedad con el Dr. Luis Enrique Palafox Maestre
+                {eventTitle()}
               </h3>
               <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm text-text-soft">
-                <span>Dr. Luis Enrique Palafox Maestre — Rector de UABC</span>
-                <span>13 de julio de 2026 · 2:00 PM · Oryx Restaurante</span>
+                <span>{eventSpeakerLine()}</span>
+                <span>{eventDateLine()}</span>
               </div>
               <div>
                 <Link

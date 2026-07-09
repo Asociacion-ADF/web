@@ -637,17 +637,24 @@ Se implementó el backend real del formulario de `/proximos-encuentros` (email i
 **Arquitectura elegida:** Route Handler propio (`app/api/registro-eventos/route.ts`), llamado por `fetch` desde `RegistrationForm.tsx` (Client Component). No se usa Make.com ni Google Apps Script — toda la automatización vive dentro del mismo deploy de Vercel, por decisión explícita del cliente.
 
 **Archivos nuevos:**
-- `lib/active-event.ts` — objeto `ACTIVE_EVENT` con los datos del ponente/fecha vigente. Es la fuente que se usa para la columna "Evento activo" en Sheets y en el cuerpo del correo. **Al actualizar el próximo evento en `page.tsx`, hay que actualizar también este archivo** — se agregó como paso nuevo a la rutina de mantenimiento de eventos.
+- `lib/active-event.ts` — **fuente única** del evento activo (`ACTIVE_EVENT`: programa, ponente, cargo, fecha, hora, lugar, foto) y de sus variantes de texto ya formateadas (`eventTitle()`, `eventSpeakerLine()`, `eventDateLine()`, `activeEventLabel()`). `app/proximos-encuentros/page.tsx` importa estos datos para la tarjeta visible del próximo encuentro, y `app/api/registro-eventos/route.ts` (vía `lib/email.ts` y `lib/sheets.ts`) los importa para el correo y la columna "Evento activo" en Sheets. **Actualizar el próximo evento requiere editar solo este archivo** — ya no hay que tocar el mismo dato en dos lugares.
 - `lib/validation.ts` — schema de `zod` (nombre ≤100, teléfono ≤20, email ≤254 con formato válido, motivo limitado a `registro`/`duda`/`otro`, mensaje ≤1000, rechazo de cualquier entrada con etiquetas HTML, campo honeypot `empresa`).
 - `lib/rate-limit.ts` — limitador en memoria por IP, máximo 5 solicitudes por minuto (según regla de seguridad ya documentada). No persiste entre cold starts; si el spam aumenta, migrar a un almacén compartido (ej. Upstash Redis) sin cambiar la firma de la función.
 - `lib/email.ts` — envía la notificación vía Resend. Lee `RESEND_API_KEY`, `EMAIL_FROM` y `EMAIL_TO_EVENTOS` exclusivamente de variables de entorno (nunca hardcodeadas). `Reply-To` se arma dinámicamente con el correo capturado en el formulario.
 - `lib/sheets.ts` — agrega una fila a Google Sheets vía API v4 (`spreadsheets.values.append`), autenticado con una cuenta de servicio de Google Cloud (`google-auth-library`, JWT). Lee `GOOGLE_SERVICE_ACCOUNT_EMAIL`, `GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY`, `GOOGLE_SHEETS_SPREADSHEET_ID` y opcionalmente `GOOGLE_SHEETS_EVENTOS_TAB` (default: `"Registros Eventos"`).
 - `app/api/registro-eventos/route.ts` — Route Handler POST: rate limit por IP → parseo → honeypot (responde éxito falso en silencio si el campo oculto llega lleno) → validación con zod → envía email y guarda en Sheets en paralelo.
 
-**Archivo modificado:**
+**Archivos modificados:**
 - `app/proximos-encuentros/RegistrationForm.tsx` — se agregó un input oculto honeypot (`name="empresa"`, fuera de pantalla, `tabIndex={-1}`), el selector "Tipo de solicitud" ahora es `required`, y el `handleSubmit` llama a `fetch("/api/registro-eventos")` real en vez del `setTimeout` simulado. Si la API responde error, se muestra un mensaje inline (rojo, `role="alert"`) y **no** se redirige a `/confirmacion` — solo se redirige tras una respuesta exitosa, para no perder integridad del registro.
+- `app/proximos-encuentros/page.tsx` — la tarjeta horizontal de próximo encuentro (foto circular, programa, título, ponente/cargo, fecha/hora/lugar) ahora lee esos valores desde `lib/active-event.ts` en vez de tenerlos como texto suelto. El diseño y el HTML resultante no cambiaron.
 
-**Contrato de éxito/error:** el registro se considera exitoso si **al menos uno** de los dos canales (email o Sheets) se completa correctamente — así el sistema sigue siendo útil aunque un solo proveedor falle. Solo devuelve error 502 al usuario si **ambos** fallan. Los detalles de cada falla se registran en logs del servidor (sin datos sensibles) y nunca se exponen al cliente.
+**Contrato de éxito/error (corregido):** la condición mínima de éxito es la **fila guardada en Google Sheets** — es la base de datos de registros que AADF prioriza. El email de Resend es una notificación complementaria:
+- Sheets guarda y Resend envía → éxito.
+- Sheets guarda y Resend falla → **éxito igual**; la falla de email solo se registra en logs del servidor, sin exponerla al usuario.
+- Sheets falla (aunque Resend haya enviado el email) → **no** se redirige a `/confirmacion`; se responde error 502 y el formulario muestra el mensaje inline.
+- Ambos fallan → error 502, mensaje inline.
+
+Los detalles de cada falla se registran en logs del servidor (sin datos sensibles) y nunca se exponen al cliente.
 
 **Variables de entorno requeridas en Vercel** (ninguna con prefijo `NEXT_PUBLIC_`, todas server-only):
 

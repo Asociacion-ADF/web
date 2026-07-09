@@ -72,7 +72,10 @@ export async function POST(request: NextRequest) {
     console.error("[registro-eventos] Sheets no guardado:", sheetsResult.reason);
   }
 
-  if (!emailResult.sent && !sheetsResult.saved) {
+  // La condición mínima de éxito es la fila guardada en Google Sheets — es
+  // la base de datos de registros de AADF. El email es una notificación
+  // complementaria: si falla, se registra en logs pero no bloquea el éxito.
+  if (!sheetsResult.saved) {
     return NextResponse.json(
       {
         ok: false,
