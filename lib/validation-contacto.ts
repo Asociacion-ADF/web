@@ -1,13 +1,7 @@
 import { z } from "zod";
+import { noHtml } from "./validation";
 
-const HTML_TAG_PATTERN = /<[^>]*>/;
-
-export const noHtml = (label: string) =>
-  z.string().refine((value) => !HTML_TAG_PATTERN.test(value), {
-    message: `${label} no debe contener etiquetas HTML.`,
-  });
-
-export const eventRegistrationSchema = z.object({
+export const contactSchema = z.object({
   nombre: z
     .string()
     .trim()
@@ -26,9 +20,18 @@ export const eventRegistrationSchema = z.object({
     .min(1, "El correo es obligatorio.")
     .max(254, "El correo no debe superar 254 caracteres.")
     .email("Correo electrónico inválido."),
-  motivo: z.enum(["registro", "duda", "otro"], {
-    message: "Selecciona un tipo de solicitud válido.",
-  }),
+  motivo: z.enum(
+    [
+      "institucional",
+      "programas",
+      "encuentros",
+      "miembro",
+      "aliado",
+      "general",
+      "otro",
+    ],
+    { message: "Selecciona un motivo de contacto válido." }
+  ),
   mensaje: z
     .string()
     .trim()
@@ -40,13 +43,14 @@ export const eventRegistrationSchema = z.object({
   empresa: z.string().max(200).optional().or(z.literal("")),
 });
 
-export type EventRegistrationInput = z.infer<typeof eventRegistrationSchema>;
+export type ContactInput = z.infer<typeof contactSchema>;
 
-export const MOTIVO_LABELS: Record<
-  EventRegistrationInput["motivo"],
-  string
-> = {
-  registro: "Registrarme al próximo encuentro",
-  duda: "Tengo una duda sobre el evento",
+export const MOTIVO_CONTACTO_LABELS: Record<ContactInput["motivo"], string> = {
+  institucional: "Solicitar información institucional",
+  programas: "Quiero conocer los programas",
+  encuentros: "Quiero recibir información de próximos encuentros",
+  miembro: "Quiero ser miembro",
+  aliado: "Quiero ser aliado estratégico",
+  general: "Contacto general",
   otro: "Otro",
 };

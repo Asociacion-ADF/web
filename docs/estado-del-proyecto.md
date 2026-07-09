@@ -254,7 +254,7 @@ La página tiene contenido real publicado con diseño aprobado.
 
 | Pendiente | Descripción |
 |-----------|-------------|
-| Conectar formularios reales | `/proximos-encuentros` ya tiene backend real (Route Handler + Resend + Google Sheets) pendiente de variables de entorno en Vercel — ver "Conexión funcional de /proximos-encuentros" más abajo. `/contacto` sigue como stub sin backend |
+| Conectar formularios reales | `/proximos-encuentros` validado en producción (Route Handler + Resend + Google Sheets). `/contacto` tiene el mismo backend implementado, pendiente de cargar `EMAIL_TO_CONTACTO` en Vercel y crear la pestaña "Contacto General" — ver secciones "Conexión funcional de /proximos-encuentros" y "Conexión funcional de /contacto" más abajo |
 | Configuración Vercel | Crear cuenta, conectar repo `Asociacion-ADF/web`, hacer deploy preview |
 | Conectar dominio | Apuntar `asociacionaccion.com` a Vercel una vez aprobado el preview |
 | Google Workspace / correo | Activar `contacto@asociacionaccion.com`, configurar SPF, DKIM y DMARC |
@@ -670,10 +670,35 @@ Los detalles de cada falla se registran en logs del servidor (sin datos sensible
 
 **Columnas de la pestaña "Registros Eventos" (en orden, A–I):** Fecha y hora de envío · Nombre completo · Teléfono · Correo electrónico · Tipo de solicitud · Mensaje · Evento activo · Página de origen · Tipo de formulario (fijo: `"Registro evento"`).
 
-**Pendiente antes de probar en producción:**
-- Crear/verificar la cuenta de Resend y agregar en el DNS de `asociacionaccion.com` los registros SPF/DKIM que Resend solicite (el cliente confirmó que tiene acceso al DNS del dominio).
-- Crear la cuenta de servicio de Google Cloud, habilitar la API de Sheets, y compartir el Sheet (en la cuenta personal de Google de AADF) con el email de la cuenta de servicio como Editor.
-- Cargar las siete variables de entorno en Vercel (Preview y Production).
-- Hasta que eso ocurra, el código está probado localmente (validación, honeypot, rate limit) pero el envío real de email y la escritura real en Sheets **no se han probado en producción** — el endpoint responde error controlado (502) si ninguno de los dos está configurado, en vez de fallar de forma silenciosa o exponer detalles internos.
+**Estado: validado en producción (julio 2026).** El envío real de email vía Resend y la escritura real en Google Sheets ya se probaron y confirmaron funcionando en producción. Las variables de entorno están cargadas en Vercel.
 
 **Reglas de seguridad aplicadas:** rate limit 5/min por IP, honeypot, validación de servidor con `zod`, límites de longitud iguales a los ya definidos en el HTML, rechazo de cualquier entrada con etiquetas HTML, sin exposición de stack traces ni mensajes internos al cliente, sin secretos hardcodeados. `next.config.ts` no requirió cambios de CSP: el navegador solo llama a `/api/registro-eventos` (mismo origen); las llamadas a Resend y Google Sheets ocurren del lado del servidor.
+
+### Conexión funcional de /contacto (julio 2026)
+
+Se implementó el backend real del formulario de `/contacto`, reutilizando el mismo patrón técnico que `/proximos-encuentros` (Route Handler propio + Resend + Google Sheets, sin Make.com ni Apps Script).
+
+**Archivos nuevos:**
+- `lib/validation-contacto.ts` — schema de `zod` para los campos de `/contacto` (nombre, teléfono, email, `motivo` limitado a las 7 opciones del selector "Motivo de contacto", mensaje opcional, honeypot `empresa`). Reutiliza el helper `noHtml` exportado desde `lib/validation.ts` (único cambio hecho a un archivo del flujo de eventos: se le agregó `export` a esa función, sin alterar su comportamiento).
+- `lib/email-contacto.ts` — envía la notificación vía Resend. Lee `RESEND_API_KEY`, `EMAIL_FROM` y `EMAIL_TO_CONTACTO` desde variables de entorno. `Reply-To` dinámico con el correo capturado en el formulario.
+- `lib/sheets-contacto.ts` — agrega una fila a la pestaña `"Contacto General"` del mismo spreadsheet (`GOOGLE_SHEETS_SPREADSHEET_ID`), autenticado con la misma cuenta de servicio de Google ya usada para eventos. Nombre de pestaña configurable opcionalmente con `GOOGLE_SHEETS_CONTACTO_TAB` (default: `"Contacto General"`).
+- `app/api/contacto/route.ts` — Route Handler POST: reutiliza `isRateLimited` de `lib/rate-limit.ts` (el límite de 5/min por IP se comparte entre `/api/contacto` y `/api/registro-eventos`) → parseo → honeypot → validación con zod → envía email y guarda en Sheets en paralelo.
+
+**Archivo modificado:**
+- `app/contacto/ContactForm.tsx` — mismo patrón que `RegistrationForm.tsx`: input honeypot oculto (`name="empresa"`), el selector "Motivo de contacto" ahora es `required`, y `handleSubmit` llama a `fetch("/api/contacto")` real. Si la API responde error, muestra un mensaje inline y no redirige a `/confirmacion`.
+
+**No se tocó `/proximos-encuentros`** salvo la exportación de `noHtml` mencionada arriba — `lib/email.ts`, `lib/sheets.ts` y `app/api/registro-eventos/route.ts` quedaron intactos (verificado con pruebas de regresión tras el cambio).
+
+**Contrato de éxito/error:** idéntico al de `/proximos-encuentros` — la condición mínima de éxito es la fila guardada en Google Sheets. Si Sheets guarda y Resend falla, se considera éxito (la falla de email solo se loguea). Si Sheets falla, no se redirige a `/confirmacion` y se muestra error inline, así el email haya salido.
+
+**Variables de entorno:** reutiliza `RESEND_API_KEY`, `EMAIL_FROM`, `GOOGLE_SERVICE_ACCOUNT_EMAIL`, `GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY` y `GOOGLE_SHEETS_SPREADSHEET_ID` ya configuradas para eventos. Variable nueva:
+
+| Variable | Valor / uso |
+|---|---|
+| `EMAIL_TO_CONTACTO` | `contacto@asociacionaccion.com` — destinatario de las notificaciones de este formulario |
+
+**Columnas de la pestaña "Contacto General" (en orden, A–H):** Fecha y hora de envío · Nombre completo · Teléfono · Correo electrónico · Motivo de contacto · Mensaje · Página de origen · Tipo de formulario (fijo: `"Contacto general"`). Sin IP ni user-agent, por regla explícita.
+
+**Pendiente antes de probar en producción:** cargar `EMAIL_TO_CONTACTO` en Vercel (Preview y Production) y crear la pestaña `"Contacto General"` en el mismo spreadsheet de eventos. El resto de las credenciales (Resend, cuenta de servicio de Google) ya están activas porque se comparten con `/proximos-encuentros`. Probado localmente: validación, honeypot, rate limit compartido y respuesta de error controlada (502) sin `EMAIL_TO_CONTACTO` configurado — el envío real de email y la escritura real en la pestaña "Contacto General" quedan pendientes de confirmar en producción.
+
+**Reglas de seguridad aplicadas:** las mismas que en `/proximos-encuentros` — rate limit compartido, honeypot, validación de servidor con `zod`, límites de longitud, rechazo de HTML, sin exposición de errores internos, sin secretos hardcodeados, sin cambios de CSP.

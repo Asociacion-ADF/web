@@ -11,17 +11,60 @@ export default function ContactForm() {
   const router = useRouter();
   const [submitting, setSubmitting] = useState(false);
   const [motivo, setMotivo] = useState("");
+  const [error, setError] = useState("");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setError("");
     setSubmitting(true);
-    await new Promise((r) => setTimeout(r, 900));
-    setSubmitting(false);
-    router.push("/confirmacion");
+
+    const formData = new FormData(e.currentTarget);
+    const payload = {
+      nombre: formData.get("nombre"),
+      telefono: formData.get("telefono"),
+      email: formData.get("email"),
+      motivo: formData.get("motivo"),
+      mensaje: formData.get("mensaje"),
+      empresa: formData.get("empresa"),
+    };
+
+    try {
+      const res = await fetch("/api/contacto", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json();
+
+      if (!res.ok || !data.ok) {
+        setError(
+          data.error ||
+            "No pudimos enviar tu mensaje. Intenta de nuevo en unos minutos."
+        );
+        setSubmitting(false);
+        return;
+      }
+
+      router.push("/confirmacion");
+    } catch {
+      setError(
+        "No pudimos enviar tu mensaje. Revisa tu conexión e intenta de nuevo."
+      );
+      setSubmitting(false);
+    }
   };
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+      {/* Honeypot anti-spam: campo oculto que un usuario real nunca llena. */}
+      <input
+        type="text"
+        name="empresa"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        className="absolute -left-[9999px] w-px h-px opacity-0"
+      />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="flex flex-col gap-2">
           <label
@@ -87,6 +130,7 @@ export default function ContactForm() {
         <select
           id="motivo"
           name="motivo"
+          required
           value={motivo}
           onChange={(e) => setMotivo(e.target.value)}
           className={`${inputBase} appearance-none cursor-pointer ${motivo === "" ? "text-slate-400" : "text-gray-800"}`}
@@ -123,6 +167,15 @@ export default function ContactForm() {
           className={`${inputBase} resize-none`}
         />
       </div>
+
+      {error && (
+        <p
+          role="alert"
+          className="text-sm text-center text-red-600 bg-red-50 border border-red-200 rounded-xl px-4 py-3"
+        >
+          {error}
+        </p>
+      )}
 
       <button
         type="submit"
