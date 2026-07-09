@@ -82,7 +82,7 @@ export default function RegistrationForm() {
           htmlFor="motivo"
           className="text-[10px] font-bold tracking-[0.18em] text-[#154c66] uppercase"
         >
-          Motivo de interés
+          Tipo de solicitud
         </label>
         <select
           id="motivo"
@@ -92,11 +92,8 @@ export default function RegistrationForm() {
           className={`${inputBase} appearance-none cursor-pointer ${motivo === "" ? "text-slate-400" : "text-gray-800"}`}
         >
           <option value="">Selecciona una opción</option>
-          <option value="asistir">Quiero asistir a un próximo encuentro</option>
-          <option value="informacion">Quiero recibir información sobre eventos</option>
-          <option value="programas">Quiero conocer los programas</option>
-          <option value="miembro">Quiero ser miembro</option>
-          <option value="aliado">Quiero ser aliado estratégico</option>
+          <option value="registro">Registrarme al próximo encuentro</option>
+          <option value="duda">Tengo una duda sobre el evento</option>
           <option value="otro">Otro</option>
         </select>
       </div>

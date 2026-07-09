@@ -92,15 +92,14 @@ export default function ContactForm() {
           className={`${inputBase} appearance-none cursor-pointer ${motivo === "" ? "text-slate-400" : "text-gray-800"}`}
         >
           <option value="">Selecciona una opción</option>
+          <option value="institucional">Solicitar información institucional</option>
+          <option value="programas">Quiero conocer los programas</option>
+          <option value="encuentros">
+            Quiero recibir información de próximos encuentros
+          </option>
           <option value="miembro">Quiero ser miembro</option>
           <option value="aliado">Quiero ser aliado estratégico</option>
-          <option value="programa">Quiero apoyar un programa específico</option>
-          <option value="encuentros">
-            Quiero información sobre próximos encuentros
-          </option>
-          <option value="programas-info">
-            Quiero información sobre programas
-          </option>
+          <option value="general">Contacto general</option>
           <option value="otro">Otro</option>
         </select>
       </div>

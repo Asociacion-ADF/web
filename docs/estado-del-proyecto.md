@@ -592,6 +592,14 @@ Antes de conectar cualquier endpoint real de formularios:
 
 Fase 2 será la conexión real de formularios.
 
+### Diferenciación de formularios por intención (julio 2026)
+
+Antes de conectar backend, los dos formularios existentes quedaron diferenciados según la intención real de cada página (ambos siguen sin backend, redirigiendo a `/confirmacion`):
+
+- **`/proximos-encuentros` — `RegistrationForm.tsx`:** el selector cambió de "Motivo de interés" a **"Tipo de solicitud"**, con opciones enfocadas solo en el evento: `Registrarme al próximo encuentro`, `Tengo una duda sobre el evento`, `Otro`. Ya no incluye opciones de membresía, aliados, programas ni información general. Botón "Enviar registro" sin cambios.
+- **`/contacto` — `ContactForm.tsx`:** el selector "Motivo de contacto" ahora cubre las intenciones generales de la asociación: `Solicitar información institucional`, `Quiero conocer los programas`, `Quiero recibir información de próximos encuentros`, `Quiero ser miembro`, `Quiero ser aliado estratégico`, `Contacto general`, `Otro`. No incluye "Registrarme al próximo encuentro" (esa acción vive solo en `/proximos-encuentros`). Botón "Enviar mensaje" sin cambios.
+- No se modificó diseño, layout, ni los campos Nombre completo / Teléfono / Correo electrónico / Mensaje opcional en ninguno de los dos formularios.
+
 Decisión recomendada:
 
 * No usar Supabase todavía.
