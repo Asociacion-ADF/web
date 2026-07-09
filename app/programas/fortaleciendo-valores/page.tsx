@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import {
   ArrowRight,
   Plus,
@@ -189,6 +190,14 @@ const faq = [
 export default function FortaliciendoValoresPage() {
   return (
     <>
+      <Breadcrumbs
+        items={[
+          { label: "Inicio", href: "/" },
+          { label: "Programas", href: "/programas" },
+          { label: "Fortaleciendo Valores" },
+        ]}
+      />
+
       {/* ─── HERO ─── */}
       <section className="relative h-[88vh] min-h-[580px] w-full flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">

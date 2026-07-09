@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type React from "react";
 import Link from "next/link";
 import { ArrowRight, Plus, Check, ShieldCheck } from "lucide-react";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import ParticipationForm from "./ParticipationForm";
 
 export const metadata: Metadata = {
@@ -126,6 +127,8 @@ const faq: Array<{ q: string; a: React.ReactNode }> = [
 export default function ParticipaPage() {
   return (
     <>
+      <Breadcrumbs items={[{ label: "Inicio", href: "/" }, { label: "Participa" }]} />
+
       {/* ─── HERO ─── */}
       <section className="relative lg:min-h-[680px] flex items-center justify-center overflow-hidden bg-[#154c66]">
         <div

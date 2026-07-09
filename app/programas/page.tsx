@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import { ArrowRight, Plus, BookOpen, Users, Eye, Scale, FileText } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -89,6 +90,8 @@ const faq = [
 export default function ProgramasPage() {
   return (
     <>
+      <Breadcrumbs items={[{ label: "Inicio", href: "/" }, { label: "Programas" }]} />
+
       {/* ─── HERO: Asymmetric editorial composition (Stitch §1) ─── */}
       <section className="relative pt-20 pb-28 lg:pb-36 px-5 overflow-hidden bg-white">
         {/* blur orb */}

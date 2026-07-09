@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import RegistrationForm from "./RegistrationForm";
 import PastEventsCarousel from "./PastEventsCarousel";
 
@@ -24,6 +25,8 @@ function FineLine({ light = false }: { light?: boolean }) {
 export default function ProximosEncuentrosPage() {
   return (
     <>
+      <Breadcrumbs items={[{ label: "Inicio", href: "/" }, { label: "Próximos encuentros" }]} />
+
       {/* ─── HERO ─── */}
       <section className="relative min-h-[680px] flex items-center justify-center overflow-hidden">
         <Image

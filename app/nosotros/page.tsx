@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import {
   ArrowRight,
   Check,
@@ -147,6 +148,8 @@ const faqs = [
 export default function NosotrosPage() {
   return (
     <>
+      <Breadcrumbs items={[{ label: "Inicio", href: "/" }, { label: "Nosotros" }]} />
+
       {/* ─── HERO ─── */}
       <section className="relative min-h-[80vh] flex items-center bg-[#154c66] overflow-hidden">
         <div aria-hidden="true" className="absolute inset-0 opacity-20 mix-blend-overlay pointer-events-none">

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Aviso de privacidad | Acción por los Derechos Fundamentales, A.C.",
@@ -21,6 +22,10 @@ function Divider() {
 export default function AvisoDePrivacidadPage() {
   return (
     <>
+      <Breadcrumbs
+        items={[{ label: "Inicio", href: "/" }, { label: "Aviso de privacidad" }]}
+      />
+
       {/* ─── HERO ─── */}
       <section className="py-16 px-5 bg-[#154c66] text-white">
         <div className="max-w-3xl mx-auto">

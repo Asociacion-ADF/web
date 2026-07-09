@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, FileText } from "lucide-react";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Comunicados | Acción por los Derechos Fundamentales, A.C.",
@@ -21,6 +22,8 @@ function FineLine({ light = false }: { light?: boolean }) {
 export default function ComunicadosPage() {
   return (
     <>
+      <Breadcrumbs items={[{ label: "Inicio", href: "/" }, { label: "Comunicados" }]} />
+
       {/* ─── HERO ─── */}
       <section className="relative min-h-[640px] flex items-center justify-center overflow-hidden">
         <Image

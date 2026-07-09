@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import ContactForm from "./ContactForm";
 
 export const metadata: Metadata = {
@@ -22,6 +23,8 @@ function FineLine({ light = false }: { light?: boolean }) {
 export default function ContactoPage() {
   return (
     <>
+      <Breadcrumbs items={[{ label: "Inicio", href: "/" }, { label: "Contacto" }]} />
+
       {/* ─── HERO ─── */}
       <section className="relative lg:min-h-[560px] flex items-center overflow-hidden bg-[#154c66]">
         <div

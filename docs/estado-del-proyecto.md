@@ -419,6 +419,17 @@ Reglas futuras:
 5. No mostrar fechas dentro de la portada azul (van solo en el cuerpo de la card).
 6. Verificar móvil para evitar textos cortados.
 
+### Breadcrumbs (julio 2026)
+
+Se incorporaron breadcrumbs institucionales como decisión permanente de navegación:
+
+- Componente reutilizable: `components/ui/Breadcrumbs.tsx`. Recibe un arreglo `items` (`{ label, href? }`) y renderiza `nav aria-label="Breadcrumb"` con separadores (ícono `ChevronRight`), fondo blanco y borde inferior sutil (`border-border-subtle`). El último elemento se muestra como texto no enlazado con `aria-current="page"`, en azul profundo (`#154c66`); los enlaces previos usan `text-text-muted` con hover `#3d815c`.
+- Se coloca como primer elemento dentro del fragmento de cada página, antes de la sección `HERO`, para no tocar ni rediseñar los heroes aprobados (funciona como franja discreta entre el header y el hero).
+- **No se agregó en la home (`/`)**, según regla explícita.
+- Rutas con breadcrumbs: `/nosotros`, `/trayectoria-rufo-ibarra-batista`, `/programas`, `/programas/fortaleciendo-valores`, `/programas/dialogos-con-la-sociedad`, `/programas/vigilancia-ciudadana`, `/programas/derecho-de-propiedad`, `/participa`, `/proximos-encuentros`, `/noticias`, `/comunicados`, `/contacto`, `/aviso-de-privacidad`.
+- Estructura: `Inicio / Nombre de página`, y para las páginas hijas de programas: `Inicio / Programas / Nombre del programa`.
+- No se modificó header, footer, ni el diseño/layout de ninguna sección aprobada.
+
 ### Footer y header
 
 - Header responsive aprobado.

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import MediaGrid from "./MediaGrid";
 
 export const metadata: Metadata = {
@@ -22,6 +23,8 @@ function FineLine({ light = false }: { light?: boolean }) {
 export default function NoticiasPage() {
   return (
     <>
+      <Breadcrumbs items={[{ label: "Inicio", href: "/" }, { label: "Noticias" }]} />
+
       {/* ─── HERO ─── */}
       <section className="relative min-h-[640px] flex items-center justify-center overflow-hidden">
         <Image

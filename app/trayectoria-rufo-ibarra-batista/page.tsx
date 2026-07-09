@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import {
   ArrowLeft,
   ArrowRight,
@@ -24,6 +25,13 @@ export const metadata: Metadata = {
 export default function TrayectoriaRufoIbarraBatista() {
   return (
     <>
+      <Breadcrumbs
+        items={[
+          { label: "Inicio", href: "/" },
+          { label: "Trayectoria de Rufo Ibarra Batista" },
+        ]}
+      />
+
       {/* ─── HERO ─── */}
       <section className="relative bg-[#154c66] text-white overflow-hidden py-24 md:py-32">
         <div
