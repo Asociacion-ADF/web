@@ -254,7 +254,7 @@ La página tiene contenido real publicado con diseño aprobado.
 
 | Pendiente | Descripción |
 |-----------|-------------|
-| Conectar formularios reales | Los formularios redirigen a /confirmacion sin backend; conectar cuando `contacto@asociacionaccion.com` esté activo |
+| Conectar formularios reales | `/proximos-encuentros` ya tiene backend real (Route Handler + Resend + Google Sheets) pendiente de variables de entorno en Vercel — ver "Conexión funcional de /proximos-encuentros" más abajo. `/contacto` sigue como stub sin backend |
 | Configuración Vercel | Crear cuenta, conectar repo `Asociacion-ADF/web`, hacer deploy preview |
 | Conectar dominio | Apuntar `asociacionaccion.com` a Vercel una vez aprobado el preview |
 | Google Workspace / correo | Activar `contacto@asociacionaccion.com`, configurar SPF, DKIM y DMARC |
@@ -627,3 +627,46 @@ Reglas Fase 2:
 * no exponer secretos en frontend
 * usar variables de entorno en Vercel
 * probar en producción antes de anunciar formularios
+
+### Conexión funcional de /proximos-encuentros (julio 2026)
+
+Se implementó el backend real del formulario de `/proximos-encuentros` (email interno + Google Sheets). El de `/contacto` queda para una fase posterior, reutilizando la misma infraestructura.
+
+**Corrección importante:** el stack no es "Static Export" — `next.config.ts` no tiene `output: "export"`. Es un Next.js 16 App Router estándar desplegado en Vercel (SSR/Node), por lo que sí soporta Route Handlers de forma nativa.
+
+**Arquitectura elegida:** Route Handler propio (`app/api/registro-eventos/route.ts`), llamado por `fetch` desde `RegistrationForm.tsx` (Client Component). No se usa Make.com ni Google Apps Script — toda la automatización vive dentro del mismo deploy de Vercel, por decisión explícita del cliente.
+
+**Archivos nuevos:**
+- `lib/active-event.ts` — objeto `ACTIVE_EVENT` con los datos del ponente/fecha vigente. Es la fuente que se usa para la columna "Evento activo" en Sheets y en el cuerpo del correo. **Al actualizar el próximo evento en `page.tsx`, hay que actualizar también este archivo** — se agregó como paso nuevo a la rutina de mantenimiento de eventos.
+- `lib/validation.ts` — schema de `zod` (nombre ≤100, teléfono ≤20, email ≤254 con formato válido, motivo limitado a `registro`/`duda`/`otro`, mensaje ≤1000, rechazo de cualquier entrada con etiquetas HTML, campo honeypot `empresa`).
+- `lib/rate-limit.ts` — limitador en memoria por IP, máximo 5 solicitudes por minuto (según regla de seguridad ya documentada). No persiste entre cold starts; si el spam aumenta, migrar a un almacén compartido (ej. Upstash Redis) sin cambiar la firma de la función.
+- `lib/email.ts` — envía la notificación vía Resend. Lee `RESEND_API_KEY`, `EMAIL_FROM` y `EMAIL_TO_EVENTOS` exclusivamente de variables de entorno (nunca hardcodeadas). `Reply-To` se arma dinámicamente con el correo capturado en el formulario.
+- `lib/sheets.ts` — agrega una fila a Google Sheets vía API v4 (`spreadsheets.values.append`), autenticado con una cuenta de servicio de Google Cloud (`google-auth-library`, JWT). Lee `GOOGLE_SERVICE_ACCOUNT_EMAIL`, `GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY`, `GOOGLE_SHEETS_SPREADSHEET_ID` y opcionalmente `GOOGLE_SHEETS_EVENTOS_TAB` (default: `"Registros Eventos"`).
+- `app/api/registro-eventos/route.ts` — Route Handler POST: rate limit por IP → parseo → honeypot (responde éxito falso en silencio si el campo oculto llega lleno) → validación con zod → envía email y guarda en Sheets en paralelo.
+
+**Archivo modificado:**
+- `app/proximos-encuentros/RegistrationForm.tsx` — se agregó un input oculto honeypot (`name="empresa"`, fuera de pantalla, `tabIndex={-1}`), el selector "Tipo de solicitud" ahora es `required`, y el `handleSubmit` llama a `fetch("/api/registro-eventos")` real en vez del `setTimeout` simulado. Si la API responde error, se muestra un mensaje inline (rojo, `role="alert"`) y **no** se redirige a `/confirmacion` — solo se redirige tras una respuesta exitosa, para no perder integridad del registro.
+
+**Contrato de éxito/error:** el registro se considera exitoso si **al menos uno** de los dos canales (email o Sheets) se completa correctamente — así el sistema sigue siendo útil aunque un solo proveedor falle. Solo devuelve error 502 al usuario si **ambos** fallan. Los detalles de cada falla se registran en logs del servidor (sin datos sensibles) y nunca se exponen al cliente.
+
+**Variables de entorno requeridas en Vercel** (ninguna con prefijo `NEXT_PUBLIC_`, todas server-only):
+
+| Variable | Valor / uso |
+|---|---|
+| `RESEND_API_KEY` | API key de Resend |
+| `EMAIL_FROM` | Remitente. Valor temporal: `Acción por los Derechos Fundamentales <eventos@asociacionaccion.com>`. Cuando exista `notificaciones@asociacionaccion.com` en Workspace, cambiar solo esta variable en Vercel — sin tocar código |
+| `EMAIL_TO_EVENTOS` | `eventos@asociacionaccion.com` — destinatario de las notificaciones de este formulario |
+| `GOOGLE_SERVICE_ACCOUNT_EMAIL` | Email de la cuenta de servicio de Google Cloud, compartida como Editor en el Sheet (el Sheet vive en una cuenta personal de Google creada para AADF, no en Workspace) |
+| `GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY` | Clave privada de la cuenta de servicio. En Vercel debe pegarse con `\n` literal (el código ya convierte `\n` a saltos de línea reales) |
+| `GOOGLE_SHEETS_SPREADSHEET_ID` | ID de la hoja de cálculo de registros de eventos |
+| `GOOGLE_SHEETS_EVENTOS_TAB` | Opcional. Nombre de la pestaña, default `"Registros Eventos"` |
+
+**Columnas de la pestaña "Registros Eventos" (en orden, A–I):** Fecha y hora de envío · Nombre completo · Teléfono · Correo electrónico · Tipo de solicitud · Mensaje · Evento activo · Página de origen · Tipo de formulario (fijo: `"Registro evento"`).
+
+**Pendiente antes de probar en producción:**
+- Crear/verificar la cuenta de Resend y agregar en el DNS de `asociacionaccion.com` los registros SPF/DKIM que Resend solicite (el cliente confirmó que tiene acceso al DNS del dominio).
+- Crear la cuenta de servicio de Google Cloud, habilitar la API de Sheets, y compartir el Sheet (en la cuenta personal de Google de AADF) con el email de la cuenta de servicio como Editor.
+- Cargar las siete variables de entorno en Vercel (Preview y Production).
+- Hasta que eso ocurra, el código está probado localmente (validación, honeypot, rate limit) pero el envío real de email y la escritura real en Sheets **no se han probado en producción** — el endpoint responde error controlado (502) si ninguno de los dos está configurado, en vez de fallar de forma silenciosa o exponer detalles internos.
+
+**Reglas de seguridad aplicadas:** rate limit 5/min por IP, honeypot, validación de servidor con `zod`, límites de longitud iguales a los ya definidos en el HTML, rechazo de cualquier entrada con etiquetas HTML, sin exposición de stack traces ni mensajes internos al cliente, sin secretos hardcodeados. `next.config.ts` no requirió cambios de CSP: el navegador solo llama a `/api/registro-eventos` (mismo origen); las llamadas a Resend y Google Sheets ocurren del lado del servidor.
