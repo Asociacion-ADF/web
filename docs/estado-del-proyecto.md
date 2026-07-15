@@ -254,7 +254,7 @@ La página tiene contenido real publicado con diseño aprobado.
 
 | Pendiente | Descripción |
 |-----------|-------------|
-| Conectar formularios reales | `/proximos-encuentros` validado en producción (Route Handler + Resend + Google Sheets). `/contacto` tiene el mismo backend implementado, pendiente de cargar `EMAIL_TO_CONTACTO` en Vercel y crear la pestaña "Contacto General" — ver secciones "Conexión funcional de /proximos-encuentros" y "Conexión funcional de /contacto" más abajo |
+| Conectar formularios reales | ✓ Completado — `/proximos-encuentros` y `/contacto` validados en producción (Route Handler + Resend + Google Sheets) — ver "Formularios validados en producción" más abajo |
 | Configuración Vercel | Crear cuenta, conectar repo `Asociacion-ADF/web`, hacer deploy preview |
 | Conectar dominio | Apuntar `asociacionaccion.com` a Vercel una vez aprobado el preview |
 | Google Workspace / correo | Activar `contacto@asociacionaccion.com`, configurar SPF, DKIM y DMARC |
@@ -699,6 +699,19 @@ Se implementó el backend real del formulario de `/contacto`, reutilizando el mi
 
 **Columnas de la pestaña "Contacto General" (en orden, A–H):** Fecha y hora de envío · Nombre completo · Teléfono · Correo electrónico · Motivo de contacto · Mensaje · Página de origen · Tipo de formulario (fijo: `"Contacto general"`). Sin IP ni user-agent, por regla explícita.
 
-**Pendiente antes de probar en producción:** cargar `EMAIL_TO_CONTACTO` en Vercel (Preview y Production) y crear la pestaña `"Contacto General"` en el mismo spreadsheet de eventos. El resto de las credenciales (Resend, cuenta de servicio de Google) ya están activas porque se comparten con `/proximos-encuentros`. Probado localmente: validación, honeypot, rate limit compartido y respuesta de error controlada (502) sin `EMAIL_TO_CONTACTO` configurado — el envío real de email y la escritura real en la pestaña "Contacto General" quedan pendientes de confirmar en producción.
+**Estado: validado en producción (julio 2026).** `EMAIL_TO_CONTACTO` está cargada en Vercel y la pestaña `"Contacto General"` existe en el spreadsheet. El envío real de email vía Resend y la escritura real en Sheets ya se probaron y confirmaron funcionando en producción.
 
 **Reglas de seguridad aplicadas:** las mismas que en `/proximos-encuentros` — rate limit compartido, honeypot, validación de servidor con `zod`, límites de longitud, rechazo de HTML, sin exposición de errores internos, sin secretos hardcodeados, sin cambios de CSP.
+
+### Formularios validados en producción (julio 2026)
+
+Ambos formularios reales quedaron probados y confirmados funcionando en producción:
+
+- **`/proximos-encuentros`** guarda cada registro en Google Sheets, pestaña **"Registros Eventos"**, y envía la notificación por email a **`eventos@asociacionaccion.com`**.
+- **`/contacto`** guarda cada mensaje en Google Sheets, pestaña **"Contacto General"**, y envía la notificación por email a **`contacto@asociacionaccion.com`**.
+- **Resend** quedó verificado por DNS (SPF/DKIM) sobre el dominio `asociacionaccion.com`, por lo que el envío de email ya no depende de configuración pendiente.
+- **Google Sheets** se autentica con una cuenta de servicio de Google Cloud, compartida como **Editor** sobre el spreadsheet (el spreadsheet vive en la cuenta personal de Google creada para AADF, no en Workspace).
+- **Vercel** tiene todas las variables de entorno cargadas en **Production**: `RESEND_API_KEY`, `EMAIL_FROM`, `EMAIL_TO_EVENTOS`, `EMAIL_TO_CONTACTO`, `GOOGLE_SERVICE_ACCOUNT_EMAIL`, `GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY`, `GOOGLE_SHEETS_SPREADSHEET_ID`.
+- **Condición mínima de éxito (ambos formularios):** que Google Sheets guarde la fila.
+  - Si Resend falla pero Sheets guarda, el registro se considera **exitoso** igual — la falla de email solo se registra en logs del servidor.
+  - Si Sheets falla, se muestra un error inline y **no** se redirige a `/confirmacion`, aunque Resend haya enviado el email.
