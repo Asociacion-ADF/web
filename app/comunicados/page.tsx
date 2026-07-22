@@ -118,6 +118,14 @@ export default function ComunicadosPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
+                fecha: "17 de julio de 2026",
+                etiqueta: "Fiscalía General de la República",
+                titulo: "Manifiesto público dirigido a la Fiscalía General de la República",
+                resumen: "Acción por los Derechos Fundamentales, A.C. hace un llamado a que las actuaciones de la autoridad se conduzcan con objetividad, legalidad, imparcialidad, respeto al debido proceso y pleno respeto a los derechos fundamentales de todas las personas.",
+                href: "/comunicados/manifiesto-publico-fgr-17-julio-2026.pdf",
+                btnLabel: "Descargar PDF",
+              },
+              {
                 fecha: "6 de julio de 2026",
                 etiqueta: "Relación México-Estados Unidos y T-MEC",
                 titulo: "Pronunciamiento a la opinión pública",
