@@ -412,6 +412,8 @@ Estado actual:
 
 Nota — nuevo comunicado (20 de julio de 2026): "Pronunciamiento por la Unidad Nacional". PDF: `public/comunicados/pronunciamiento-unidad-nacional.pdf`. Estado: integrado y publicado en `/comunicados`, como primera card (más reciente).
 
+Nota — Decálogo ciudadano para el uso ético de la Inteligencia Artificial (17 de junio de 2026): se movió de la mini sección "Recursos ciudadanos" en `/programas` a una card en `/comunicados`. PDF: `public/recursos/decalogo-ciudadano-uso-etico-inteligencia-artificial.pdf` (misma ruta, sin mover ni renombrar). Estado: ya no aparece en `/programas`; publicado como card en `/comunicados`.
+
 Reglas futuras:
 
 1. Para agregar comunicado nuevo, subir PDF a `public/comunicados`.

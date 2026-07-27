@@ -142,6 +142,14 @@ export default function ComunicadosPage() {
                 btnLabel: "Descargar PDF",
               },
               {
+                fecha: "17 de junio de 2026",
+                etiqueta: "Uso ético de la Inteligencia Artificial",
+                titulo: "Decálogo ciudadano para el uso ético de la Inteligencia Artificial",
+                resumen: "Guía ciudadana con principios para promover un uso responsable, ético y consciente de la Inteligencia Artificial.",
+                href: "/recursos/decalogo-ciudadano-uso-etico-inteligencia-artificial.pdf",
+                btnLabel: "Descargar PDF",
+              },
+              {
                 fecha: "Junio de 2026",
                 etiqueta: "Diálogos con la Sociedad",
                 titulo: "A la opinión pública: postura sobre Diálogos con la Sociedad",
