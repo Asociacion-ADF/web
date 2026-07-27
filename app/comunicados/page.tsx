@@ -118,6 +118,14 @@ export default function ComunicadosPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
+                fecha: "20 de julio de 2026",
+                etiqueta: "Unidad Nacional",
+                titulo: "Pronunciamiento por la Unidad Nacional",
+                resumen: "Acción por los Derechos Fundamentales, A.C. hace un llamado a privilegiar el diálogo, el respeto, la colaboración y aquello que une a las y los mexicanos, fortaleciendo la democracia, los derechos fundamentales y el bienestar de México.",
+                href: "/comunicados/pronunciamiento-unidad-nacional.pdf",
+                btnLabel: "Descargar PDF",
+              },
+              {
                 fecha: "17 de julio de 2026",
                 etiqueta: "Fiscalía General de la República",
                 titulo: "Manifiesto público dirigido a la Fiscalía General de la República",

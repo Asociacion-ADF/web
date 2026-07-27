@@ -410,6 +410,8 @@ Estado actual:
 - Las portadas muestran: ícono + "COMUNICADO OFICIAL" + etiqueta. Sin fechas en la portada.
 - PDFs en `public/comunicados`.
 
+Nota — nuevo comunicado (20 de julio de 2026): "Pronunciamiento por la Unidad Nacional". PDF: `public/comunicados/pronunciamiento-unidad-nacional.pdf`. Estado: integrado y publicado en `/comunicados`, como primera card (más reciente).
+
 Reglas futuras:
 
 1. Para agregar comunicado nuevo, subir PDF a `public/comunicados`.
