@@ -5,14 +5,13 @@
 // el próximo encuentro solo requiere editar este archivo.
 export const ACTIVE_EVENT = {
   programa: "Diálogos con la Sociedad",
-  ponente: "Dr. Luis Enrique Palafox Maestre",
-  cargo: "Rector de UABC",
-  fecha: "13 de julio de 2026",
+  ponente: "Fernando Castro Trenti",
+  cargo: "Diputado Federal por B.C.",
+  fecha: "3 de agosto de 2026",
   hora: "2:00 PM",
   lugar: "Oryx Restaurante",
-  fotoSrc:
-    "/eventos/foto-perfil-dialogos-sociedad-luis-enrique-palafox-13-julio-2026.jpeg",
-  fotoAlt: "Dr. Luis Enrique Palafox Maestre",
+  fotoSrc: "/eventos/foto-perfil-fernando-castro-trenti.jpeg",
+  fotoAlt: "Fernando Castro Trenti",
 } as const;
 
 export function eventTitle(): string {
