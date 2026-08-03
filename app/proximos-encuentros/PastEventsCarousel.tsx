@@ -29,6 +29,10 @@ const events = [
     src: "/eventos/dialogos-sociedad-ismael-burgueno-6-julio-2026.jpg",
     alt: "Diálogos con la Sociedad con el Dr. Ismael Burgueño Ruiz — 6 de julio de 2026",
   },
+  {
+    src: "/eventos/dialogos-sociedad-luis-enrique-palafox-13-julio-2026.jpeg",
+    alt: "Diálogos con la Sociedad con el Dr. Luis Enrique Palafox Maestre — 13 de julio de 2026",
+  },
 ];
 
 export default function PastEventsCarousel() {

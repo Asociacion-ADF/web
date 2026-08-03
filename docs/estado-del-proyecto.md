@@ -65,6 +65,9 @@ Carrusel horizontal con flechas de navegación (componente cliente: `PastEventsC
 | Héctor Osuna Jaime — 15 de junio de 2026 | `dialogos-sociedad-hector-osuna-jaime-flyer-cuadrado-15-junio-2026.jpeg` |
 | Dra. Lorena Becerra — 22 de junio de 2026 | `dialogos-sociedad-lorena-becerra-22-junio-2026.jpeg` |
 | Dr. Ismael Burgueño Ruiz — 6 de julio de 2026 | `dialogos-sociedad-ismael-burgueno-6-julio-2026.jpg` |
+| Dr. Luis Enrique Palafox Maestre — 13 de julio de 2026 | `dialogos-sociedad-luis-enrique-palafox-13-julio-2026.jpeg` |
+
+Nota (agosto 2026): el encuentro con el Dr. Luis Enrique Palafox Maestre (Rector de UABC, 13 de julio de 2026, Oryx Restaurante) ya se realizó y se incorporó al histórico "Diálogos que construyen comunidad" en `PastEventsCarousel.tsx`, como última card (más reciente). No se modificó el evento activo ni el calendario de agosto.
 
 ---
 
