@@ -5,13 +5,13 @@
 // el próximo encuentro solo requiere editar este archivo.
 export const ACTIVE_EVENT = {
   programa: "Diálogos con la Sociedad",
-  ponente: "Fernando Castro Trenti",
+  ponente: "César Damián Retes",
   cargo: "Diputado Federal por B.C.",
-  fecha: "3 de agosto de 2026",
+  fecha: "17 de agosto de 2026",
   hora: "2:00 PM",
   lugar: "Oryx Restaurante",
-  fotoSrc: "/eventos/foto-perfil-fernando-castro-trenti.jpeg",
-  fotoAlt: "Fernando Castro Trenti",
+  fotoSrc: "/eventos/foto-perfil-cesar-damian-retes.jpeg",
+  fotoAlt: "César Damián Retes",
 } as const;
 
 export function eventTitle(): string {

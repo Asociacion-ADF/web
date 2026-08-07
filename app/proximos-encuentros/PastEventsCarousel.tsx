@@ -33,6 +33,10 @@ const events = [
     src: "/eventos/dialogos-sociedad-luis-enrique-palafox-13-julio-2026.jpeg",
     alt: "Diálogos con la Sociedad con el Dr. Luis Enrique Palafox Maestre — 13 de julio de 2026",
   },
+  {
+    src: "/eventos/dialogos-sociedad-fernando-castro-trenti-3-agosto-2026.jpeg",
+    alt: "Diálogos con la Sociedad con Fernando Castro Trenti — 3 de agosto de 2026",
+  },
 ];
 
 export default function PastEventsCarousel() {

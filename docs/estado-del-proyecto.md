@@ -66,8 +66,11 @@ Carrusel horizontal con flechas de navegación (componente cliente: `PastEventsC
 | Dra. Lorena Becerra — 22 de junio de 2026 | `dialogos-sociedad-lorena-becerra-22-junio-2026.jpeg` |
 | Dr. Ismael Burgueño Ruiz — 6 de julio de 2026 | `dialogos-sociedad-ismael-burgueno-6-julio-2026.jpg` |
 | Dr. Luis Enrique Palafox Maestre — 13 de julio de 2026 | `dialogos-sociedad-luis-enrique-palafox-13-julio-2026.jpeg` |
+| Fernando Castro Trenti — 3 de agosto de 2026 | `dialogos-sociedad-fernando-castro-trenti-3-agosto-2026.jpeg` |
 
 Nota (agosto 2026): el encuentro con el Dr. Luis Enrique Palafox Maestre (Rector de UABC, 13 de julio de 2026, Oryx Restaurante) ya se realizó y se incorporó al histórico "Diálogos que construyen comunidad" en `PastEventsCarousel.tsx`, como última card (más reciente). No se modificó el evento activo ni el calendario de agosto.
+
+Nota (agosto 2026, actualización): el evento activo (`lib/active-event.ts`) cambió a César Damián Retes (Diputado Federal por B.C., 17 de agosto de 2026, 2:00 PM, Oryx Restaurante, foto `foto-perfil-cesar-damian-retes.jpeg`). El encuentro anterior con Fernando Castro Trenti (Diputado Federal por B.C., 3 de agosto de 2026) ya se realizó y pasó al histórico como última card. No se modificó el calendario de agosto.
 
 ---
 
