@@ -5,7 +5,7 @@ import { ArrowRight, FileText } from "lucide-react";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 
 export const metadata: Metadata = {
-  title: "Comunicados | Acción por los Derechos Fundamentales, A.C.",
+  title: "Comunicados Públicos | Acción por los Derechos Fundamentales, A.C.",
   description:
     "Mensajes institucionales, avisos importantes, convocatorias e información oficial de Acción por los Derechos Fundamentales, A.C. en Tijuana, Baja California.",
 };
@@ -22,7 +22,7 @@ function FineLine({ light = false }: { light?: boolean }) {
 export default function ComunicadosPage() {
   return (
     <>
-      <Breadcrumbs items={[{ label: "Inicio", href: "/" }, { label: "Comunicados" }]} />
+      <Breadcrumbs items={[{ label: "Inicio", href: "/" }, { label: "Comunicados Públicos" }]} />
 
       {/* ─── HERO ─── */}
       <section className="relative min-h-[640px] flex items-center justify-center overflow-hidden">
