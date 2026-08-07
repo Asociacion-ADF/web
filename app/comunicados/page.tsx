@@ -230,6 +230,14 @@ export default function ComunicadosPage() {
                 btnLabel: "Descargar PDF",
               },
               {
+                fecha: "11 de febrero de 2026",
+                etiqueta: "Vacunación y salud pública",
+                titulo: "Manifiesto / Comunicado a la Ciudadanía",
+                resumen: "Acción por los Derechos Fundamentales, A.C. invita a las familias a mantener al día sus esquemas de vacunación y consultar los puntos oficiales de atención disponibles según su domicilio.",
+                href: "/comunicados/manifiesto-vacunacion-11-febrero-2026.pdf",
+                btnLabel: "Descargar PDF",
+              },
+              {
                 fecha: "Diciembre de 2025",
                 etiqueta: "Estímulo fiscal del 8% de IVA en regiones fronterizas y perímetros libres",
                 titulo: "Solicitud de permanencia del estímulo fiscal del 8% del IVA en regiones fronterizas",
