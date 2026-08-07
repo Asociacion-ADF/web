@@ -57,7 +57,7 @@ export default function ComunicadosPage() {
               className="font-display text-4xl sm:text-5xl lg:text-7xl font-bold text-white leading-[1.05] mb-6"
               style={{ textShadow: "0 4px 20px rgba(0,0,0,0.3)" }}
             >
-              Comunicados
+              Comunicados Públicos
             </h1>
             <p className="text-lg lg:text-xl text-[#a3d3f2] font-semibold leading-snug max-w-2xl mb-5 opacity-90">
               Mensajes institucionales e información oficial de la asociación

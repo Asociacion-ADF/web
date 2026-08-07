@@ -94,7 +94,7 @@ const navColumns = [
     links: [
       { label: "En medios", href: "/noticias" },
       { label: "Actividades / Próximos encuentros", href: "/proximos-encuentros" },
-      { label: "Comunicados", href: "/comunicados" },
+      { label: "Comunicados Públicos", href: "/comunicados" },
     ],
   },
 ];
