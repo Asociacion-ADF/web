@@ -116,15 +116,58 @@ export default function ComunicadosPage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* ─── PRUEBA DE DISEÑO: card con preview real del PDF (solo este comunicado) ─── */}
+            <div className="rounded-2xl border border-[#a3d3f2] overflow-hidden flex flex-col bg-white">
+              <div className="w-full h-56 sm:h-64 bg-[#a3d3f2]/12 flex flex-col shrink-0 overflow-hidden">
+                <div className="h-[3px] bg-[#3d815c] w-full shrink-0" aria-hidden="true" />
+                <div className="flex-1 flex items-center justify-center p-4">
+                  <div className="relative h-full aspect-[3/4] rounded-sm overflow-hidden border border-[#a3d3f2]/40 shadow-md bg-white">
+                    <Image
+                      src="/comunicados/pronunciamiento-unidad-nacional-preview.png"
+                      alt="Vista previa de la primera página del comunicado: Pronunciamiento por la Unidad Nacional"
+                      fill
+                      className="object-contain object-top"
+                      sizes="(max-width: 768px) 220px, 280px"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="flex flex-col gap-3 p-6 flex-1">
+                <div className="flex items-center gap-2 flex-wrap">
+                  <span className="text-[10px] font-bold tracking-[0.3em] uppercase px-2.5 py-1 rounded-full bg-[#154c66]/10 text-[#154c66]">
+                    Comunicado público
+                  </span>
+                </div>
+                <p className="text-[10px] font-semibold tracking-[0.2em] text-text-soft/70 uppercase">
+                  20 de julio de 2026
+                </p>
+                <h3 className="font-display text-base font-bold text-[#154c66] leading-snug">
+                  Pronunciamiento por la Unidad Nacional
+                </h3>
+                <p className="text-text-soft text-sm leading-relaxed flex-1">
+                  Acción por los Derechos Fundamentales, A.C. hace un llamado a fortalecer la unidad nacional mediante el diálogo, el respeto y la colaboración, privilegiando aquello que une a las y los mexicanos por encima de las diferencias.
+                </p>
+                <div className="mt-auto pt-2 flex flex-wrap gap-3">
+                  <Link
+                    href="/comunicados/pronunciamiento-unidad-nacional.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 text-xs font-semibold text-white bg-[#3d815c] hover:bg-[#2d6347] px-4 py-2.5 rounded-lg transition-colors"
+                  >
+                    Ver comunicado
+                    <ArrowRight size={13} aria-hidden="true" />
+                  </Link>
+                  <Link
+                    href="/comunicados/pronunciamiento-unidad-nacional.pdf"
+                    download
+                    className="inline-flex items-center justify-center gap-2 text-xs font-semibold text-[#154c66] border border-[#a3d3f2] hover:border-[#154c66] px-4 py-2.5 rounded-lg transition-colors"
+                  >
+                    Descargar PDF
+                  </Link>
+                </div>
+              </div>
+            </div>
             {[
-              {
-                fecha: "20 de julio de 2026",
-                etiqueta: "Unidad Nacional",
-                titulo: "Pronunciamiento por la Unidad Nacional",
-                resumen: "Acción por los Derechos Fundamentales, A.C. hace un llamado a privilegiar el diálogo, el respeto, la colaboración y aquello que une a las y los mexicanos, fortaleciendo la democracia, los derechos fundamentales y el bienestar de México.",
-                href: "/comunicados/pronunciamiento-unidad-nacional.pdf",
-                btnLabel: "Descargar PDF",
-              },
               {
                 fecha: "17 de julio de 2026",
                 etiqueta: "Fiscalía General de la República",
