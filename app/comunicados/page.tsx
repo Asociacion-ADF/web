@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, FileText } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 
 export const metadata: Metadata = {
@@ -117,7 +117,7 @@ export default function ComunicadosPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* ─── PRUEBA DE DISEÑO: card con preview real del PDF (solo este comunicado) ─── */}
-            <div className="self-start rounded-2xl border border-[#a3d3f2] overflow-hidden flex flex-col bg-white">
+            <div className="rounded-2xl border border-[#a3d3f2] overflow-hidden flex flex-col bg-white">
               <div className="w-full bg-white border-b border-[#a3d3f2]/30 shrink-0 flex flex-col items-center text-center gap-1.5 px-6 py-3">
                 <div className="relative w-60 h-16">
                   <Image
@@ -132,7 +132,7 @@ export default function ComunicadosPage() {
                   Pronunciamiento por la Unidad Nacional
                 </p>
               </div>
-              <div className="flex flex-col gap-3 p-6">
+              <div className="flex flex-col gap-3 p-6 flex-1">
                 <div className="flex items-center gap-2 flex-wrap">
                   <span className="text-[10px] font-bold tracking-[0.3em] uppercase px-2.5 py-1 rounded-full bg-[#154c66]/10 text-[#154c66]">
                     Comunicado público
@@ -141,13 +141,10 @@ export default function ComunicadosPage() {
                 <p className="text-[10px] font-semibold tracking-[0.2em] text-text-soft/70 uppercase">
                   20 de julio de 2026
                 </p>
-                <h3 className="font-display text-base font-bold text-[#154c66] leading-snug">
-                  Pronunciamiento por la Unidad Nacional
-                </h3>
                 <p className="text-text-soft text-sm leading-relaxed line-clamp-3">
                   Acción por los Derechos Fundamentales, A.C. hace un llamado a fortalecer la unidad nacional mediante el diálogo, el respeto y la colaboración, privilegiando aquello que une a las y los mexicanos por encima de las diferencias.
                 </p>
-                <div className="pt-2">
+                <div className="mt-auto pt-2">
                   <Link
                     href="/comunicados/pronunciamiento-unidad-nacional.pdf"
                     target="_blank"
@@ -160,157 +157,461 @@ export default function ComunicadosPage() {
                 </div>
               </div>
             </div>
-            {[
-              {
-                fecha: "17 de julio de 2026",
-                etiqueta: "Fiscalía General de la República",
-                titulo: "Manifiesto público dirigido a la Fiscalía General de la República",
-                resumen: "Acción por los Derechos Fundamentales, A.C. hace un llamado a que las actuaciones de la autoridad se conduzcan con objetividad, legalidad, imparcialidad, respeto al debido proceso y pleno respeto a los derechos fundamentales de todas las personas.",
-                href: "/comunicados/manifiesto-publico-fgr-17-julio-2026.pdf",
-                btnLabel: "Descargar PDF",
-              },
-              {
-                fecha: "6 de julio de 2026",
-                etiqueta: "Relación México-Estados Unidos y T-MEC",
-                titulo: "Pronunciamiento a la opinión pública",
-                resumen: "Acción por los Derechos Fundamentales A.C. hace un llamado a fortalecer la confianza, la certeza jurídica, el Estado de Derecho y el diálogo en la relación México-Estados Unidos ante los desafíos del T-MEC.",
-                href: "/comunicados/PRONUNCIAMIENTO- A- LA -OPINION -PUBLICA.pdf",
-                btnLabel: "Descargar PDF",
-              },
-              {
-                fecha: "17 de junio de 2026",
-                etiqueta: "Uso ético de la Inteligencia Artificial",
-                titulo: "Decálogo ciudadano para el uso ético de la Inteligencia Artificial",
-                resumen: "Guía ciudadana con principios para promover un uso responsable, ético y consciente de la Inteligencia Artificial.",
-                href: "/recursos/decalogo-ciudadano-uso-etico-inteligencia-artificial.pdf",
-                btnLabel: "Descargar PDF",
-              },
-              {
-                fecha: "Junio de 2026",
-                etiqueta: "Diálogos con la Sociedad",
-                titulo: "A la opinión pública: postura sobre Diálogos con la Sociedad",
-                resumen: "Acción por los Derechos Fundamentales, A.C. aclara que el programa Diálogos con la Sociedad es un espacio plural, abierto y respetuoso, cuyo propósito es fomentar la participación ciudadana y el intercambio de ideas sin representar respaldo político, electoral o partidista para persona alguna.",
-                href: "/comunicados/comunicado-publicado-prensa.jpeg",
-                btnLabel: "Ver comunicado publicado",
-              },
-              {
-                fecha: "15 de junio de 2026",
-                etiqueta: "Comunidad Católica de Tijuana",
-                titulo: "Fortaleciendo Valores: invitación a la Comunidad Católica de Tijuana",
-                resumen: "Acción por los Derechos Fundamentales, A.C. comparte una invitación a familias de la Comunidad Católica de Tijuana para fortalecer, desde el hogar y la comunidad, la formación en valores de niñas, niños y adolescentes.",
 
-                href: "/comunicados/Carta-programa-valores-comunidad-catolica-tijuana.pdf",
-                btnLabel: "Descargar PDF",
-              },
-              {
-                fecha: "27 de abril de 2026",
-                etiqueta: "Estado de Derecho y certeza jurídica",
-                titulo: "Carta dirigida a Claudia Sheinbaum Pardo",
-                resumen: "Carta institucional dirigida a la Presidenta de México para expresar preocupación por reformas legales con posibles efectos retroactivos y su impacto en la certeza jurídica, la confianza institucional y la estabilidad económica.",
-
-                href: "/comunicados/claudia-sheinbaum-pardo-abril-2026.pdf",
-                btnLabel: "Descargar PDF",
-              },
-              {
-                fecha: "22 de abril de 2026",
-                etiqueta: "Bloqueo de cuentas y prevención financiera",
-                titulo: "Mensaje a la ciudadanía en general",
-                resumen: "Comunicado dirigido a la ciudadanía sobre la importancia de mantenerse informada y tomar medidas preventivas ante posibles riesgos relacionados con bloqueos o inmovilización de cuentas bancarias.",
-
-                href: "/comunicados/mensaje-ciudadania-general-tijuana-abril-2026.pdf",
-                btnLabel: "Descargar PDF",
-              },
-              {
-                fecha: "19 de marzo de 2026",
-                etiqueta: "Reforma al artículo 141 del Código Fiscal",
-                titulo: "Mensaje al sector empresarial de México",
-                resumen: "Comunicado dirigido al sector empresarial sobre la importancia de fortalecer la certeza jurídica, la confianza institucional y condiciones más equilibradas para la inversión y la actividad productiva.",
-
-                href: "/comunicados/mensaje-sector-empresarial-marzo-2026.pdf",
-                btnLabel: "Descargar PDF",
-              },
-              {
-                fecha: "11 de febrero de 2026",
-                etiqueta: "Vacunación y salud pública",
-                titulo: "Manifiesto / Comunicado a la Ciudadanía",
-                resumen: "Acción por los Derechos Fundamentales, A.C. invita a las familias a mantener al día sus esquemas de vacunación y consultar los puntos oficiales de atención disponibles según su domicilio.",
-                href: "/comunicados/manifiesto-vacunacion-11-febrero-2026.pdf",
-                btnLabel: "Descargar PDF",
-              },
-              {
-                fecha: "Diciembre de 2025",
-                etiqueta: "Estímulo fiscal del 8% de IVA en regiones fronterizas y perímetros libres",
-                titulo: "Solicitud de permanencia del estímulo fiscal del 8% del IVA en regiones fronterizas",
-                resumen: "Acción por los Derechos Fundamentales, A.C. solicita la permanencia o prórroga del estímulo fiscal del 8% de IVA en regiones fronterizas y perímetros libres, al considerarlo un mecanismo de equilibrio económico y social para proteger empleo, consumo, inversión y estabilidad de las familias fronterizas.",
-
-                href: "/comunicados/Accion_Tasa del 8% de IVA en la Zona Fronteriza 1 (1).pdf",
-                btnLabel: "Descargar PDF",
-              },
-              {
-                fecha: "Octubre de 2025",
-                etiqueta: "Democracia, derechos humanos y libertad",
-                titulo: "Felicitación y reconocimiento a María Corina Machado",
-                resumen: "Acción por los Derechos Fundamentales, A.C. expresa su felicitación y reconocimiento a María Corina Machado por su firmeza, valentía y compromiso con los valores democráticos y los derechos fundamentales.",
-
-                href: "/comunicados/felcitaciones-maria-corina-machado.pdf",
-                btnLabel: "Descargar PDF",
-              },
-            ].map(({ fecha, etiqueta, titulo, resumen, href, btnLabel }) => (
-              <div
-                key={titulo}
-                className="rounded-2xl border border-[#a3d3f2] overflow-hidden flex flex-col bg-white"
-              >
-                {/* Portada institucional uniforme */}
-                <div className="w-full aspect-[16/9] md:aspect-[4/3] bg-[#a3d3f2] flex flex-col shrink-0 overflow-hidden">
-                  <div className="h-[3px] bg-[#3d815c] w-full shrink-0" aria-hidden="true" />
-                  <div className="flex flex-col items-center justify-center gap-3 p-6 text-center flex-1">
-                    <div className="w-11 h-11 rounded-xl bg-white/50 flex items-center justify-center">
-                      <FileText size={22} className="text-[#154c66]" aria-hidden="true" />
-                    </div>
-                    <div className="flex flex-col gap-1.5">
-                      <span className="text-[9px] font-bold tracking-[0.4em] text-[#3d815c] uppercase">
-                        Comunicado oficial
-                      </span>
-                      <p className="text-sm font-bold text-[#154c66] leading-snug line-clamp-3">
-                        {etiqueta}
-                      </p>
-                    </div>
-                  </div>
+            {/* ─── PRUEBA DE DISEÑO: patrón aprobado extendido a estos 3 comunicados ─── */}
+            <div className="rounded-2xl border border-[#a3d3f2] overflow-hidden flex flex-col bg-white">
+              <div className="w-full bg-white border-b border-[#a3d3f2]/30 shrink-0 flex flex-col items-center text-center gap-1.5 px-6 py-3">
+                <div className="relative w-60 h-16">
+                  <Image
+                    src="/comunicados/pronunciamiento-unidad-nacional-preview-marca.png"
+                    alt="Acción por los Derechos Fundamentales, A.C."
+                    fill
+                    className="object-contain"
+                    sizes="240px"
+                  />
                 </div>
-                <div className="flex flex-col gap-3 p-6 flex-1">
-                  <div className="flex items-center gap-2 flex-wrap">
-                    <span className="text-[10px] font-bold tracking-[0.3em] uppercase px-2.5 py-1 rounded-full bg-[#154c66]/10 text-[#154c66]">
-                      Comunicado oficial
-                    </span>
-                  </div>
-                  <p className="text-[10px] font-semibold tracking-wide text-text-soft uppercase">
-                    {etiqueta}
-                  </p>
-                  {fecha && (
-                    <p className="text-[10px] font-semibold tracking-[0.2em] text-text-soft/70 uppercase">
-                      {fecha}
-                    </p>
-                  )}
-                  <h3 className="font-display text-base font-bold text-[#154c66] leading-snug">
-                    {titulo}
-                  </h3>
-                  <p className="text-text-soft text-sm leading-relaxed flex-1">
-                    {resumen}
-                  </p>
-                  <div className="mt-auto pt-2">
-                    <Link
-                      href={href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-sm font-semibold text-[#154c66] hover:text-[#0d3347] transition-colors"
-                    >
-                      {btnLabel}
-                      <ArrowRight size={14} aria-hidden="true" />
-                    </Link>
-                  </div>
+                <p className="font-display text-base sm:text-lg font-bold text-[#154c66] leading-snug max-w-[15rem] sm:max-w-xs">
+                  Manifiesto público dirigido a la Fiscalía General de la República
+                </p>
+              </div>
+              <div className="flex flex-col gap-3 p-6 flex-1">
+                <div className="flex items-center gap-2 flex-wrap">
+                  <span className="text-[10px] font-bold tracking-[0.3em] uppercase px-2.5 py-1 rounded-full bg-[#154c66]/10 text-[#154c66]">
+                    Comunicado público
+                  </span>
+                </div>
+                <p className="text-[10px] font-semibold tracking-[0.2em] text-text-soft/70 uppercase">
+                  17 de julio de 2026
+                </p>
+                <p className="text-text-soft text-sm leading-relaxed line-clamp-3">
+                  Acción por los Derechos Fundamentales, A.C. hace un llamado a que las actuaciones de la autoridad se conduzcan con objetividad, legalidad, imparcialidad, respeto al debido proceso y pleno respeto a los derechos fundamentales de todas las personas.
+                </p>
+                <div className="mt-auto pt-2">
+                  <Link
+                    href="/comunicados/manifiesto-publico-fgr-17-julio-2026.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-[#154c66] hover:text-[#0d3347] transition-colors"
+                  >
+                    Leer comunicado completo
+                    <ArrowRight size={14} aria-hidden="true" />
+                  </Link>
                 </div>
               </div>
-            ))}
+            </div>
+
+            <div className="rounded-2xl border border-[#a3d3f2] overflow-hidden flex flex-col bg-white">
+              <div className="w-full bg-white border-b border-[#a3d3f2]/30 shrink-0 flex flex-col items-center text-center gap-1.5 px-6 py-3">
+                <div className="relative w-60 h-16">
+                  <Image
+                    src="/comunicados/pronunciamiento-unidad-nacional-preview-marca.png"
+                    alt="Acción por los Derechos Fundamentales, A.C."
+                    fill
+                    className="object-contain"
+                    sizes="240px"
+                  />
+                </div>
+                <p className="font-display text-base sm:text-lg font-bold text-[#154c66] leading-snug max-w-[15rem] sm:max-w-xs">
+                  Pronunciamiento a la opinión pública
+                </p>
+              </div>
+              <div className="flex flex-col gap-3 p-6 flex-1">
+                <div className="flex items-center gap-2 flex-wrap">
+                  <span className="text-[10px] font-bold tracking-[0.3em] uppercase px-2.5 py-1 rounded-full bg-[#154c66]/10 text-[#154c66]">
+                    Comunicado público
+                  </span>
+                </div>
+                <p className="text-[10px] font-semibold tracking-[0.2em] text-text-soft/70 uppercase">
+                  6 de julio de 2026
+                </p>
+                <p className="text-text-soft text-sm leading-relaxed line-clamp-3">
+                  Acción por los Derechos Fundamentales A.C. hace un llamado a fortalecer la confianza, la certeza jurídica, el Estado de Derecho y el diálogo en la relación México-Estados Unidos ante los desafíos del T-MEC.
+                </p>
+                <div className="mt-auto pt-2">
+                  <Link
+                    href="/comunicados/PRONUNCIAMIENTO- A- LA -OPINION -PUBLICA.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-[#154c66] hover:text-[#0d3347] transition-colors"
+                  >
+                    Leer comunicado completo
+                    <ArrowRight size={14} aria-hidden="true" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-[#a3d3f2] overflow-hidden flex flex-col bg-white">
+              <div className="w-full bg-white border-b border-[#a3d3f2]/30 shrink-0 flex flex-col items-center text-center gap-1.5 px-6 py-3">
+                <div className="relative w-60 h-16">
+                  <Image
+                    src="/comunicados/pronunciamiento-unidad-nacional-preview-marca.png"
+                    alt="Acción por los Derechos Fundamentales, A.C."
+                    fill
+                    className="object-contain"
+                    sizes="240px"
+                  />
+                </div>
+                <p className="font-display text-base sm:text-lg font-bold text-[#154c66] leading-snug max-w-[15rem] sm:max-w-xs">
+                  Decálogo ciudadano para el uso ético de la Inteligencia Artificial
+                </p>
+              </div>
+              <div className="flex flex-col gap-3 p-6 flex-1">
+                <div className="flex items-center gap-2 flex-wrap">
+                  <span className="text-[10px] font-bold tracking-[0.3em] uppercase px-2.5 py-1 rounded-full bg-[#154c66]/10 text-[#154c66]">
+                    Comunicado público
+                  </span>
+                </div>
+                <p className="text-[10px] font-semibold tracking-[0.2em] text-text-soft/70 uppercase">
+                  17 de junio de 2026
+                </p>
+                <p className="text-text-soft text-sm leading-relaxed line-clamp-3">
+                  Guía ciudadana con principios para promover un uso responsable, ético y consciente de la Inteligencia Artificial.
+                </p>
+                <div className="mt-auto pt-2">
+                  <Link
+                    href="/recursos/decalogo-ciudadano-uso-etico-inteligencia-artificial.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-[#154c66] hover:text-[#0d3347] transition-colors"
+                  >
+                    Leer comunicado completo
+                    <ArrowRight size={14} aria-hidden="true" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* ─── PRUEBA DE DISEÑO: patrón aprobado extendido a estos 3 comunicados ─── */}
+            <div className="rounded-2xl border border-[#a3d3f2] overflow-hidden flex flex-col bg-white">
+              <div className="w-full bg-white border-b border-[#a3d3f2]/30 shrink-0 flex flex-col items-center text-center gap-1.5 px-6 py-3">
+                <div className="relative w-60 h-16">
+                  <Image
+                    src="/comunicados/pronunciamiento-unidad-nacional-preview-marca.png"
+                    alt="Acción por los Derechos Fundamentales, A.C."
+                    fill
+                    className="object-contain"
+                    sizes="240px"
+                  />
+                </div>
+                <p className="font-display text-base sm:text-lg font-bold text-[#154c66] leading-snug max-w-[15rem] sm:max-w-xs">
+                  A la opinión pública: postura sobre Diálogos con la Sociedad
+                </p>
+              </div>
+              <div className="flex flex-col gap-3 p-6 flex-1">
+                <div className="flex items-center gap-2 flex-wrap">
+                  <span className="text-[10px] font-bold tracking-[0.3em] uppercase px-2.5 py-1 rounded-full bg-[#154c66]/10 text-[#154c66]">
+                    Comunicado público
+                  </span>
+                </div>
+                <p className="text-[10px] font-semibold tracking-[0.2em] text-text-soft/70 uppercase">
+                  Junio de 2026
+                </p>
+                <p className="text-text-soft text-sm leading-relaxed line-clamp-3">
+                  Acción por los Derechos Fundamentales, A.C. aclara que el programa Diálogos con la Sociedad es un espacio plural, abierto y respetuoso, cuyo propósito es fomentar la participación ciudadana y el intercambio de ideas sin representar respaldo político, electoral o partidista para persona alguna.
+                </p>
+                <div className="mt-auto pt-2">
+                  <Link
+                    href="/comunicados/comunicado-publicado-prensa.jpeg"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-[#154c66] hover:text-[#0d3347] transition-colors"
+                  >
+                    Leer comunicado completo
+                    <ArrowRight size={14} aria-hidden="true" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-[#a3d3f2] overflow-hidden flex flex-col bg-white">
+              <div className="w-full bg-white border-b border-[#a3d3f2]/30 shrink-0 flex flex-col items-center text-center gap-1.5 px-6 py-3">
+                <div className="relative w-60 h-16">
+                  <Image
+                    src="/comunicados/pronunciamiento-unidad-nacional-preview-marca.png"
+                    alt="Acción por los Derechos Fundamentales, A.C."
+                    fill
+                    className="object-contain"
+                    sizes="240px"
+                  />
+                </div>
+                <p className="font-display text-base sm:text-lg font-bold text-[#154c66] leading-snug max-w-[15rem] sm:max-w-xs">
+                  Fortaleciendo Valores: invitación a la Comunidad Católica de Tijuana
+                </p>
+              </div>
+              <div className="flex flex-col gap-3 p-6 flex-1">
+                <div className="flex items-center gap-2 flex-wrap">
+                  <span className="text-[10px] font-bold tracking-[0.3em] uppercase px-2.5 py-1 rounded-full bg-[#154c66]/10 text-[#154c66]">
+                    Comunicado público
+                  </span>
+                </div>
+                <p className="text-[10px] font-semibold tracking-[0.2em] text-text-soft/70 uppercase">
+                  15 de junio de 2026
+                </p>
+                <p className="text-text-soft text-sm leading-relaxed line-clamp-3">
+                  Acción por los Derechos Fundamentales, A.C. comparte una invitación a familias de la Comunidad Católica de Tijuana para fortalecer, desde el hogar y la comunidad, la formación en valores de niñas, niños y adolescentes.
+                </p>
+                <div className="mt-auto pt-2">
+                  <Link
+                    href="/comunicados/Carta-programa-valores-comunidad-catolica-tijuana.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-[#154c66] hover:text-[#0d3347] transition-colors"
+                  >
+                    Leer comunicado completo
+                    <ArrowRight size={14} aria-hidden="true" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-[#a3d3f2] overflow-hidden flex flex-col bg-white">
+              <div className="w-full bg-white border-b border-[#a3d3f2]/30 shrink-0 flex flex-col items-center text-center gap-1.5 px-6 py-3">
+                <div className="relative w-60 h-16">
+                  <Image
+                    src="/comunicados/pronunciamiento-unidad-nacional-preview-marca.png"
+                    alt="Acción por los Derechos Fundamentales, A.C."
+                    fill
+                    className="object-contain"
+                    sizes="240px"
+                  />
+                </div>
+                <p className="font-display text-base sm:text-lg font-bold text-[#154c66] leading-snug max-w-[15rem] sm:max-w-xs">
+                  Carta dirigida a Claudia Sheinbaum Pardo
+                </p>
+              </div>
+              <div className="flex flex-col gap-3 p-6 flex-1">
+                <div className="flex items-center gap-2 flex-wrap">
+                  <span className="text-[10px] font-bold tracking-[0.3em] uppercase px-2.5 py-1 rounded-full bg-[#154c66]/10 text-[#154c66]">
+                    Comunicado público
+                  </span>
+                </div>
+                <p className="text-[10px] font-semibold tracking-[0.2em] text-text-soft/70 uppercase">
+                  27 de abril de 2026
+                </p>
+                <p className="text-text-soft text-sm leading-relaxed line-clamp-3">
+                  Carta institucional dirigida a la Presidenta de México para expresar preocupación por reformas legales con posibles efectos retroactivos y su impacto en la certeza jurídica, la confianza institucional y la estabilidad económica.
+                </p>
+                <div className="mt-auto pt-2">
+                  <Link
+                    href="/comunicados/claudia-sheinbaum-pardo-abril-2026.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-[#154c66] hover:text-[#0d3347] transition-colors"
+                  >
+                    Leer comunicado completo
+                    <ArrowRight size={14} aria-hidden="true" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* ─── PRUEBA DE DISEÑO: patrón aprobado extendido a estos 3 comunicados ─── */}
+            <div className="rounded-2xl border border-[#a3d3f2] overflow-hidden flex flex-col bg-white">
+              <div className="w-full bg-white border-b border-[#a3d3f2]/30 shrink-0 flex flex-col items-center text-center gap-1.5 px-6 py-3">
+                <div className="relative w-60 h-16">
+                  <Image
+                    src="/comunicados/pronunciamiento-unidad-nacional-preview-marca.png"
+                    alt="Acción por los Derechos Fundamentales, A.C."
+                    fill
+                    className="object-contain"
+                    sizes="240px"
+                  />
+                </div>
+                <p className="font-display text-base sm:text-lg font-bold text-[#154c66] leading-snug max-w-[15rem] sm:max-w-xs">
+                  Mensaje a la ciudadanía en general
+                </p>
+              </div>
+              <div className="flex flex-col gap-3 p-6 flex-1">
+                <div className="flex items-center gap-2 flex-wrap">
+                  <span className="text-[10px] font-bold tracking-[0.3em] uppercase px-2.5 py-1 rounded-full bg-[#154c66]/10 text-[#154c66]">
+                    Comunicado público
+                  </span>
+                </div>
+                <p className="text-[10px] font-semibold tracking-[0.2em] text-text-soft/70 uppercase">
+                  22 de abril de 2026
+                </p>
+                <p className="text-text-soft text-sm leading-relaxed line-clamp-3">
+                  Comunicado dirigido a la ciudadanía sobre la importancia de mantenerse informada y tomar medidas preventivas ante posibles riesgos relacionados con bloqueos o inmovilización de cuentas bancarias.
+                </p>
+                <div className="mt-auto pt-2">
+                  <Link
+                    href="/comunicados/mensaje-ciudadania-general-tijuana-abril-2026.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-[#154c66] hover:text-[#0d3347] transition-colors"
+                  >
+                    Leer comunicado completo
+                    <ArrowRight size={14} aria-hidden="true" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-[#a3d3f2] overflow-hidden flex flex-col bg-white">
+              <div className="w-full bg-white border-b border-[#a3d3f2]/30 shrink-0 flex flex-col items-center text-center gap-1.5 px-6 py-3">
+                <div className="relative w-60 h-16">
+                  <Image
+                    src="/comunicados/pronunciamiento-unidad-nacional-preview-marca.png"
+                    alt="Acción por los Derechos Fundamentales, A.C."
+                    fill
+                    className="object-contain"
+                    sizes="240px"
+                  />
+                </div>
+                <p className="font-display text-base sm:text-lg font-bold text-[#154c66] leading-snug max-w-[15rem] sm:max-w-xs">
+                  Mensaje al sector empresarial de México
+                </p>
+              </div>
+              <div className="flex flex-col gap-3 p-6 flex-1">
+                <div className="flex items-center gap-2 flex-wrap">
+                  <span className="text-[10px] font-bold tracking-[0.3em] uppercase px-2.5 py-1 rounded-full bg-[#154c66]/10 text-[#154c66]">
+                    Comunicado público
+                  </span>
+                </div>
+                <p className="text-[10px] font-semibold tracking-[0.2em] text-text-soft/70 uppercase">
+                  19 de marzo de 2026
+                </p>
+                <p className="text-text-soft text-sm leading-relaxed line-clamp-3">
+                  Comunicado dirigido al sector empresarial sobre la importancia de fortalecer la certeza jurídica, la confianza institucional y condiciones más equilibradas para la inversión y la actividad productiva.
+                </p>
+                <div className="mt-auto pt-2">
+                  <Link
+                    href="/comunicados/mensaje-sector-empresarial-marzo-2026.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-[#154c66] hover:text-[#0d3347] transition-colors"
+                  >
+                    Leer comunicado completo
+                    <ArrowRight size={14} aria-hidden="true" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-[#a3d3f2] overflow-hidden flex flex-col bg-white">
+              <div className="w-full bg-white border-b border-[#a3d3f2]/30 shrink-0 flex flex-col items-center text-center gap-1.5 px-6 py-3">
+                <div className="relative w-60 h-16">
+                  <Image
+                    src="/comunicados/pronunciamiento-unidad-nacional-preview-marca.png"
+                    alt="Acción por los Derechos Fundamentales, A.C."
+                    fill
+                    className="object-contain"
+                    sizes="240px"
+                  />
+                </div>
+                <p className="font-display text-base sm:text-lg font-bold text-[#154c66] leading-snug max-w-[15rem] sm:max-w-xs">
+                  Manifiesto / Comunicado a la Ciudadanía
+                </p>
+              </div>
+              <div className="flex flex-col gap-3 p-6 flex-1">
+                <div className="flex items-center gap-2 flex-wrap">
+                  <span className="text-[10px] font-bold tracking-[0.3em] uppercase px-2.5 py-1 rounded-full bg-[#154c66]/10 text-[#154c66]">
+                    Comunicado público
+                  </span>
+                </div>
+                <p className="text-[10px] font-semibold tracking-[0.2em] text-text-soft/70 uppercase">
+                  11 de febrero de 2026
+                </p>
+                <p className="text-text-soft text-sm leading-relaxed line-clamp-3">
+                  Acción por los Derechos Fundamentales, A.C. invita a las familias a mantener al día sus esquemas de vacunación y consultar los puntos oficiales de atención disponibles según su domicilio.
+                </p>
+                <div className="mt-auto pt-2">
+                  <Link
+                    href="/comunicados/manifiesto-vacunacion-11-febrero-2026.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-[#154c66] hover:text-[#0d3347] transition-colors"
+                  >
+                    Leer comunicado completo
+                    <ArrowRight size={14} aria-hidden="true" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* ─── PRUEBA DE DISEÑO: patrón aprobado extendido a estos 2 comunicados ─── */}
+            <div className="rounded-2xl border border-[#a3d3f2] overflow-hidden flex flex-col bg-white">
+              <div className="w-full bg-white border-b border-[#a3d3f2]/30 shrink-0 flex flex-col items-center text-center gap-1.5 px-6 py-3">
+                <div className="relative w-60 h-16">
+                  <Image
+                    src="/comunicados/pronunciamiento-unidad-nacional-preview-marca.png"
+                    alt="Acción por los Derechos Fundamentales, A.C."
+                    fill
+                    className="object-contain"
+                    sizes="240px"
+                  />
+                </div>
+                <p className="font-display text-base sm:text-lg font-bold text-[#154c66] leading-snug max-w-[15rem] sm:max-w-xs">
+                  Solicitud de permanencia del estímulo fiscal del 8% del IVA en regiones fronterizas
+                </p>
+              </div>
+              <div className="flex flex-col gap-3 p-6 flex-1">
+                <div className="flex items-center gap-2 flex-wrap">
+                  <span className="text-[10px] font-bold tracking-[0.3em] uppercase px-2.5 py-1 rounded-full bg-[#154c66]/10 text-[#154c66]">
+                    Comunicado público
+                  </span>
+                </div>
+                <p className="text-[10px] font-semibold tracking-[0.2em] text-text-soft/70 uppercase">
+                  Diciembre de 2025
+                </p>
+                <p className="text-text-soft text-sm leading-relaxed line-clamp-3">
+                  Acción por los Derechos Fundamentales, A.C. solicita la permanencia o prórroga del estímulo fiscal del 8% de IVA en regiones fronterizas y perímetros libres, al considerarlo un mecanismo de equilibrio económico y social para proteger empleo, consumo, inversión y estabilidad de las familias fronterizas.
+                </p>
+                <div className="mt-auto pt-2">
+                  <Link
+                    href="/comunicados/Accion_Tasa del 8% de IVA en la Zona Fronteriza 1 (1).pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-[#154c66] hover:text-[#0d3347] transition-colors"
+                  >
+                    Leer comunicado completo
+                    <ArrowRight size={14} aria-hidden="true" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-[#a3d3f2] overflow-hidden flex flex-col bg-white">
+              <div className="w-full bg-white border-b border-[#a3d3f2]/30 shrink-0 flex flex-col items-center text-center gap-1.5 px-6 py-3">
+                <div className="relative w-60 h-16">
+                  <Image
+                    src="/comunicados/pronunciamiento-unidad-nacional-preview-marca.png"
+                    alt="Acción por los Derechos Fundamentales, A.C."
+                    fill
+                    className="object-contain"
+                    sizes="240px"
+                  />
+                </div>
+                <p className="font-display text-base sm:text-lg font-bold text-[#154c66] leading-snug max-w-[15rem] sm:max-w-xs">
+                  Felicitación y reconocimiento a María Corina Machado
+                </p>
+              </div>
+              <div className="flex flex-col gap-3 p-6 flex-1">
+                <div className="flex items-center gap-2 flex-wrap">
+                  <span className="text-[10px] font-bold tracking-[0.3em] uppercase px-2.5 py-1 rounded-full bg-[#154c66]/10 text-[#154c66]">
+                    Comunicado público
+                  </span>
+                </div>
+                <p className="text-[10px] font-semibold tracking-[0.2em] text-text-soft/70 uppercase">
+                  Octubre de 2025
+                </p>
+                <p className="text-text-soft text-sm leading-relaxed line-clamp-3">
+                  Acción por los Derechos Fundamentales, A.C. expresa su felicitación y reconocimiento a María Corina Machado por su firmeza, valentía y compromiso con los valores democráticos y los derechos fundamentales.
+                </p>
+                <div className="mt-auto pt-2">
+                  <Link
+                    href="/comunicados/felcitaciones-maria-corina-machado.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-[#154c66] hover:text-[#0d3347] transition-colors"
+                  >
+                    Leer comunicado completo
+                    <ArrowRight size={14} aria-hidden="true" />
+                  </Link>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
